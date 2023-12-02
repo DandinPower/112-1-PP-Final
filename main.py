@@ -12,7 +12,10 @@ class TestSparseMatrixMultiplication(unittest.TestCase):
         # Multiply the sparse matrices using your function
         result_sparse = ExtensionHandler.sparse_mm(sparse_matrix1, sparse_matrix2)
         result_sparse_true = torch.sparse.mm(sparse_matrix1, sparse_matrix2)
-        print(sparse_matrix1.to_dense())
+
+        print(result_sparse._indices())
+        print(result_sparse._values())
+        
         print(result_sparse.to_dense())
         print(result_sparse_true.to_dense())
 

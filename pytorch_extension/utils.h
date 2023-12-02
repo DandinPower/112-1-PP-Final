@@ -31,3 +31,10 @@ void copy_value(const int64_t n, scalar_t C[], scalar_t D[])
         C[i] = D[i];
     }
 }
+
+torch::Tensor copy_tensor(torch::Tensor tensor)
+{
+    auto tensor_copy = torch::empty_like(tensor);
+    tensor_copy.copy_(tensor);
+    return tensor_copy;
+}

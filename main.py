@@ -1,16 +1,23 @@
+import unittest
 import torch
-import sparse_mm
+from src.utils import generate_sparse_matrix
+from src.extension import ExtensionHandler
 
-# Create some sparse and dense tensors
-sparse = torch.sparse_coo_tensor(
-    indices=torch.tensor([[0, 1, 1],
-                          [2, 0, 2]]),
-    values=torch.tensor([3., 4., 5.]),
-    size=(2, 3))
+class TestSparseMatrixMultiplication(unittest.TestCase):
+    def test_sparse_mm(self):
+        # Generate two sparse matrices
+        sparse_matrix1 = generate_sparse_matrix(1000, 1000, density=0.1)
+        sparse_matrix2 = generate_sparse_matrix(1000, 1000, density=0.1)
 
-dense = torch.randn(3, 2)
+        # Multiply the sparse matrices using your function
+        result_sparse = ExtensionHandler.sparse_mm(sparse_matrix1, sparse_matrix2)
+        result_sparse_true = torch.sparse.mm(sparse_matrix1, sparse_matrix2)
+        print(sparse_matrix1.to_dense())
+        print(result_sparse.to_dense())
+        print(result_sparse_true.to_dense())
 
-# Use the extension for sparse matrix multiplication
-result = sparse_mm.sparse_mm(sparse, dense)
+        # Check if the result from your function matches the expected result
+        self.assertTrue(torch.allclose(result_sparse.to_dense(), result_sparse_true.to_dense()))
 
-print(result)
+if __name__ == "__main__":
+    unittest.main()

@@ -71,28 +71,26 @@ torch::Tensor sparse_matmul_kernel(
         output_col_indices.data_ptr<int64_t>(),
         output_values.data_ptr<scalar_t>());
 
-    ''' For Debugging
-    std::cout << "CSR Format: " << std::endl;
-    view<int64_t>(M + 1, output_indptr.data_ptr<int64_t>());
-    view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
-    view<scalar_t>(nnz, output_values.data_ptr<scalar_t>());
-    std::cout << std::endl;
-    '''
+    // For Debugging
+    // std::cout << "CSR Format: " << std::endl;
+    // view<int64_t>(M + 1, output_indptr.data_ptr<int64_t>());
+    // view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
+    // view<scalar_t>(nnz, output_values.data_ptr<scalar_t>());
+    // std::cout << std::endl;
 
     csr_to_coo(M, output_indptr.data_ptr<int64_t>(), output_row_indices.data_ptr<int64_t>());
     output._coalesced_(true);
 
-    ''' For Debugging
-    std::cout << "Correct COO Format: " << std::endl;
-    view<int64_t>(nnz, output_row_indices.data_ptr<int64_t>());
-    view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
-    view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
-    std::cout << std::endl;
+    // For Debugging
+    // std::cout << "Correct COO Format: " << std::endl;
+    // view<int64_t>(nnz, output_row_indices.data_ptr<int64_t>());
+    // view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
+    // view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
+    // std::cout << std::endl;
 
-    std::cout << "Output"<< std::endl;
-    view<int64_t>(nnz*2, output._indices().data_ptr<int64_t>());
-    view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
-    '''
+    // std::cout << "Output"<< std::endl;
+    // view<int64_t>(nnz*2, output._indices().data_ptr<int64_t>());
+    // view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
 
     auto indices = torch::empty({2, nnz}, torch::kLong);
     auto values = torch::empty({nnz}, torch::kFloat);
@@ -134,16 +132,15 @@ torch::Tensor sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matr
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
     
-    ''' Different Sparse MM Strategy
+    // Different Sparse MM Strategy
     // Original High level interface, will succeed
-    torch::Tensor answer = at::_sparse_sparse_matmul(sparse_matrix_0, sparse_matrix_1);
+    // torch::Tensor answer = at::_sparse_sparse_matmul(sparse_matrix_0, sparse_matrix_1);
 
-    // CUDA FAIL
-    torch::Tensor answer = at::native::sparse_sparse_matmul_cuda(sparse_matrix_0, sparse_matrix_1);
+    // // CUDA FAIL
+    // torch::Tensor answer = at::native::sparse_sparse_matmul_cuda(sparse_matrix_0, sparse_matrix_1);
     
-    // Original Sparse MM, will return all zero
-    torch::Tensor answer = at::native::sparse_sparse_matmul_cpu(sparse_matrix_0, sparse_matrix_1);
-    '''
+    // // Original Sparse MM, will return all zero
+    // torch::Tensor answer = at::native::sparse_sparse_matmul_cpu(sparse_matrix_0, sparse_matrix_1);
 
     torch::Tensor answer = sparse_sparse_matmul_cpu(sparse_matrix_0, sparse_matrix_1);
     return answer;

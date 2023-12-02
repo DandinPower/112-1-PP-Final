@@ -1,20 +1,29 @@
+## Sparse Matrix Pytorch Extension
+
+### Compile and Test
 - install the requirements
     ```bash
     pip install -r requirements.txt
     ```
 
-- setup the pytorch extension
+- compile the pytorch extension
     ```bash
     cd pytorch_extension
     python setup.py install
     ```
 
-- for those which didn't appear in torch/extension.hm, you need to include the right file like
-    at::native::Stride...
-    you need to include <ATEN/NATIVE/Stride...>
+- run the test
+    ```bash
+    python main.py
+    ```
 
-- made a modification on #include <ATen/native/CompositeRandomAccessorCommon.h>
-    C10_HOST_DEVICE
-  references& data() const {
-    return refs;
-  }
+### Notes
+
+- for those which pytorch built-in function didn't include by torch/extension.h, you need to include the right file like
+    ```c++
+    at::native::StridedRandomAccessor
+    ``` 
+    you need to include
+    ```c++
+    #include <ATen/native/StridedRandomAccessor.h>
+    ```

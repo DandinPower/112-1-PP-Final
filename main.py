@@ -6,8 +6,8 @@ from src.extension import ExtensionHandler
 class TestSparseMatrixMultiplication(unittest.TestCase):
     def test_sparse_mm(self):
         # Generate two sparse matrices
-        sparse_matrix1 = generate_sparse_matrix(1000, 1000, density=0.1)
-        sparse_matrix2 = generate_sparse_matrix(1000, 1000, density=0.1)
+        sparse_matrix1 = generate_sparse_matrix(5, 4, density=0.7)
+        sparse_matrix2 = generate_sparse_matrix(4, 5, density=0.7)
 
         # Multiply the sparse matrices using your function
         result_sparse = ExtensionHandler.sparse_mm(sparse_matrix1, sparse_matrix2)

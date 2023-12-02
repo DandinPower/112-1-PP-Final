@@ -14,12 +14,13 @@ long int get_first(const at::native::references_holder<T, T2>& t) {
 }
 
 template <typename scalar_t>
-void test(const int64_t n_row, const scalar_t C[])
+void view(const int64_t n_row, const scalar_t C[])
 {
     for (const auto i : c10::irange(n_row))
     {
-        std::cout << C[i] << std::endl;
+        std::cout << C[i] << ", ";
     }
+    std::cout << std::endl;
 }
 
 template <typename scalar_t>

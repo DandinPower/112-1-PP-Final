@@ -1,14 +1,7 @@
-from src.benchmark import benchmark_functions_single_test, benchmark_functions_multiple_test, show_benchmark_results
-from src.utils import SparseMatrixTestConfiguration
+from src.benchmark import generate_and_benchmark_configurations, show_benchmark_results
 
 def main():
-    results = []
-    for size in range(5, 21, 5):
-        for density in [i/10 for i in range(2, 10, 7)]:
-            configurations = []
-            for density_2 in [i/10 for i in range(2, 10, 7)]:
-                configurations.append(SparseMatrixTestConfiguration(size, size, density, size, size, density_2))
-            benchmark_functions_multiple_test(configurations, results)
+    results = generate_and_benchmark_configurations(size_start=5, size_end=500, size_step=50, density_start=1, density_end=10, density_step=4)
     show_benchmark_results(results)
 
 if __name__ == '__main__':

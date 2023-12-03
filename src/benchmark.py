@@ -63,7 +63,7 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
         sub_label = f'[{config.A_row:5}, {config.A_col:5}, density={config.A_density:5.2f}], [{config.B_row:5}, {config.B_col:5}, density={config.B_density:5.2f}]'
         sparse_matrix = generate_sparse_matrix(config.A_row, config.A_col, density=config.A_density)
         sparse_matrix_1 = generate_sparse_matrix(config.B_row, config.B_col, density=config.B_density)
-        print(f'Builtin SPMM: {i*3 + 0}')
+        # print(f'Builtin SPMM: {i*3 + 0}')
         results.append(benchmark.Timer(
             stmt='builtin_sparse_mm(sparse_matrix, sparse_matrix_1)',
             setup='from src.benchmark import builtin_sparse_mm',
@@ -72,7 +72,7 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
             sub_label=sub_label,
             description='builtin_sparse_mm').timeit(1))
         
-        print(f'Extension SPMM: {i*3 + 1}')
+        # print(f'Extension SPMM: {i*3 + 1}')
         results.append(benchmark.Timer(
             stmt='builtin_sparse_mm_extension(sparse_matrix, sparse_matrix_1)',
             setup='from src.benchmark import builtin_sparse_mm_extension',
@@ -81,7 +81,7 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
             sub_label=sub_label,
             description='builtin_sparse_mm_extension').timeit(1))
 
-        print(f'Dense MM: {i*3 + 2}')
+        # print(f'Dense MM: {i*3 + 2}')
         results.append(benchmark.Timer(
             stmt='dense_mm(sparse_matrix.to_dense(), sparse_matrix_1.to_dense())',
             setup='from src.benchmark import dense_mm',
@@ -95,6 +95,20 @@ def show_benchmark_results(results):
     Show the benchmark results.
     """
     compare = benchmark.Compare(results)
-    compare.trim_significant_figures()
-    compare.colorize()
     compare.print()
+
+def generate_and_benchmark_configurations(size_start, size_end, size_step, density_start, density_end, density_step):
+    """
+    Generate a list of test configurations and benchmark them.
+    """
+    size_range = range(size_start, size_end, size_step)
+    density_range = range(density_start, density_end, density_step)
+    results = []
+    from tqdm import tqdm
+    for size in tqdm(size_range, desc="Size"):
+        configurations = []
+        for density in [i/10 for i in density_range]:
+            for density_2 in [i/10 for i in density_range]:
+                configurations.append(SparseMatrixTestConfiguration(size, size, density, size, size, density_2))
+        benchmark_functions_multiple_test(configurations, results)
+    return results

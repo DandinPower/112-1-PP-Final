@@ -102,7 +102,6 @@ torch::Tensor sparse_matmul_kernel(
 // TODO: solve the following error: output matrix will be all zero
 torch::Tensor sparse_sparse_matmul_cpu(const torch::Tensor &mat1_, const torch::Tensor &mat2_)
 { 
-    std::cout << "sparse_sparse_matmul_cpu" << std::endl;
     TORCH_INTERNAL_ASSERT(mat1_.is_sparse());
     TORCH_INTERNAL_ASSERT(mat2_.is_sparse());
     TORCH_CHECK(mat1_.dim() == 2);

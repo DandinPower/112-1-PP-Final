@@ -1,6 +1,11 @@
 ## Sparse Matrix Pytorch Extension
 
-### Compile and Test
+### Compile
+
+- description
+
+    in order to run the pytorch extension, you need to compile the pytorch extension first.
+
 - install the requirements
     ```bash
     pip install -r requirements.txt
@@ -12,9 +17,15 @@
     python setup.py install
     ```
 
-- run the test
+### Unit Test 
+
+- description
+
+    in order to test the pytorch extension implementation, we use pytest module to test the pytorch extension.
+
+- run the unit test
     ```bash
-    python main.py
+    pytest ./test
     ```
 
 ### Notes

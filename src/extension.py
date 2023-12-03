@@ -1,3 +1,4 @@
+import torch
 import sparse_mm
 
 class ExtensionHandler(object):

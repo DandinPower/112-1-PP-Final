@@ -13,6 +13,10 @@ def builtin_sparse_mm_extension(sparse_matrix: torch.Tensor, sparse_matrix_1: to
     """Computes the product of two sparse matrices by using the extension version of ``torch.sparse.mm`` function"""
     return ExtensionHandler.sparse_mm(sparse_matrix, sparse_matrix_1)
 
+def openmp_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
+    """Computes the product of two sparse matrices by using the openmp version of ``torch.sparse.mm`` function"""
+    return ExtensionHandler.openmp_sparse_mm(sparse_matrix, sparse_matrix_1)
+
 def dense_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
     """Computes the product of two dense matrices by using the builtin ``torch.mm`` function"""
     if sparse_matrix.is_sparse:
@@ -38,14 +42,20 @@ def benchmark_functions_single_test(config: SparseMatrixTestConfiguration, num_r
         stmt='builtin_sparse_mm_extension(sparse_matrix, sparse_matrix_1)',
         setup='from src.benchmark import builtin_sparse_mm_extension',
         globals={'sparse_matrix': sparse_matrix, 'sparse_matrix_1': sparse_matrix_1})
-
+    
     t2 = benchmark.Timer(
+        stmt='openmp_sparse_mm(sparse_matrix, sparse_matrix_1)',
+        setup='from src.benchmark import openmp_sparse_mm',
+        globals={'sparse_matrix': sparse_matrix, 'sparse_matrix_1': sparse_matrix_1})
+
+    t3 = benchmark.Timer(
         stmt='dense_mm(sparse_matrix.to_dense(), sparse_matrix_1.to_dense())',
         setup='from src.benchmark import dense_mm',
         globals={'sparse_matrix': sparse_matrix, 'sparse_matrix_1': sparse_matrix_1})
 
     print(f'builtin_sparse_mm(sparse_matrix, sparse_matrix_1):  {t0.timeit(num_runs)})')
     print(f'builtin_sparse_mm_extension(sparse_matrix, sparse_matrix_1):      {t1.timeit(num_runs)})')
+    print(f'openmp_sparse_mm(sparse_matrix, sparse_matrix_1):      {t2.timeit(num_runs)})')
     print(f'dense_mm(sparse_matrix.to_dense(), sparse_matrix_1.to_dense()):      {t2.timeit(num_runs)})')
     print(f'Finsish Benchmarking with A_row={config.A_row}, A_col={config.A_col}, A_density={config.A_density}, B_row={config.B_row}, B_col={config.B_col}, B_density={config.B_density}, num_runs={num_runs}')
     print("-" * 50 + "\n")
@@ -63,7 +73,7 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
         sub_label = f'[{config.A_row:5}, {config.A_col:5}, density={config.A_density:5.2f}], [{config.B_row:5}, {config.B_col:5}, density={config.B_density:5.2f}]'
         sparse_matrix = generate_sparse_matrix(config.A_row, config.A_col, density=config.A_density)
         sparse_matrix_1 = generate_sparse_matrix(config.B_row, config.B_col, density=config.B_density)
-        # print(f'Builtin SPMM: {i*3 + 0}')
+        # print(f'Builtin SPMM: {i*4 + 0}')
         results.append(benchmark.Timer(
             stmt='builtin_sparse_mm(sparse_matrix, sparse_matrix_1)',
             setup='from src.benchmark import builtin_sparse_mm',
@@ -72,7 +82,7 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
             sub_label=sub_label,
             description='builtin_sparse_mm').timeit(1))
         
-        # print(f'Extension SPMM: {i*3 + 1}')
+        # print(f'Extension SPMM: {i*4 + 1}')
         results.append(benchmark.Timer(
             stmt='builtin_sparse_mm_extension(sparse_matrix, sparse_matrix_1)',
             setup='from src.benchmark import builtin_sparse_mm_extension',
@@ -80,8 +90,17 @@ def benchmark_functions_multiple_test(config_list: List[SparseMatrixTestConfigur
             label=label,
             sub_label=sub_label,
             description='builtin_sparse_mm_extension').timeit(1))
+        
+        # print(f'Parallel SPMM: {i*4 + 2}')
+        results.append(benchmark.Timer(
+            stmt='openmp_sparse_mm(sparse_matrix, sparse_matrix_1)',
+            setup='from src.benchmark import openmp_sparse_mm',
+            globals={'sparse_matrix': sparse_matrix, 'sparse_matrix_1': sparse_matrix_1},
+            label=label,
+            sub_label=sub_label,
+            description='openmp_sparse_mm').timeit(1))
 
-        # print(f'Dense MM: {i*3 + 2}')
+        # print(f'Dense MM: {i*4 + 2}')
         results.append(benchmark.Timer(
             stmt='dense_mm(sparse_matrix.to_dense(), sparse_matrix_1.to_dense())',
             setup='from src.benchmark import dense_mm',

@@ -32,8 +32,10 @@ void _csr_matmult_omp(
 
   std::vector<std::vector<index_t>> next(n_row, std::vector<index_t>(n_col, -1));
   std::vector<std::vector<scalar_t>> sums(n_row, std::vector<scalar_t>(n_col, 0));
-  std::vector<index_t> head(n_col, -2);
-  std::vector<index_t> length(n_col, 0);
+  // std::vector<index_t> head(n_col, -2);
+  index_t head[n_col] = {-2};
+  index_t length[n_col] = {0};
+  // std::vector<index_t> length(n_col, 0);
   int64_t nnz = 0;
   Cp[0] = 0;
 
@@ -46,8 +48,8 @@ void _csr_matmult_omp(
 
     index_t jj_start = Ap[i];
     index_t jj_end = Ap[i + 1];
-// for (const auto jj : c10::irange(jj_start, jj_end))
-#pragma omp parallel for
+    // for (const auto jj : c10::irange(jj_start, jj_end))
+    // #pragma omp parallel for
     for (int jj = jj_start; jj < jj_end; jj++)
     {
       index_t j = Aj[jj];

@@ -7,7 +7,7 @@ module = CppExtension(
             'sparse_mm.cpp'
       ],
       include_dirs=[
-            '/data/oscar310118/112-1-PP-Final/pytorch_extension/include/'
+            'include'
       ],
       extra_compile_args=['-O3', '-fopenmp']
 )

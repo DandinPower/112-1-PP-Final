@@ -6,8 +6,8 @@
 #include <ATen/native/CompositeRandomAccessor.h>
 #include <ATen/ATen.h>
 #include <ATen/native/CompositeRandomAccessorCommon.h>
-#include "utils.h"
-#include "multiplication_utils.h"
+#include <utils.h>
+#include <multiplication_utils.h>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
 void _csr_matmult_omp(
@@ -23,48 +23,32 @@ void _csr_matmult_omp(
     typename index_t_ptr::value_type Cj[],
     typename scalar_t_ptr::value_type Cx[])
 {
-
   using index_t = typename index_t_ptr::value_type;
   using scalar_t = typename scalar_t_ptr::value_type;
 
-  // std::vector<index_t> next(n_col, -1);
-  // std::vector<scalar_t> sums(n_col, 0);
-
   std::vector<std::vector<index_t>> next(n_row, std::vector<index_t>(n_col, -1));
   std::vector<std::vector<scalar_t>> sums(n_row, std::vector<scalar_t>(n_col, 0));
-  // std::vector<index_t> head(n_col, -2);
   index_t head[n_col] = {-2};
   index_t length[n_col] = {0};
-  // std::vector<index_t> length(n_col, 0);
   int64_t nnz = 0;
   Cp[0] = 0;
 
-// for (const auto i : c10::irange(n_row))
 #pragma omp parallel for
   for (int i = 0; i < n_row; i++)
   {
-    // index_t head = -2;
-    // index_t length = 0;
-
     index_t jj_start = Ap[i];
     index_t jj_end = Ap[i + 1];
-    // for (const auto jj : c10::irange(jj_start, jj_end))
-    // #pragma omp parallel for
+
     for (int jj = jj_start; jj < jj_end; jj++)
     {
       index_t j = Aj[jj];
       scalar_t v = Ax[jj];
-
       index_t kk_start = Bp[j];
       index_t kk_end = Bp[j + 1];
-      // for (const auto kk : c10::irange(kk_start, kk_end))
-      // #pragma omp parallel for
       for (int kk = kk_start; kk < kk_end; kk++)
       {
         index_t k = Bj[kk];
-
         sums[i][k] += v * Bx[kk];
-
         if (next[i][k] == -1)
         {
           next[i][k] = head[i];
@@ -77,17 +61,14 @@ void _csr_matmult_omp(
 
   for (int i = 0; i < n_row; i++)
   {
-    // for (C10_UNUSED const auto jj : c10::irange(length))
     for (int jj = 0; jj < length[i]; jj++)
     {
 
       Cj[nnz] = head[i];
       Cx[nnz] = sums[i][head[i]];
       nnz++;
-
       index_t temp = head[i];
       head[i] = next[i][head[i]];
-
       next[i][temp] = -1; // clear arrays
       sums[i][temp] = 0;
     }

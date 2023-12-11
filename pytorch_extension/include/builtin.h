@@ -6,8 +6,8 @@
 #include <ATen/native/CompositeRandomAccessor.h>
 #include <ATen/ATen.h>
 #include <ATen/native/CompositeRandomAccessorCommon.h>
-#include "utils.h"
-#include "multiplication_utils.h"
+#include <utils.h>
+#include <multiplication_utils.h>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
 void _csr_matmult(
@@ -34,7 +34,6 @@ void _csr_matmult(
 
   Cp[0] = 0;
 
-  // for (const auto i : c10::irange(n_row))
   for (int i = 0; i < n_row; i++)
   {
     index_t head = -2;
@@ -42,7 +41,6 @@ void _csr_matmult(
 
     index_t jj_start = Ap[i];
     index_t jj_end = Ap[i + 1];
-    // for (const auto jj : c10::irange(jj_start, jj_end))
     for (int jj = jj_start; jj < jj_end; jj++)
     {
       index_t j = Aj[jj];
@@ -50,7 +48,6 @@ void _csr_matmult(
 
       index_t kk_start = Bp[j];
       index_t kk_end = Bp[j + 1];
-      // for (const auto kk : c10::irange(kk_start, kk_end))
       for (int kk = kk_start; kk < kk_end; kk++)
       {
         index_t k = Bj[kk];
@@ -66,7 +63,6 @@ void _csr_matmult(
       }
     }
 
-    // for (C10_UNUSED const auto jj : c10::irange(length))
     for (int jj = 0; jj < length; jj++)
     {
 

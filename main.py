@@ -1,12 +1,4 @@
-def multiple_benchmark_legacy_example():
-    """
-    An example of how to benchmark multiple test configurations.
-    """
-    from src.legacy_benchmark import generate_and_benchmark_configurations, show_benchmark_results
-    results = generate_and_benchmark_configurations(size_start=5, size_end=500, size_step=50, density_start=1, density_end=10, density_step=4)
-    show_benchmark_results(results)
-
-def single_benchmark_example():
+def benchmark_example():
     """
     An example of how to benchmark a single test configuration.
     """
@@ -17,7 +9,7 @@ def single_benchmark_example():
     show_benchmark_results(results)
 
 def main():
-    single_benchmark_example()
+    benchmark_example()
 
 if __name__ == '__main__':
     main()

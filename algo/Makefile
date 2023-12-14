@@ -1,20 +1,8 @@
-# Define the compiler
 CXX = g++
+CXXFLAGS = -std=c++11
 
-# Define the compiler flags
-CXXFLAGS = -Wall -Wextra -std=c++11
-
-# Define the source files
-SRCS = matmul.cpp
-
-# Define the executable name
-TARGET = matmul
-
-# The build rule
-all: $(TARGET)
-
-$(TARGET): $(SRCS)
-	$(CXX) $(CXXFLAGS) -o $(TARGET) $(SRCS)
+all: 
+	$(CXX) $(CXXFLAGS) -o matmul matmul.cpp
 
 clean:
-	rm -f $(TARGET)
+	rm -f matmul

@@ -9,7 +9,7 @@ module = CppExtension(
       include_dirs=[
             'include'
       ],
-      extra_compile_args=['-O3', '-fopenmp']
+      extra_compile_args=['-O3', '-fopenmp', '-lpthread']
 )
 
 setup(

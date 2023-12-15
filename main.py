@@ -22,13 +22,13 @@ def multiple_benchmark_example():
     An example of how to benchmark multiple test configurations.
     """
     from src.benchmark import generate_and_benchmark_configurations, show_benchmark_results
-    results = generate_and_benchmark_configurations(size_start=100, size_end=1000, size_step=100, density_start=1, density_end=10, density_step=4)
+    results = generate_and_benchmark_configurations(size_start=50, size_end=550, size_step=50, density_start=1, density_end=10, density_step=4)
     show_benchmark_results(results)
 
 def main():
-    simple_test()
+    # simple_test()
     # single_benchmark_example()
-    # multiple_benchmark_example()
+    multiple_benchmark_example()
 
 
 if __name__ == '__main__':

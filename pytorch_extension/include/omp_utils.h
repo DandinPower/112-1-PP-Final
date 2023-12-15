@@ -3,8 +3,8 @@
 #include <tuple>
 #include <iostream>
 
-#define DEBUG 1
-#define N_CPU 16
+#define DEBUG 0
+#define N_CPU 8
 
 template <typename T, typename T2>
 long int omp_get_first(const std::tuple<T, T2>& t) {

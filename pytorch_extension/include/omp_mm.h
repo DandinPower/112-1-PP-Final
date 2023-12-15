@@ -32,7 +32,7 @@ void omp_csr_matmult(
 
   Cp[0] = 0;
 
-  #pragma omp parallel 
+  #pragma omp parallel
   {
     std::vector<index_t>  next(n_col, -1);
     std::vector<scalar_t> sums(n_col, 0);

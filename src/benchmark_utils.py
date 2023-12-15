@@ -22,9 +22,9 @@ def openmp_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor)
     """Computes the product of two sparse matrices by using the openmp version of ``torch.sparse.mm`` function"""
     return ExtensionHandler.openmp_sparse_mm(sparse_matrix, sparse_matrix_1)
 
-def pthread_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
+def std_thread_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
     """Computes the product of two sparse matrices by using the pthread version of ``torch.sparse.mm`` function"""
-    return ExtensionHandler.pthread_sparse_mm(sparse_matrix, sparse_matrix_1)
+    return ExtensionHandler.std_thread_sparse_mm(sparse_matrix, sparse_matrix_1)
 
 def dense_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
     """Computes the product of two dense matrices by using the builtin ``torch.mm`` function"""
@@ -40,7 +40,7 @@ class BenchmarkResult:
     sparse_mm: float
     sparse_mm_extension: float
     openmp_sparse_mm: float
-    pthread_sparse_mm: float
+    std_thread_sparse_mm: float
     dense_mm: float
     A_col: int
     A_row: int
@@ -56,7 +56,7 @@ class BenchmarkResult:
         return_string += f'builtin_sparse_mm: {self.sparse_mm:>20.5f}ms\n'
         return_string += f'builtin_sparse_mm_extension: {self.sparse_mm_extension:>10.5f}ms\n'
         return_string += f'openmp_sparse_mm: {self.openmp_sparse_mm:>21.5f}ms\n'
-        return_string += f'pthread_sparse_mm: {self.pthread_sparse_mm:>20.5f}ms\n'
+        return_string += f'std_thread_sparse_mm: {self.std_thread_sparse_mm:>17.5f}ms\n'
         return_string += f'dense_mm: {self.dense_mm:>29.5f}ms\n'
         return_string += "-" * 50 + "\n"
         return return_string

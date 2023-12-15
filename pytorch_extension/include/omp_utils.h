@@ -2,9 +2,10 @@
 #include <torch/extension.h>
 #include <tuple>
 #include <iostream>
+#include <omp.h>
 
 #define DEBUG 0
-#define N_CPU 8
+#define N_CPU 16
 
 #define MAX_NNZ_ATOMIC 1
 
@@ -32,7 +33,8 @@ void omp_view(const int64_t n_row, const scalar_t C[])
 template <typename scalar_t>
 void omp_copy_value(const int64_t n, scalar_t C[], scalar_t D[])
 {
-    for (const auto i : c10::irange(n))
+    #pragma omp for
+    for (int64_t i = 0; i < n; i++)
     {
         C[i] = D[i];
     }

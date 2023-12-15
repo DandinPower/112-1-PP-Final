@@ -6,6 +6,9 @@
 #define DEBUG 0
 #define N_CPU 8
 
+#define MAX_NNZ_ATOMIC 1
+
+
 template <typename T, typename T2>
 long int omp_get_first(const std::tuple<T, T2>& t) {
     return std::get<0>(t);

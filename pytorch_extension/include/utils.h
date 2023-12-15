@@ -5,6 +5,7 @@
 
 #define DEBUG 0
 
+
 template <typename T, typename T2>
 long int get_first(const std::tuple<T, T2>& t) {
     return std::get<0>(t);

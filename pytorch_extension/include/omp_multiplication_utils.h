@@ -25,6 +25,36 @@ int64_t omp_csr_matmult_maxnnz(
 {
   int64_t nnz = 0;
 
+#if MAX_NNZ_ATOMIC == 1
+
+  #pragma omp parallel
+  {
+    std::vector<int64_t> mask(n_col, -1);
+
+    #pragma omp for
+    for (int64_t i = 0; i < n_row; i++)
+    {
+      int64_t row_nnz = 0;
+      for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++)
+      {
+        int64_t j = Aj[jj];
+        for (int64_t kk = Bp[j]; kk < Bp[j + 1]; kk++)
+        {
+          int64_t k = Bj[kk];
+          if (mask[k] != i)
+          {
+            mask[k] = i;
+            row_nnz++;
+          }
+        }
+      }
+      #pragma omp atomic
+      nnz += row_nnz;
+    }
+  }
+
+#elif
+
   #pragma omp parallel
   {
     std::vector<int64_t> mask(n_col, -1);
@@ -49,6 +79,8 @@ int64_t omp_csr_matmult_maxnnz(
       nnz += row_nnz;
     }
   }
+
+#endif
 
   return nnz;
 }

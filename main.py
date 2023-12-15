@@ -28,9 +28,9 @@ def multiple_benchmark_example():
     plot_results(results)
 
 def main():
-    # simple_test()
+    simple_test()
     # single_benchmark_example()
-    multiple_benchmark_example()
+    # multiple_benchmark_example()
 
 
 if __name__ == '__main__':

@@ -23,28 +23,32 @@ int64_t omp_csr_matmult_maxnnz(
     const index_t_ptr Bp,
     const index_t_ptr Bj)
 {
-  std::vector<int64_t> mask(n_col, -1);
   int64_t nnz = 0;
 
-  for (int64_t i = 0; i < n_row; i++)
+  #pragma omp parallel
   {
-    int64_t row_nnz = 0;
+    std::vector<int64_t> mask(n_col, -1);
 
-    for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++)
+    #pragma omp for reduction (+:nnz)
+    for (int64_t i = 0; i < n_row; i++)
     {
-      int64_t j = Aj[jj];
-      for (int64_t kk = Bp[j]; kk < Bp[j + 1]; kk++)
+      int64_t row_nnz = 0;
+      for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++)
       {
-        int64_t k = Bj[kk];
-        if (mask[k] != i)
+        int64_t j = Aj[jj];
+        for (int64_t kk = Bp[j]; kk < Bp[j + 1]; kk++)
         {
-          mask[k] = i;
-          row_nnz++;
+          int64_t k = Bj[kk];
+          if (mask[k] != i)
+          {
+            mask[k] = i;
+            row_nnz++;
+          }
         }
       }
+      nnz += row_nnz;
     }
-    int64_t next_nnz = nnz + row_nnz;
-    nnz = next_nnz;
   }
+
   return nnz;
 }

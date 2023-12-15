@@ -2,7 +2,7 @@ def simple_test():
     from src.utils     import generate_sparse_matrix
     from src.extension import ExtensionHandler
     from src.benchmark import SparseMatrixTestConfiguration
-    config = SparseMatrixTestConfiguration(10, 10, 0.3, 10, 10, 0.3)
+    config = SparseMatrixTestConfiguration(10, 10, 0.3, 10, 10, 0.1)
     sparse_matrix_0 = generate_sparse_matrix(config.A_row, config.A_col, density=config.A_density)
     sparse_matrix_1 = generate_sparse_matrix(config.B_row, config.B_col, density=config.B_density)
     print("=" * 50 + "[sparse_mm]" + "=" * 50)
@@ -21,9 +21,11 @@ def multiple_benchmark_example():
     """
     An example of how to benchmark multiple test configurations.
     """
+    from src.utils     import plot_results
     from src.benchmark import generate_and_benchmark_configurations, show_benchmark_results
     results = generate_and_benchmark_configurations(size_start=50, size_end=550, size_step=50, density_start=1, density_end=10, density_step=4)
     show_benchmark_results(results)
+    plot_results(results)
 
 def main():
     # simple_test()

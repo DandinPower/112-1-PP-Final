@@ -1,5 +1,13 @@
 import torch
+from torch.utils.benchmark import Measurement
+
 import dataclasses
+import matplotlib.pyplot as plt
+from typing import List
+
+
+plt.style.use("seaborn")
+
 
 @dataclasses.dataclass
 class SparseMatrixTestConfiguration(object):
@@ -41,3 +49,22 @@ def assert_sparse_or_dense_matrix_are_equal(matrix: torch.Tensor, matrix_1: torc
         matrix_1 = matrix_1.to_dense()
     assert matrix.allclose(matrix_1)
     return True
+
+def plot_results(results: List[Measurement]):
+    exe_times_dict = {
+        "builtin_sparse_mm"           : [],
+        "builtin_sparse_mm_extension" : [], 
+        "openmp_sparse_mm"            : [],
+        "dense_mm"                    : []
+    }
+
+    for res in results:
+        exe_times_dict[res.task_spec.stmt.split("(")[0]].append(res.raw_times)
+    
+    plt.plot(exe_times_dict["builtin_sparse_mm"])
+    plt.plot(exe_times_dict["builtin_sparse_mm_extension"])
+    plt.plot(exe_times_dict["openmp_sparse_mm"])
+    plt.plot(exe_times_dict["dense_mm"])
+    plt.legend(list(exe_times_dict.keys()))
+    plt.title("Execution Times")
+    plt.savefig("plot/Test.png")

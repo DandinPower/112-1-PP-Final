@@ -116,7 +116,7 @@ def show_benchmark_results(results):
     compare = benchmark.Compare(results)
     compare.print()
 
-def generate_and_benchmark_configurations(size_start, size_end, size_step, density_start, density_end, density_step):
+def generate_and_benchmark_configurations(size_start, size_end, size_step, density_start, density_end, density_step) -> List[benchmark.Measurement]:
     """
     Generate a list of test configurations and benchmark them.
     """
@@ -129,5 +129,7 @@ def generate_and_benchmark_configurations(size_start, size_end, size_step, densi
         for density in [i/10 for i in density_range]:
             for density_2 in [i/10 for i in density_range]:
                 configurations.append(SparseMatrixTestConfiguration(size, size, density, size, size, density_2))
+                
         benchmark_functions_multiple_test(configurations, results)
+
     return results

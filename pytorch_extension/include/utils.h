@@ -2,7 +2,6 @@
 #include <torch/extension.h>
 #include <tuple>
 #include <iostream>
-#include <ctime>
 
 #define DEBUG 0
 

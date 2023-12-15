@@ -2,13 +2,9 @@
 #include <torch/extension.h>
 #include <tuple>
 #include <iostream>
-#include <ctime>
 
-#define DEFINE_TIMES    clock_t a, b, c;
-#define START_TIME      a = clock();
-#define DIFF_TIME       b = clock(); c = b - a;
-#define PRINT_TIME(msg) std::cout << msg << " : " << c << std::endl;
-
+#define DEBUG 0
+#define N_CPU 16
 
 template <typename T, typename T2>
 long int omp_get_first(const std::tuple<T, T2>& t) {

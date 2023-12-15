@@ -1,7 +1,7 @@
 #pragma once
 #include <torch/extension.h>
 #include <omp.h>
-#include <omp_utils.h>
+#include "omp_utils.h"
 
 void omp_csr_to_coo(const int64_t n_row, const int64_t Ap[], int64_t Bi[])
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include <torch/extension.h>
-#include <utils.h>
+#include "utils.h"
 
 void csr_to_coo(const int64_t n_row, const int64_t Ap[], int64_t Bi[])
 {

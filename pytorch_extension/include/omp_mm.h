@@ -177,9 +177,6 @@ torch::Tensor omp_sparse_matmul_kernel(
 
 torch::Tensor sparse_sparse_matmul_omp(const torch::Tensor &mat1_, const torch::Tensor &mat2_)
 { 
-
-    omp_set_num_threads(8);
-
     TORCH_INTERNAL_ASSERT(mat1_.is_sparse());
     TORCH_INTERNAL_ASSERT(mat2_.is_sparse());
     TORCH_CHECK(mat1_.dim() == 2);

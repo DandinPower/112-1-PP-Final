@@ -1,5 +1,9 @@
 # Sparse Matrix Pytorch Extension
 
+## Result
+
+![](plot/Test_16-CPUs_atomic.png)
+
 ## Prerequisites
 
 Before you can compile the PyTorch extension, you need to install the necessary requirements. Run the following command in your terminal:

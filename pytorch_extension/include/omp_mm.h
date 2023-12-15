@@ -38,19 +38,19 @@ void omp_csr_matmult(
     std::vector<scalar_t> sums(n_col, 0);
 
     #pragma omp for ordered schedule(static, 1)
-    for (const int64_t i = 0; i < n_row; i++)
+    for (int64_t i = 0; i < n_row; i++)
     {
       index_t head   = -2;
       index_t length = 0;
       index_t jj_start = Ap[i];
       index_t jj_end   = Ap[i + 1];
-      for (const index_t jj = jj_start; jj < jj_end; jj++)
+      for (index_t jj = jj_start; jj < jj_end; jj++)
       {
         index_t  j = Aj[jj];
         scalar_t v = Ax[jj];
         index_t  kk_start = Bp[j];
         index_t  kk_end   = Bp[j + 1];
-        for (const index_t kk = kk_start; kk < kk_end; kk++)
+        for (index_t kk = kk_start; kk < kk_end; kk++)
         {
           index_t k = Bj[kk];
           sums[k] += v * Bx[kk];
@@ -65,13 +65,12 @@ void omp_csr_matmult(
 
       nnzs[i] = length;
 
-      #pragma omp barrier
       #pragma omp ordered
       if (i > 0)
         nnzs[i] += nnzs[i - 1];
 
       index_t nnz = nnzs[i];
-      for (const index_t jj = nnz - length; jj < nnz; jj++)
+      for (index_t jj = nnz - length; jj < nnz; jj++)
       {
         Cj[jj] = head;
         Cx[jj] = sums[head];
@@ -146,7 +145,7 @@ torch::Tensor omp_sparse_matmul_kernel(
     torch::Tensor output_row_indices = output_indices.select(0, 0);
     torch::Tensor output_col_indices = output_indices.select(0, 1);
 
-    _csr_matmult(
+    omp_csr_matmult(
         M,
         N,
         mat1_crow_indices_ptr,

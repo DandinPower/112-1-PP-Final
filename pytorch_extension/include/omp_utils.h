@@ -3,7 +3,7 @@
 #include <tuple>
 #include <iostream>
 
-#define DEBUG 0
+#define DEBUG 1
 #define N_CPU 16
 
 template <typename T, typename T2>

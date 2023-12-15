@@ -153,26 +153,14 @@ torch::Tensor sparse_matmul_kernel(
         output_col_indices.data_ptr<int64_t>(),
         output_values.data_ptr<scalar_t>());
 
-    // For Debugging
-    // std::cout << "CSR Format: " << std::endl;
-    // view<int64_t>(M + 1, output_indptr.data_ptr<int64_t>());
-    // view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
-    // view<scalar_t>(nnz, output_values.data_ptr<scalar_t>());
-    // std::cout << std::endl;
-
     csr_to_coo(M, output_indptr.data_ptr<int64_t>(), output_row_indices.data_ptr<int64_t>());
     output._coalesced_(true);
 
-    // For Debugging
-    // std::cout << "Correct COO Format: " << std::endl;
-    // view<int64_t>(nnz, output_row_indices.data_ptr<int64_t>());
-    // view<int64_t>(nnz, output_col_indices.data_ptr<int64_t>());
-    // view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
-    // std::cout << std::endl;
-
-    // std::cout << "Output"<< std::endl;
-    // view<int64_t>(nnz*2, output._indices().data_ptr<int64_t>());
-    // view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
+#if DEBUG == 1
+    std::cout << "Output: "<< std::endl;
+    view<int64_t>(nnz*2, output._indices().data_ptr<int64_t>());
+    view<scalar_t>(nnz, output._values().data_ptr<scalar_t>());
+#endif
 
     auto indices = torch::empty({2, nnz}, torch::kLong);
     auto values = torch::empty({nnz}, torch::kFloat);

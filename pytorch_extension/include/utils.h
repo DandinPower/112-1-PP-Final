@@ -4,11 +4,7 @@
 #include <iostream>
 #include <ctime>
 
-#define DEFINE_TIMES    clock_t a, b, c;
-#define START_TIME      a = clock();
-#define DIFF_TIME       b = clock(); c = b - a;
-#define PRINT_TIME(msg) printf("%s msg : %ld\n", msg, c);
-
+#define DEBUG 0
 
 template <typename T, typename T2>
 long int get_first(const std::tuple<T, T2>& t) {

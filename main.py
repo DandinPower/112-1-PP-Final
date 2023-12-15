@@ -2,9 +2,12 @@ def simple_test():
     from src.utils     import generate_sparse_matrix
     from src.extension import ExtensionHandler
     from src.benchmark import SparseMatrixTestConfiguration
-    config = SparseMatrixTestConfiguration(100, 100, 1., 100, 100, 1.)
+    config = SparseMatrixTestConfiguration(10, 10, 0.3, 10, 10, 0.3)
     sparse_matrix_0 = generate_sparse_matrix(config.A_row, config.A_col, density=config.A_density)
     sparse_matrix_1 = generate_sparse_matrix(config.B_row, config.B_col, density=config.B_density)
+    print("=" * 50 + "[sparse_mm]" + "=" * 50)
+    ExtensionHandler.sparse_mm(sparse_matrix_0, sparse_matrix_1)
+    print("=" * 50 + "[openmp_sparse_mm]" + "=" * 50)
     ExtensionHandler.openmp_sparse_mm(sparse_matrix_0, sparse_matrix_1)
 
 def single_benchmark_example():

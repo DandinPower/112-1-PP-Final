@@ -41,6 +41,7 @@ void _csr_matmult(
 
     index_t jj_start = Ap[i];
     index_t jj_end = Ap[i + 1];
+
     for (const auto jj : c10::irange(jj_start, jj_end))
     {
       index_t j = Aj[jj];

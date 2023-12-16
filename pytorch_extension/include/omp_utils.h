@@ -5,7 +5,7 @@
 #include <omp.h>
 
 #define DEBUG 0
-#define N_CPU 16
+#define N_CPU 24
 
 #define MAX_NNZ_ATOMIC 1
 

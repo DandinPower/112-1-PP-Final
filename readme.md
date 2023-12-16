@@ -2,7 +2,7 @@
 
 ## Result
 
-![](plot/Test_16-CPUs_atomic.png)
+![](plot/Test_24-CPUs_atomic.png)
 
 ## Prerequisites
 

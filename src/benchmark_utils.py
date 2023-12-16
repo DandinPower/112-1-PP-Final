@@ -18,13 +18,13 @@ def builtin_sparse_mm_extension(sparse_matrix: torch.Tensor, sparse_matrix_1: to
     """Computes the product of two sparse matrices by using the extension version of ``torch.sparse.mm`` function"""
     return ExtensionHandler.sparse_mm(sparse_matrix, sparse_matrix_1)
 
-def openmp_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
+def openmp_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor, num_threads: int):
     """Computes the product of two sparse matrices by using the openmp version of ``torch.sparse.mm`` function"""
-    return ExtensionHandler.openmp_sparse_mm(sparse_matrix, sparse_matrix_1)
+    return ExtensionHandler.openmp_sparse_mm(sparse_matrix, sparse_matrix_1, num_threads)
 
-def std_thread_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
+def std_thread_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor, num_threads: int):
     """Computes the product of two sparse matrices by using the pthread version of ``torch.sparse.mm`` function"""
-    return ExtensionHandler.std_thread_sparse_mm(sparse_matrix, sparse_matrix_1)
+    return ExtensionHandler.std_thread_sparse_mm(sparse_matrix, sparse_matrix_1, num_threads)
 
 def dense_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
     """Computes the product of two dense matrices by using the builtin ``torch.mm`` function"""
@@ -48,10 +48,11 @@ class BenchmarkResult:
     B_col: int
     B_row: int
     B_density: float
+    num_threads: int
 
     def __repr__(self) -> str:
         """Return the string representation of the benchmark result"""
-        return_string = f'A=[ {self.A_row} x {self.A_col}, {self.A_density}], B=[ {self.B_row} x {self.B_col}, {self.B_density} ]\n'
+        return_string = f'A=[ {self.A_row} x {self.A_col}, {self.A_density}], B=[ {self.B_row} x {self.B_col}, {self.B_density}] , num_threads= [ {self.num_threads} ]\n'
         return_string += "-" * 50 + "\n"
         return_string += f'builtin_sparse_mm: {self.sparse_mm:>20.5f}ms\n'
         return_string += f'builtin_sparse_mm_extension: {self.sparse_mm_extension:>10.5f}ms\n'

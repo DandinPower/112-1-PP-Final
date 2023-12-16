@@ -20,11 +20,11 @@ def _benchmark(config: SparseMatrixTestConfiguration, num_runs: int):
     for i in range(num_runs):
         t0 += benchmark(builtin_sparse_mm, sparse_matrix, sparse_matrix_1)
         t1 += benchmark(builtin_sparse_mm_extension, sparse_matrix, sparse_matrix_1)
-        t2 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1)
-        t3 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1)
+        t2 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
+        t3 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
         t4 += benchmark(dense_mm, sparse_matrix.to_dense(), sparse_matrix_1.to_dense())
 
-    return BenchmarkResult(t0 / num_runs, t1 / num_runs, t2 / num_runs, t3 / num_runs, t4 / num_runs, config.A_col, config.A_row, config.A_density, config.B_col, config.B_row, config.B_density)
+    return BenchmarkResult(t0 / num_runs, t1 / num_runs, t2 / num_runs, t3 / num_runs, t4 / num_runs, config.A_col, config.A_row, config.A_density, config.B_col, config.B_row, config.B_density, config.num_threads)
 
 def show_benchmark_results(results: List[BenchmarkResult]) -> None:
     """
@@ -43,12 +43,13 @@ def benchmark_by_config_list(config_list: List[SparseMatrixTestConfiguration], n
         results.append(_benchmark(config, num_runs))
     return results
 
-def generate_benchmark_configurations(size_start: int, size_end: int, size_step: int, density_start: float, density_end: float, density_step: float) -> List[SparseMatrixTestConfiguration]:
+def generate_benchmark_configurations(size_start: int, size_end: int, size_step: int, density_start: float, density_end: float, density_step: float, num_threads_start: int, num_threads_end: int, num_threads_step: int) -> List[SparseMatrixTestConfiguration]:
     """
     Generate a list of benchmark configurations.
     """
     config_list = []
     for size in range(size_start, size_end, size_step):
         for density in range(density_start, density_end, density_step):
-            config_list.append(SparseMatrixTestConfiguration(size, size, density / 10, size, size, density / 10))
+            for num_threads in range(num_threads_start, num_threads_end, num_threads_step):
+                config_list.append(SparseMatrixTestConfiguration(size, size, density / 10, size, size, density / 10, num_threads))
     return config_list

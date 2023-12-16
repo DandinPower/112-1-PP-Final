@@ -1,5 +1,5 @@
 import torch.utils.benchmark as benchmark
-from .utils import generate_sparse_matrix, SparseMatrixTestConfiguration
+from ..utils import generate_sparse_matrix, SparseMatrixTestConfiguration
 from typing import List
 
 # WARNING: Do not use the following function for benchmarking. Because when using benchmark.Timer

@@ -12,6 +12,7 @@ class SparseMatrixTestConfiguration(object):
     B_row: int
     B_col: int
     B_density: float    
+    num_threads: int
 
 def generate_sparse_matrix(rows, cols, density=0.1):
     """

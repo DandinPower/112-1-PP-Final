@@ -5,6 +5,7 @@ from .extension import ExtensionHandler
 from .utils import generate_sparse_matrix, SparseMatrixTestConfiguration
 from typing import List
 
+
 def builtin_sparse_mm(sparse_matrix: torch.Tensor, sparse_matrix_1: torch.Tensor):
     """Computes the product of two sparse matrices by using the builtin ``torch.sparse.mm`` function"""
     return torch.sparse.mm(sparse_matrix, sparse_matrix_1)

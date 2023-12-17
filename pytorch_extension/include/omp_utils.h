@@ -7,7 +7,7 @@
 #define DEBUG 0
 #define N_CPU 24
 
-#define MAX_NNZ_ATOMIC 1
+#define MAX_NNZ_ATOMIC 0
 
 
 template <typename T, typename T2>

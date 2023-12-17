@@ -53,7 +53,7 @@ int64_t omp_csr_matmult_maxnnz(
     }
   }
 
-#elif
+#else
 
   #pragma omp parallel
   {

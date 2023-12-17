@@ -158,7 +158,7 @@ torch::Tensor omp_sparse_matmul_kernel(
         output_col_indices.data_ptr<int64_t>(),
         output_values.data_ptr<scalar_t>());
 
-    csr_to_coo(M, output_indptr.data_ptr<int64_t>(), output_row_indices.data_ptr<int64_t>());
+    omp_csr_to_coo(M, output_indptr.data_ptr<int64_t>(), output_row_indices.data_ptr<int64_t>());
     output._coalesced_(true);
 
 #if DEBUG == 1

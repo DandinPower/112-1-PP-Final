@@ -5,7 +5,8 @@
 
 void omp_csr_to_coo(const int64_t n_row, const int64_t Ap[], int64_t Bi[])
 {
-  for (const auto i : c10::irange(n_row))
+  #pragma omp for
+  for (int64_t i = 0; i < n_row; i++)
   {
     for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++)
     {

@@ -28,3 +28,19 @@ def test_sparse_mm(handler, dim1, dim2, density):
 
     # Check if the result from your function matches the expected result
     assert torch.allclose(result_sparse.to_dense(), result_sparse_true.to_dense())
+
+# @pytest.mark.parametrize("dim1,dim2,dim3,density", [
+#     (5, 10, 4, 0.7)
+# ])
+# def test_openmp_sparse_mm(handler, dim1, dim2, dim3, density):
+#     # Generate two sparse matrices
+#     sparse_matrix1 = generate_sparse_matrix(dim1, dim2, density=density)
+#     sparse_matrix2 = generate_sparse_matrix(dim2, dim3, density=density)
+#     test_configuration = SparseMatrixTestConfiguration(dim1, dim2, density, dim2, dim3, density, 1)
+
+#     # Multiply the sparse matrices using your function
+#     result_sparse: torch.Tensor = handler.parallel_structure_sparse_mm(sparse_matrix1, sparse_matrix2, test_configuration)
+#     result_sparse_true: torch.Tensor = torch.sparse.mm(sparse_matrix1, sparse_matrix2)
+
+#     # Check if the result from your function matches the expected result
+#     assert torch.allclose(result_sparse.to_dense(), result_sparse_true.to_dense())

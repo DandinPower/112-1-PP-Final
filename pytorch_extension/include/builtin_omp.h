@@ -29,8 +29,9 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
                                            std::vector<index_t>(n_col, -1));
     std::vector<std::vector<scalar_t>> sums(n_row,
                                             std::vector<scalar_t>(n_col, 0));
-    index_t head[n_col] = {-2};
-    index_t length[n_col] = {0};
+    std::vector <index_t> head(n_col, -2);
+    std::vector <index_t> length(n_col, 0);
+
     Cp[0] = 0;
     logger.endTest("csr_matmult_initialization");
 

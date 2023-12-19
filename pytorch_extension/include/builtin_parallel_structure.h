@@ -4,24 +4,26 @@
 #include <ATen/native/CompositeRandomAccessorCommon.h>
 #include <ATen/native/Resize.h>
 #include <ATen/native/StridedRandomAccessor.h>
+#include <logger.h>
 #include <multiplication_utils.h>
 #include <torch/extension.h>
 #include <utils.h>
+
 #include <iostream>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
-void _csr_matmult_parallel_structure(const int64_t n_row,
-                      const int64_t n_col, const index_t_ptr Ap,
-                      const index_t_ptr Aj, const scalar_t_ptr Ax,
-                      const index_t_ptr Bp, const index_t_ptr Bj,
-                      const scalar_t_ptr Bx,
-                      typename index_t_ptr::value_type Cp[],
-                      typename index_t_ptr::value_type Cj[],
-                      typename scalar_t_ptr::value_type Cx[]) {
-
+void _csr_matmult_parallel_structure(const int64_t n_row, const int64_t n_col,
+                                     const index_t_ptr Ap, const index_t_ptr Aj,
+                                     const scalar_t_ptr Ax,
+                                     const index_t_ptr Bp, const index_t_ptr Bj,
+                                     const scalar_t_ptr Bx,
+                                     typename index_t_ptr::value_type Cp[],
+                                     typename index_t_ptr::value_type Cj[],
+                                     typename scalar_t_ptr::value_type Cx[]) {
     using index_t = typename index_t_ptr::value_type;
     using scalar_t = typename scalar_t_ptr::value_type;
 
+    logger.startTest("csr_matmult_initialization");
     std::vector<std::vector<index_t>> next(n_row,
                                            std::vector<index_t>(n_col, -1));
     std::vector<std::vector<scalar_t>> sums(n_row,
@@ -29,7 +31,9 @@ void _csr_matmult_parallel_structure(const int64_t n_row,
     index_t head[n_col] = {-2};
     index_t length[n_col] = {0};
     Cp[0] = 0;
+    logger.endTest("csr_matmult_initialization");
 
+    logger.startTest("csr_matmult_calculation_region");
     for (int i = 0; i < n_row; i++) {
         index_t jj_start = Ap[i];
         index_t jj_end = Ap[i + 1];
@@ -50,7 +54,9 @@ void _csr_matmult_parallel_structure(const int64_t n_row,
             }
         }
     }
+    logger.endTest("csr_matmult_calculation_region");
 
+    logger.startTest("csr_matmult_putanswer_region");
     int64_t tempNnz = 0;
     for (int i = 0; i < n_row; i++) {
         tempNnz += length[i];
@@ -60,7 +66,6 @@ void _csr_matmult_parallel_structure(const int64_t n_row,
     for (int i = 0; i < n_row; i++) {
         int previous_nnz = Cp[i];
         for (int jj = 0; jj < length[i]; jj++) {
-            
             Cj[previous_nnz] = head[i];
             Cx[previous_nnz] = sums[i][head[i]];
             previous_nnz++;
@@ -70,8 +75,8 @@ void _csr_matmult_parallel_structure(const int64_t n_row,
             sums[i][temp] = 0;
         }
 
-        auto col_indices_accessor =
-            at::native::StridedRandomAccessor<int64_t>(Cj + previous_nnz - length[i], 1);
+        auto col_indices_accessor = at::native::StridedRandomAccessor<int64_t>(
+            Cj + previous_nnz - length[i], 1);
         auto val_accessor = at::native::StridedRandomAccessor<scalar_t>(
             Cx + previous_nnz - length[i], 1);
         auto kv_accessor = at::native::CompositeRandomAccessorCPU<
@@ -83,16 +88,19 @@ void _csr_matmult_parallel_structure(const int64_t n_row,
                       return get_first(lhs) < get_first(rhs);
                   });
     }
+    logger.endTest("csr_matmult_putanswer_region");
 }
 
 template <typename scalar_t>
-torch::Tensor sparse_matmul_kernel_parallel_structure(const torch::Tensor &mat1,
-                                       const torch::Tensor &mat2) {
+torch::Tensor sparse_matmul_kernel_parallel_structure(
+    const torch::Tensor &mat1, const torch::Tensor &mat2) {
+    logger.startTest("convert_to_csr");
     auto M = mat1.size(0);
     auto N = mat2.size(1);
 
     const auto mat1_csr = mat1.to_sparse_csr();
     const auto mat2_csr = mat2.to_sparse_csr();
+    logger.endTest("convert_to_csr");
 
     auto mat1_crow_indices_ptr = at::native::StridedRandomAccessor<int64_t>(
         mat1_csr.crow_indices().data_ptr<int64_t>(),
@@ -124,18 +132,22 @@ torch::Tensor sparse_matmul_kernel_parallel_structure(const torch::Tensor &mat1,
     torch::Tensor output_col_indices = indices.select(0, 1);
 
     _csr_matmult_parallel_structure(
-        M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
-        mat1_values_ptr, mat2_crow_indices_ptr, mat2_col_indices_ptr,
-        mat2_values_ptr, output_indptr.data_ptr<int64_t>(),
+        M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr, mat1_values_ptr,
+        mat2_crow_indices_ptr, mat2_col_indices_ptr, mat2_values_ptr,
+        output_indptr.data_ptr<int64_t>(),
         output_col_indices.data_ptr<int64_t>(), values.data_ptr<scalar_t>());
 
     csr_to_coo(M, output_indptr.data_ptr<int64_t>(),
                output_row_indices.data_ptr<int64_t>());
-    return torch::sparse_coo_tensor(indices, values, {M, N});
+
+    logger.startTest("create_sparse_tensor");
+    auto answer = torch::sparse_coo_tensor(indices, values, {M, N});
+    logger.endTest("create_sparse_tensor");
+    return answer;
 }
 
-torch::Tensor sparse_sparse_matmul_cpu_parallel_structure(const torch::Tensor &mat1_,
-                                           const torch::Tensor &mat2_) {
+torch::Tensor sparse_sparse_matmul_cpu_parallel_structure(
+    const torch::Tensor &mat1_, const torch::Tensor &mat2_) {
     TORCH_INTERNAL_ASSERT(mat1_.is_sparse());
     TORCH_INTERNAL_ASSERT(mat2_.is_sparse());
     TORCH_CHECK(mat1_.dim() == 2);

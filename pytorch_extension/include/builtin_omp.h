@@ -24,6 +24,7 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
     using index_t = typename index_t_ptr::value_type;
     using scalar_t = typename scalar_t_ptr::value_type;
 
+    logger.startTest("csr_matmult_initialization");
     std::vector<std::vector<index_t>> next(n_row,
                                            std::vector<index_t>(n_col, -1));
     std::vector<std::vector<scalar_t>> sums(n_row,
@@ -31,6 +32,7 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
     index_t head[n_col] = {-2};
     index_t length[n_col] = {0};
     Cp[0] = 0;
+    logger.endTest("csr_matmult_initialization");
 
     logger.startTest("csr_matmult_calculation_region");
 #pragma omp parallel for
@@ -56,6 +58,7 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
     }
     logger.endTest("csr_matmult_calculation_region");
 
+    logger.startTest("csr_matmult_putanswer_region");
     int64_t tempNnz = 0;
     for (int i = 0; i < n_row; i++) {
         tempNnz += length[i];
@@ -89,17 +92,20 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
                       return get_first(lhs) < get_first(rhs);
                   });
     }
+    logger.endTest("csr_matmult_putanswer_region");
 }
 
 template <typename scalar_t>
 torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
                                        const torch::Tensor &mat2,
                                        const int num_threads) {
+    logger.startTest("convert_to_csr");
     auto M = mat1.size(0);
     auto N = mat2.size(1);
 
     const auto mat1_csr = mat1.to_sparse_csr();
     const auto mat2_csr = mat2.to_sparse_csr();
+    logger.endTest("convert_to_csr");
 
     auto mat1_crow_indices_ptr = at::native::StridedRandomAccessor<int64_t>(
         mat1_csr.crow_indices().data_ptr<int64_t>(),
@@ -138,7 +144,11 @@ torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
 
     csr_to_coo(M, output_indptr.data_ptr<int64_t>(),
                output_row_indices.data_ptr<int64_t>());
-    return torch::sparse_coo_tensor(indices, values, {M, N});
+    
+    logger.startTest("create_sparse_tensor");
+    auto answer =  torch::sparse_coo_tensor(indices, values, {M, N});
+    logger.endTest("create_sparse_tensor");
+    return answer;
 }
 
 torch::Tensor sparse_sparse_matmul_cpu_omp(const torch::Tensor &mat1_,

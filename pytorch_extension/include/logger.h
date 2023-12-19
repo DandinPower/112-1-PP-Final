@@ -99,7 +99,10 @@ class HighPrecisionLogger {
             config.B_col, config.B_density, config.num_threads,
             testTypeToString(config.test_type).c_str());
 
-        std::cout << "Test, Duration(ms)" << std::endl;
+        std::cout << "Test, Duration(ms), Percentage(%)" << std::endl;
+
+        // Calculate total duration
+        double totalDuration = 0.0;
         for (const auto& pair : startTimes) {
             const std::string& testName = pair.first;
             auto startTime = pair.second;
@@ -107,11 +110,26 @@ class HighPrecisionLogger {
 
             double duration =
                 std::chrono::duration_cast<std::chrono::microseconds>(endTime -
-                                                                      startTime)
+                                                                    startTime)
                     .count() /
                 1000.0;
-            printf("%s, %.3f\n", testName.c_str(), duration);
+            totalDuration += duration;
         }
+
+        // Print each test's duration and percentage
+    for (const auto& pair : startTimes) {
+        const std::string& testName = pair.first;
+        auto startTime = pair.second;
+        auto endTime = endTimes[testName];
+
+        double duration =
+            std::chrono::duration_cast<std::chrono::microseconds>(endTime -
+                                                                  startTime)
+                .count() /
+            1000.0;
+        double percentage = (duration / totalDuration) * 100;
+        printf("%s,%.5f,%.2f\n", testName.c_str(), duration, percentage);
+    }
 #endif
     }
 };

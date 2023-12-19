@@ -12,23 +12,20 @@ const unsigned int THREADS = std::thread::hardware_concurrency();
 torch::Tensor sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, TestConfig config)
 {
     logger.reset();
-    logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
-    logger.endTest("sparse assertion");
 
     torch::Tensor answer = sparse_sparse_matmul_cpu(sparse_matrix_0, sparse_matrix_1);
-    logger.showLogs(config);
+    // logger.showLogs(config);
+    // because it is hard to compare with the parallel structure code, so we compare the builtin implementation by using parallel structure refactoring code
     return answer;
 }
 
 torch::Tensor parallel_structure_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, TestConfig config)
 {
     logger.reset();
-    logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
-    logger.endTest("sparse assertion");
 
     torch::Tensor answer = sparse_sparse_matmul_cpu_parallel_structure(sparse_matrix_0, sparse_matrix_1);
     logger.showLogs(config);
@@ -38,10 +35,8 @@ torch::Tensor parallel_structure_sparse_mm(torch::Tensor sparse_matrix_0, torch:
 torch::Tensor openmp_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, const int num_threads, TestConfig config)
 {
     logger.reset();
-    logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
-    logger.endTest("sparse assertion");
 
     torch::Tensor answer = sparse_sparse_matmul_cpu_omp(sparse_matrix_0, sparse_matrix_1, num_threads);
 
@@ -52,10 +47,8 @@ torch::Tensor openmp_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor spar
 torch::Tensor std_thread_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, const int num_threads, TestConfig config)
 {
     logger.reset();
-    logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
-    logger.endTest("sparse assertion");
 
     torch::Tensor answer = sparse_sparse_matmul_cpu_std_thread(sparse_matrix_0, sparse_matrix_1, num_threads);
     logger.showLogs(config);

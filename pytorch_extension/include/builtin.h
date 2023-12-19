@@ -8,6 +8,7 @@
 #include <torch/extension.h>
 #include <utils.h>
 #include <iostream>
+#include <logger.h>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
 void _csr_matmult(const int64_t n_row, const int64_t n_col,

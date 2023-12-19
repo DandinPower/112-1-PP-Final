@@ -5,6 +5,7 @@
 #include <ATen/native/Resize.h>
 #include <ATen/native/StridedRandomAccessor.h>
 #include <config.h>
+#include <logger.h>
 #include <multiplication_utils.h>
 #include <torch/extension.h>
 #include <utils.h>
@@ -47,7 +48,7 @@ void thread_matmul(const int start_row, const int end_row, const index_t_ptr Ap,
 template <typename index_t, typename scalar_t, typename index_t_ptr,
           typename scalar_t_ptr>
 void thread_put_answer(const int start_row, const int end_row,
-                       const index_t* Cp, index_t* Cj, scalar_t* Cx,
+                       const index_t *Cp, index_t *Cj, scalar_t *Cx,
                        std::vector<std::vector<index_t>> &next,
                        std::vector<std::vector<scalar_t>> &sums,
                        std::vector<index_t> &head,
@@ -92,11 +93,9 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
                              typename scalar_t_ptr::value_type Cx[]) {
     using index_t = typename index_t_ptr::value_type;
     using scalar_t = typename scalar_t_ptr::value_type;
-    // define thread objects
-    // std::thread threads[THREADS];
 
+    logger.startTest("csr_matmult_initialization");
     std::vector<std::thread> threads(num_threads);
-
     // 計算每個thread要處理的row數量
     int each_row_thread = std::ceil(static_cast<float>(n_row) / num_threads);
     // 但是因為每個thread要處理的row數量不一定相同，所以要計算每個thread真的要處理的row數量
@@ -127,7 +126,9 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
     std::vector<index_t> head(n_row, -2);
     std::vector<index_t> length(n_row, 0);
     Cp[0] = 0;
+    logger.endTest("csr_matmult_initialization");
 
+    logger.startTest("csr_matmult_calculation_region");
     for (int t = 0; t < thread_count; t++) {
         threads[t] = std::thread(
             thread_matmul<index_t, scalar_t, index_t_ptr, scalar_t_ptr>,
@@ -137,7 +138,9 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
     for (int t = 0; t < thread_count; t++) {
         threads[t].join();
     }
+    logger.endTest("csr_matmult_calculation_region");
 
+    logger.startTest("csr_matmult_putanswer_region");
     int64_t tempNnz = 0;
     for (int i = 0; i < n_row; i++) {
         tempNnz += length[i];
@@ -153,17 +156,20 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
     for (int t = 0; t < thread_count; t++) {
         threads[t].join();
     }
+    logger.endTest("csr_matmult_putanswer_region");
 }
 
 template <typename scalar_t>
 torch::Tensor sparse_matmul_kernel_std_thread(const torch::Tensor &mat1,
                                               const torch::Tensor &mat2,
                                               const int num_threads) {
+    logger.startTest("convert_to_csr");
     auto M = mat1.size(0);
     auto N = mat2.size(1);
 
     const auto mat1_csr = mat1.to_sparse_csr();
     const auto mat2_csr = mat2.to_sparse_csr();
+    logger.endTest("convert_to_csr");
 
     auto mat1_crow_indices_ptr = at::native::StridedRandomAccessor<int64_t>(
         mat1_csr.crow_indices().data_ptr<int64_t>(),
@@ -202,7 +208,11 @@ torch::Tensor sparse_matmul_kernel_std_thread(const torch::Tensor &mat1,
 
     csr_to_coo(M, output_indptr.data_ptr<int64_t>(),
                output_row_indices.data_ptr<int64_t>());
-    return torch::sparse_coo_tensor(indices, values, {M, N});
+
+    logger.startTest("create_sparse_tensor");
+    auto answer = torch::sparse_coo_tensor(indices, values, {M, N});
+    logger.endTest("create_sparse_tensor");
+    return answer;
 }
 
 torch::Tensor sparse_sparse_matmul_cpu_std_thread(const torch::Tensor &mat1_,

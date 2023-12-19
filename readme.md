@@ -56,6 +56,7 @@ def benchmark_example():
     configs = generate_benchmark_configurations(size_start=5, size_end=500, size_step=50, density_start=1, density_end=10, density_step=4)
     results = benchmark_by_config_list(configs)
     show_benchmark_results(results)
+```
 
 ## Notes
 

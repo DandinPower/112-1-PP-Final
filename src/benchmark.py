@@ -20,10 +20,10 @@ def _benchmark(config: SparseMatrixTestConfiguration, num_runs: int):
 
     for i in range(num_runs):
         t0 += benchmark(builtin_sparse_mm, sparse_matrix, sparse_matrix_1)
-        t1 += benchmark(builtin_sparse_mm_extension, sparse_matrix, sparse_matrix_1)
-        t2 += benchmark(parallel_structure_sparse_mm, sparse_matrix, sparse_matrix_1)
-        t3 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
-        t4 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
+        t1 += benchmark(builtin_sparse_mm_extension, sparse_matrix, sparse_matrix_1, config)
+        t2 += benchmark(parallel_structure_sparse_mm, sparse_matrix, sparse_matrix_1, config)
+        t3 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads, config)
+        t4 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads, config)
         t5 += benchmark(dense_mm, sparse_matrix.to_dense(), sparse_matrix_1.to_dense())
 
     return BenchmarkResult(t0 / num_runs, t1 / num_runs, t2 / num_runs, t3 / num_runs, t4 / num_runs, t5 / num_runs, config.A_col, config.A_row, config.A_density, config.B_col, config.B_row, config.B_density, config.num_threads)
@@ -32,6 +32,7 @@ def show_benchmark_results(results: List[BenchmarkResult]) -> None:
     """
     Print the benchmark results.
     """
+    print("-" * 50)
     for result in results:
         print(result)
 

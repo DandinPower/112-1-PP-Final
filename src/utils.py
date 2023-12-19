@@ -1,5 +1,12 @@
 import torch
 import dataclasses
+from enum import Enum
+
+class TestType(Enum):
+    BUILTIN = 0
+    PARALLEL_STRUCTURE = 1
+    OPENMP = 2
+    STD_THREAD = 3
 
 @dataclasses.dataclass
 class SparseMatrixTestConfiguration(object):

@@ -8,6 +8,7 @@
 #include <torch/extension.h>
 #include <utils.h>
 #include <iostream>
+#include <logger.h>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
 void _csr_matmult_omp(const int num_threads, const int64_t n_row,
@@ -31,6 +32,7 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
     index_t length[n_col] = {0};
     Cp[0] = 0;
 
+    logger.startTest("csr_matmult_calculation_region");
 #pragma omp parallel for
     for (int i = 0; i < n_row; i++) {
         index_t jj_start = Ap[i];
@@ -52,6 +54,7 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
             }
         }
     }
+    logger.endTest("csr_matmult_calculation_region");
 
     int64_t tempNnz = 0;
     for (int i = 0; i < n_row; i++) {

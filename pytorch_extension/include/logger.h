@@ -1,8 +1,9 @@
+#pragma once
+#include <config.h>
 #include <chrono>
 #include <iostream>
 #include <map>
 #include <string>
-#include <config.h>
 
 typedef enum {
     BUILTIN = 0,
@@ -33,17 +34,18 @@ std::string testTypeToString(TestType test_type) {
 }
 
 /**
- * @brief Struct representing the configuration for a test, which will received from python side.
+ * @brief Struct representing the configuration for a test, which will received
+ * from python side.
  */
 struct TestConfig {
-    TestType test_type;     /**< The type of test. */
-    int num_threads;        /**< The number of threads to use. */
-    int A_row;              /**< The number of rows in matrix A. */
-    int A_col;              /**< The number of columns in matrix A. */
-    int B_row;              /**< The number of rows in matrix B. */
-    int B_col;              /**< The number of columns in matrix B. */
-    float A_density;        /**< The density of matrix A. */
-    float B_density;        /**< The density of matrix B. */
+    TestType test_type; /**< The type of test. */
+    int num_threads;    /**< The number of threads to use. */
+    int A_row;          /**< The number of rows in matrix A. */
+    int A_col;          /**< The number of columns in matrix A. */
+    int B_row;          /**< The number of rows in matrix B. */
+    int B_col;          /**< The number of columns in matrix B. */
+    float A_density;    /**< The density of matrix A. */
+    float B_density;    /**< The density of matrix B. */
 };
 
 /**
@@ -51,11 +53,21 @@ struct TestConfig {
  * @brief A class for logging high precision test durations.
  */
 class HighPrecisionLogger {
-private:
-    std::map<std::string, std::chrono::high_resolution_clock::time_point> startTimes; /**< Map to store start times of tests */
-    std::map<std::string, std::chrono::high_resolution_clock::time_point> endTimes; /**< Map to store end times of tests */
+   private:
+    std::map<std::string, std::chrono::high_resolution_clock::time_point>
+        startTimes; /**< Map to store start times of tests */
+    std::map<std::string, std::chrono::high_resolution_clock::time_point>
+        endTimes; /**< Map to store end times of tests */
 
-public:
+   public:
+    /**
+     * @brief Reset the logger by clearing the start times and end times.
+     */
+    void reset() {
+        startTimes.clear();
+        endTimes.clear();
+    }
+
     /**
      * @brief Start recording the duration of a test.
      * @param testName The name of the test.
@@ -73,16 +85,19 @@ public:
     }
 
     /**
-     * @brief Show the logs of the recorded test durations and the properties of the test configuration.
+     * @brief Show the logs of the recorded test durations and the properties of
+     * the test configuration.
      * @param config The test configuration.
      */
     void showLogs(const TestConfig& config) {
 #if VERBOSE
         printf("----------------------------------------\n");
-        printf("A=[ %d x %d, %.1f], B=[ %d x %d, %.1f], num_threads= [ %d ], type= %s\n",
-            config.A_row, config.A_col, config.A_density,
-            config.B_row, config.B_col, config.B_density,
-            config.num_threads, testTypeToString(config.test_type).c_str());
+        printf(
+            "A=[ %d x %d, %.1f], B=[ %d x %d, %.1f], num_threads= [ %d ], "
+            "type= %s\n",
+            config.A_row, config.A_col, config.A_density, config.B_row,
+            config.B_col, config.B_density, config.num_threads,
+            testTypeToString(config.test_type).c_str());
 
         std::cout << "Test, Duration(ms)" << std::endl;
         for (const auto& pair : startTimes) {
@@ -90,9 +105,16 @@ public:
             auto startTime = pair.second;
             auto endTime = endTimes[testName];
 
-            double duration = std::chrono::duration_cast<std::chrono::microseconds>(endTime - startTime).count() / 1000.0;
+            double duration =
+                std::chrono::duration_cast<std::chrono::microseconds>(endTime -
+                                                                      startTime)
+                    .count() /
+                1000.0;
             printf("%s, %.3f\n", testName.c_str(), duration);
         }
 #endif
     }
 };
+
+// global logger, please carefully to use it in multi-thread environment.
+HighPrecisionLogger logger;

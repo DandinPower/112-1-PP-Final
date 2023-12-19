@@ -11,7 +11,7 @@ const unsigned int THREADS = std::thread::hardware_concurrency();
 
 torch::Tensor sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, TestConfig config)
 {
-    HighPrecisionLogger logger;
+    logger.reset();
     logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
@@ -24,7 +24,7 @@ torch::Tensor sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matr
 
 torch::Tensor parallel_structure_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, TestConfig config)
 {
-    HighPrecisionLogger logger;
+    logger.reset();
     logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
@@ -37,7 +37,7 @@ torch::Tensor parallel_structure_sparse_mm(torch::Tensor sparse_matrix_0, torch:
 
 torch::Tensor openmp_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, const int num_threads, TestConfig config)
 {
-    HighPrecisionLogger logger;
+    logger.reset();
     logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
@@ -51,7 +51,7 @@ torch::Tensor openmp_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor spar
 
 torch::Tensor std_thread_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1, const int num_threads, TestConfig config)
 {
-    HighPrecisionLogger logger;
+    logger.reset();
     logger.startTest("sparse assertion");
     TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");

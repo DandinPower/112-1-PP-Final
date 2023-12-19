@@ -37,6 +37,13 @@ def benchmark_by_config_list(config_list: List[SparseMatrixTestConfiguration], n
     """
     Benchmark the builtin ``torch.sparse.mm`` function and the extension version of ``torch.sparse.mm`` function.
     Compare it on different sizes of sparse matrices and different densities.
+
+    Args:
+        config_list (List[SparseMatrixTestConfiguration]): A list of test configurations specifying the sizes and densities of the sparse matrices.
+        num_runs (int): The number of times to run the benchmark for each configuration.
+
+    Returns:
+        List[BenchmarkResult]: A list of benchmark results, each containing the configuration, average time, and other metrics.
     """
     results = []
     for config in tqdm(config_list):

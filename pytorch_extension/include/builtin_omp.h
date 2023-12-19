@@ -86,8 +86,6 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
                   [](const auto &lhs, const auto &rhs) -> bool {
                       return get_first(lhs) < get_first(rhs);
                   });
-
-        // Cp[i + 1] = nnz;
     }
 }
 

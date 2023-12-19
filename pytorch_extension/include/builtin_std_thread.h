@@ -1,15 +1,16 @@
 #pragma once
-#include <iostream>
-#include <thread>
 #include <ATen/ATen.h>
 #include <ATen/native/CompositeRandomAccessor.h>
 #include <ATen/native/CompositeRandomAccessorCommon.h>
 #include <ATen/native/Resize.h>
 #include <ATen/native/StridedRandomAccessor.h>
+#include <config.h>
 #include <multiplication_utils.h>
 #include <torch/extension.h>
 #include <utils.h>
-#include <config.h>
+
+#include <iostream>
+#include <thread>
 
 template <typename index_t, typename scalar_t, typename index_t_ptr,
           typename scalar_t_ptr>
@@ -42,6 +43,43 @@ void thread_matmul(const int start_row, const int end_row, const index_t_ptr Ap,
                 }
             }
         }
+    }
+}
+
+template <typename index_t, typename scalar_t, typename index_t_ptr,
+          typename scalar_t_ptr>
+void thread_put_answer(const int start_row, const int end_row,
+                       const index_t* Cp, index_t* Cj, scalar_t* Cx,
+                       std::vector<std::vector<index_t>> &next,
+                       std::vector<std::vector<scalar_t>> &sums,
+                       std::vector<index_t> &head,
+                       std::vector<index_t> &length) {
+    for (int i = start_row; i < end_row; i++) {
+        int previous_nnz = Cp[i];
+        for (int jj = 0; jj < length[i]; jj++) {
+            Cj[previous_nnz] = head[i];
+            Cx[previous_nnz] = sums[i][head[i]];
+            previous_nnz++;
+
+            index_t temp = head[i];
+            head[i] = next[i][head[i]];
+
+            next[i][temp] = -1;
+            sums[i][temp] = 0;
+        }
+
+        auto col_indices_accessor = at::native::StridedRandomAccessor<int64_t>(
+            Cj + previous_nnz - length[i], 1);
+        auto val_accessor = at::native::StridedRandomAccessor<scalar_t>(
+            Cx + previous_nnz - length[i], 1);
+        auto kv_accessor = at::native::CompositeRandomAccessorCPU<
+            decltype(col_indices_accessor), decltype(val_accessor)>(
+            col_indices_accessor, val_accessor);
+
+        std::sort(kv_accessor, kv_accessor + length[i],
+                  [](const auto &lhs, const auto &rhs) -> bool {
+                      return get_first(lhs) < get_first(rhs);
+                  });
     }
 }
 
@@ -90,7 +128,6 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
                                             std::vector<scalar_t>(n_col, 0));
     std::vector<index_t> head(n_row, -2);
     std::vector<index_t> length(n_row, 0);
-    int64_t nnz = 0;
     Cp[0] = 0;
 
     for (int t = 0; t < thread_count; t++) {
@@ -103,36 +140,20 @@ void _csr_matmult_std_thread(const int num_threads, const int64_t n_row,
         threads[t].join();
     }
 
+    int64_t tempNnz = 0;
+    for (int i = 0; i < n_row; i++) {
+        tempNnz += length[i];
+        Cp[i + 1] = tempNnz;
+    }
+
     for (int t = 0; t < thread_count; t++) {
-        for (int i = start_row[t]; i < end_row[t]; i++) {
-            for (int jj = 0; jj < length[i]; jj++) {
-                Cj[nnz] = head[i];
-                Cx[nnz] = sums[i][head[i]];
-                nnz++;
-
-                index_t temp = head[i];
-                head[i] = next[i][head[i]];
-
-                next[i][temp] = -1;
-                sums[i][temp] = 0;
-            }
-
-            auto col_indices_accessor =
-                at::native::StridedRandomAccessor<int64_t>(Cj + nnz - length[i],
-                                                           1);
-            auto val_accessor = at::native::StridedRandomAccessor<scalar_t>(
-                Cx + nnz - length[i], 1);
-            auto kv_accessor = at::native::CompositeRandomAccessorCPU<
-                decltype(col_indices_accessor), decltype(val_accessor)>(
-                col_indices_accessor, val_accessor);
-
-            std::sort(kv_accessor, kv_accessor + length[i],
-                      [](const auto &lhs, const auto &rhs) -> bool {
-                          return get_first(lhs) < get_first(rhs);
-                      });
-
-            Cp[i + 1] = nnz;
-        }
+        threads[t] = std::thread(
+            thread_put_answer<index_t, scalar_t, index_t_ptr, scalar_t_ptr>,
+            start_row[t], end_row[t], Cp, Cj, Cx, std::ref(next),
+            std::ref(sums), std::ref(head), std::ref(length));
+    }
+    for (int t = 0; t < thread_count; t++) {
+        threads[t].join();
     }
 }
 
@@ -163,9 +184,9 @@ torch::Tensor sparse_matmul_kernel_std_thread(const torch::Tensor &mat1,
     auto mat2_values_ptr = at::native::StridedRandomAccessor<scalar_t>(
         mat2_csr.values().data_ptr<scalar_t>(), mat2_csr.values().stride(-1));
 
-    const auto nnz =
-        _csr_matmult_maxnnz_parallel(M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
-                            mat2_crow_indices_ptr, mat2_col_indices_ptr);
+    const auto nnz = _csr_matmult_maxnnz_parallel(
+        M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
+        mat2_crow_indices_ptr, mat2_col_indices_ptr);
 
     torch::Tensor output_indptr = at::empty({M + 1}, at::kLong);
 

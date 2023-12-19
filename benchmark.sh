@@ -1,0 +1,1 @@
+python main.py > logs/extension_profiling_results.log

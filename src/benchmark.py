@@ -1,5 +1,5 @@
 from .utils import generate_sparse_matrix, SparseMatrixTestConfiguration
-from src.benchmark_utils import benchmark, builtin_sparse_mm, builtin_sparse_mm_extension, openmp_sparse_mm, std_thread_sparse_mm, dense_mm, BenchmarkResult
+from src.benchmark_utils import benchmark, builtin_sparse_mm, builtin_sparse_mm_extension, parallel_structure_sparse_mm, openmp_sparse_mm, std_thread_sparse_mm, dense_mm, BenchmarkResult
 from typing import List
 from tqdm import tqdm
 
@@ -16,15 +16,17 @@ def _benchmark(config: SparseMatrixTestConfiguration, num_runs: int):
     t2 = 0.0
     t3 = 0.0
     t4 = 0.0
+    t5 = 0.0
 
     for i in range(num_runs):
         t0 += benchmark(builtin_sparse_mm, sparse_matrix, sparse_matrix_1)
         t1 += benchmark(builtin_sparse_mm_extension, sparse_matrix, sparse_matrix_1)
-        t2 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
-        t3 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
-        t4 += benchmark(dense_mm, sparse_matrix.to_dense(), sparse_matrix_1.to_dense())
+        t2 += benchmark(parallel_structure_sparse_mm, sparse_matrix, sparse_matrix_1)
+        t3 += benchmark(openmp_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
+        t4 += benchmark(std_thread_sparse_mm, sparse_matrix, sparse_matrix_1, config.num_threads)
+        t5 += benchmark(dense_mm, sparse_matrix.to_dense(), sparse_matrix_1.to_dense())
 
-    return BenchmarkResult(t0 / num_runs, t1 / num_runs, t2 / num_runs, t3 / num_runs, t4 / num_runs, config.A_col, config.A_row, config.A_density, config.B_col, config.B_row, config.B_density, config.num_threads)
+    return BenchmarkResult(t0 / num_runs, t1 / num_runs, t2 / num_runs, t3 / num_runs, t4 / num_runs, t5 / num_runs, config.A_col, config.A_row, config.A_density, config.B_col, config.B_row, config.B_density, config.num_threads)
 
 def show_benchmark_results(results: List[BenchmarkResult]) -> None:
     """

@@ -10,7 +10,7 @@
 #include <iostream>
 
 template <typename index_t_ptr, typename scalar_t_ptr>
-void _csr_matmult_omp(const int num_threads, const int64_t n_row,
+void _csr_matmult_parallel_structure(const int64_t n_row,
                       const int64_t n_col, const index_t_ptr Ap,
                       const index_t_ptr Aj, const scalar_t_ptr Ax,
                       const index_t_ptr Bp, const index_t_ptr Bj,
@@ -18,7 +18,6 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
                       typename index_t_ptr::value_type Cp[],
                       typename index_t_ptr::value_type Cj[],
                       typename scalar_t_ptr::value_type Cx[]) {
-    omp_set_num_threads(num_threads);
 
     using index_t = typename index_t_ptr::value_type;
     using scalar_t = typename scalar_t_ptr::value_type;
@@ -31,7 +30,6 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
     index_t length[n_col] = {0};
     Cp[0] = 0;
 
-#pragma omp parallel for
     for (int i = 0; i < n_row; i++) {
         index_t jj_start = Ap[i];
         index_t jj_end = Ap[i + 1];
@@ -59,7 +57,6 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
         Cp[i + 1] = tempNnz;
     }
 
-#pragma omp parallel for
     for (int i = 0; i < n_row; i++) {
         int previous_nnz = Cp[i];
         for (int jj = 0; jj < length[i]; jj++) {
@@ -89,9 +86,8 @@ void _csr_matmult_omp(const int num_threads, const int64_t n_row,
 }
 
 template <typename scalar_t>
-torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
-                                       const torch::Tensor &mat2,
-                                       const int num_threads) {
+torch::Tensor sparse_matmul_kernel_parallel_structure(const torch::Tensor &mat1,
+                                       const torch::Tensor &mat2) {
     auto M = mat1.size(0);
     auto N = mat2.size(1);
 
@@ -116,7 +112,7 @@ torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
         mat2_csr.values().data_ptr<scalar_t>(), mat2_csr.values().stride(-1));
 
     const auto nnz =
-        _csr_matmult_maxnnz_parallel(M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
+        _csr_matmult_maxnnz(M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
                             mat2_crow_indices_ptr, mat2_col_indices_ptr);
 
     torch::Tensor output_indptr = at::empty({M + 1}, at::kLong);
@@ -127,8 +123,8 @@ torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
     torch::Tensor output_row_indices = indices.select(0, 0);
     torch::Tensor output_col_indices = indices.select(0, 1);
 
-    _csr_matmult_omp(
-        num_threads, M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
+    _csr_matmult_parallel_structure(
+        M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
         mat1_values_ptr, mat2_crow_indices_ptr, mat2_col_indices_ptr,
         mat2_values_ptr, output_indptr.data_ptr<int64_t>(),
         output_col_indices.data_ptr<int64_t>(), values.data_ptr<scalar_t>());
@@ -138,9 +134,8 @@ torch::Tensor sparse_matmul_kernel_omp(const torch::Tensor &mat1,
     return torch::sparse_coo_tensor(indices, values, {M, N});
 }
 
-torch::Tensor sparse_sparse_matmul_cpu_omp(const torch::Tensor &mat1_,
-                                           const torch::Tensor &mat2_,
-                                           const int num_threads) {
+torch::Tensor sparse_sparse_matmul_cpu_parallel_structure(const torch::Tensor &mat1_,
+                                           const torch::Tensor &mat2_) {
     TORCH_INTERNAL_ASSERT(mat1_.is_sparse());
     TORCH_INTERNAL_ASSERT(mat2_.is_sparse());
     TORCH_CHECK(mat1_.dim() == 2);
@@ -162,8 +157,8 @@ torch::Tensor sparse_sparse_matmul_cpu_omp(const torch::Tensor &mat1_,
 
     auto answer = AT_DISPATCH_FLOATING_AND_COMPLEX_TYPES(
         mat1_.scalar_type(), "sparse_matmul", [&]() -> at::Tensor {
-            return sparse_matmul_kernel_omp<scalar_t>(
-                mat1_.coalesce(), mat2_.coalesce(), num_threads);
+            return sparse_matmul_kernel_parallel_structure<scalar_t>(
+                mat1_.coalesce(), mat2_.coalesce());
         });
 
     return answer;

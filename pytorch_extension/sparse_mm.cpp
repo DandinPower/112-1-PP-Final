@@ -2,6 +2,7 @@
 #include <iostream>
 #include <thread>
 #include <builtin.h>
+#include <builtin_parallel_structure.h>
 #include <builtin_omp.h>
 #include <builtin_std_thread.h>
 
@@ -20,6 +21,22 @@ torch::Tensor sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matr
     TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
 
     torch::Tensor answer = sparse_sparse_matmul_cpu(sparse_matrix_0, sparse_matrix_1);
+    return answer;
+}
+
+/**
+ * Performs sparse matrix multiplication using Parallel Structure Refactorization but without actually using parallelism.
+ * 
+ * @param sparse_matrix_0 The first sparse matrix tensor.
+ * @param sparse_matrix_1 The second sparse matrix tensor.
+ * @return The result of the sparse matrix multiplication.
+ */
+torch::Tensor parallel_structure_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor sparse_matrix_1)
+{
+    TORCH_CHECK(sparse_matrix_0.is_sparse(), "sparse_matrix_0 must be a sparse tensor");
+    TORCH_CHECK(sparse_matrix_1.is_sparse(), "sparse_matrix_1 must be a sparse tensor");
+
+    torch::Tensor answer = sparse_sparse_matmul_cpu_parallel_structure(sparse_matrix_0, sparse_matrix_1);
     return answer;
 }
 
@@ -67,6 +84,7 @@ torch::Tensor std_thread_sparse_mm(torch::Tensor sparse_matrix_0, torch::Tensor 
 PYBIND11_MODULE(TORCH_EXTENSION_NAME, m)
 {
     m.def("sparse_mm", &sparse_mm, "Sparse matrix multiplication");
+    m.def("parallel_structure_sparse_mm", &parallel_structure_sparse_mm, "Parallel Structure Refactorization Sparse matrix multiplication");
     m.def("openmp_sparse_mm", &openmp_sparse_mm, "OpenMP Sparse matrix multiplication");
     m.def("std_thread_sparse_mm", &std_thread_sparse_mm, "std::thread Sparse matrix multiplication");
 }

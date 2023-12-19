@@ -21,8 +21,6 @@ void thread_matmul(const int start_row, const int end_row, const index_t_ptr Ap,
                    std::vector<std::vector<index_t>> &next,
                    std::vector<std::vector<scalar_t>> &sums,
                    std::vector<index_t> &head, std::vector<index_t> &length) {
-    // std::thread::id this_id = std::this_thread::get_id();
-    // std::cout << "thread " << this_id << std::endl;
     for (int i = start_row; i < end_row; i++) {
         index_t jj_start = Ap[i];
         index_t jj_end = Ap[i + 1];

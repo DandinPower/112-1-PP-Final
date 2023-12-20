@@ -11,7 +11,8 @@ from src.utils import SparseMatrixTestConfiguration, generate_sparse_matrix
 import time
 import matplotlib.pyplot as plt
 
-EPOCH = 1
+EPOCH = 10
+NUM_RUNS = 10
 DATA_PATH = 'mnist/data'
 FULL_MODEL_PATH = 'mnist/weight/model.pth'
 PRUNED_MODEL_PATH = 'mnist/weight/pruned_model.pth'
@@ -116,16 +117,18 @@ class SparseDnnClassifier(object):
         self.fc6_bias = state_dict['fc6.bias']
 
     def forward_layer(self, index, x, weight, bias, relu=True):
+        # matmul
         self.logger.start(f'fc{index}_matmul')
         x = self.matmul_strategy.matmul(x, weight)
         self.logger.end(f'fc{index}_matmul')
 
+        # add bias
         x = x.to_dense()
-
         self.logger.start(f'fc{index}_bias')
         x = x + bias
         self.logger.end(f'fc{index}_bias')
 
+        # relu
         if relu:
             self.logger.start(f'fc{index}_relu')
             x = torch.relu(x)
@@ -222,10 +225,13 @@ def inference_sparse():
             output_string += f'strategy, duration(ms)\n'
             output_string += "-" * 50 + "\n"
             for strategy_name, strategy in strategy_set:
-                if strategy_name == 'builtin' or strategy_name == 'parallel_structure':
-                    t = _inference(model, strategy, -1)
-                else:
-                    t = _inference(model, strategy, thread_num)
+                t = 0
+                for _ in range(NUM_RUNS):
+                    if strategy_name == 'builtin' or strategy_name == 'parallel_structure':
+                        t += _inference(model, strategy, -1)
+                    else:
+                        t += _inference(model, strategy, thread_num)
+                t /= NUM_RUNS
                 output_string += f'{strategy_name},{t*1000:.3f}\n'
             output_string += "-" * 50 + "\n"
             print(output_string)

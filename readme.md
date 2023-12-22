@@ -4,11 +4,11 @@
 
 This project is for the course project of Parallel Programming in NYCU CSIE. We implement the sparse matrix multiplication Parallel Optimization in PyTorch extension. We also provide a benchmark tool to compare the performance of different implementations. Currently, we have implemented the following methods:
 
-1. naive implementation
-2. refactor to parallel friendly structure implementation (still serial)
-3. OpenMP implementation by ![Frankie](https://github.com/frankie699) and ![DandinPower](https://github.com/DandinPower)
-4. OpenMP + memory efficient implementation by ![Leo](https://github.com/leo27945875) 
-5. std::thread implementation by ![Frankie](https://github.com/frankie699) and ![DandinPower](https://github.com/DandinPower)
+1. PyTorch serial implementation
+2. Parallel friendly structure implementation (still serial)
+3. OpenMP implementation by [Frankie](https://github.com/frankie699) and [DandinPower](https://github.com/DandinPower)
+4. OpenMP + memory efficient implementation by [Leo](https://github.com/leo27945875) 
+5. std::thread implementation by [Frankie](https://github.com/frankie699) and [DandinPower](https://github.com/DandinPower)
 
 in most of the implementation, the OpenMP + memory efficient implementation is the fastest one and also the most memory efficient one. You can check the benchmark result after you run the benchmark scripts, or you can check our benchmark result in the logs folder.
 

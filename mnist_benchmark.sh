@@ -12,10 +12,10 @@ PRUNED_MODEL_SAVE_PATH=mnist/pruned_model.pth
 # EPOCH is the number of epochs
 # DENSITY_START means the starting density of the sparse matrix
 # DENSITY_END means the ending density of the sparse matrix
-# DENSITY_STEP means the step density of the sparse matrix
+# DENSITY_STEP means the step density of the sparse matrix, each step will increase the density by multiply DENSITY_STEP
 # NUM_THREADS_START means the starting number of threads
 # NUM_THREADS_END means the ending number of threads
-# NUM_THREADS_STEP means the step number of threads
+# NUM_THREADS_STEP means the step number of threads, each step will increase the number of threads by multiply NUM_THREADS_STEP
 VERBOSE=0
 RE_TRAIN=1
 EPOCH=10

@@ -1,5 +1,4 @@
 #pragma once
-#include <config.h>
 #include <chrono>
 #include <iostream>
 #include <map>
@@ -9,7 +8,8 @@ typedef enum {
     BUILTIN = 0,
     PARALLEL_STRUCTURE = 1,
     OPENMP = 2,
-    STD_THREAD = 3
+    OPENMP_MEM_EFFI = 3,
+    STD_THREAD = 4
 } TestType;
 
 /**
@@ -26,6 +26,8 @@ std::string testTypeToString(TestType test_type) {
             return "PARALLEL_STRUCTURE";
         case OPENMP:
             return "OPENMP";
+        case OPENMP_MEM_EFFI:
+            return "OPENMP_MEM_EFFI";
         case STD_THREAD:
             return "STD_THREAD";
         default:
@@ -90,7 +92,6 @@ class HighPrecisionLogger {
      * @param config The test configuration.
      */
     void showLogs(const TestConfig& config) {
-#if VERBOSE
         printf("----------------------------------------\n");
         printf(
             "A=[ %d x %d, %.1f], B=[ %d x %d, %.1f], num_threads= [ %d ], "
@@ -130,8 +131,7 @@ class HighPrecisionLogger {
         double percentage = (duration / totalDuration) * 100;
         printf("%s,%.5f,%.2f\n", testName.c_str(), duration, percentage);
     }
-#endif
-    }
+}
 };
 
 // global logger, please carefully to use it in multi-thread environment.

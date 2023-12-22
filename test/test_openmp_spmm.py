@@ -19,7 +19,7 @@ def handler():
     (6, 6, 0.9, 1),  # Single thread
     (3, 3, 0.9, 2)  # Multiple threads
 ])
-def test_openmp_sparse_mm(handler, dim1, dim2, density, num_threads):
+def test_omp_sparse_mm(handler, dim1, dim2, density, num_threads):
     # Generate two sparse matrices
     sparse_matrix1 = generate_sparse_matrix(dim1, dim2, density=density)
     sparse_matrix2 = generate_sparse_matrix(dim2, dim1, density=density)

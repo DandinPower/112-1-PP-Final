@@ -32,6 +32,15 @@ class ExtensionHandler(object):
         extension_test_configuration = ExtensionHandler.get_extension_config(test_configuration)
         ExtensionHandler.set_extension_config_type(extension_test_configuration, TestType.OPENMP)
         return sparse_mm.openmp_sparse_mm(sparse_matrix, sparse_matrix_1, num_threads, extension_test_configuration)
+
+    @staticmethod
+    def openmp_mem_effi_sparse_mm(sparse_matrix, sparse_matrix_1, test_configuration: SparseMatrixTestConfiguration, num_threads=num_cores):
+        """
+        Computes the product of two sparse matrices by using the openmp parallel version of ``torch.sparse.mm`` function
+        """
+        extension_test_configuration = ExtensionHandler.get_extension_config(test_configuration)
+        ExtensionHandler.set_extension_config_type(extension_test_configuration, TestType.OPENMP_MEM_EFFI)
+        return sparse_mm.openmp_mem_efficient_sparse_mm(sparse_matrix, sparse_matrix_1, num_threads, extension_test_configuration)
     
     @staticmethod
     def std_thread_sparse_mm(sparse_matrix, sparse_matrix_1, test_configuration: SparseMatrixTestConfiguration, num_threads=num_cores):
@@ -42,6 +51,16 @@ class ExtensionHandler(object):
         ExtensionHandler.set_extension_config_type(extension_test_configuration, TestType.STD_THREAD)
         return sparse_mm.std_thread_sparse_mm(sparse_matrix, sparse_matrix_1, num_threads, extension_test_configuration)
     
+    @staticmethod
+    def set_verbose(verbose: int):
+        """
+        Set the verbose flag for the extension.
+
+        Args:
+        - verbose: The verbose flag.
+        """
+        sparse_mm.set_verbose(verbose)
+
     @staticmethod
     def get_extension_config(test_configuration: SparseMatrixTestConfiguration):
         """
@@ -81,6 +100,8 @@ class ExtensionHandler(object):
             extension_test_configuration.test_type = sparse_mm.TestType.PARALLEL_STRUCTURE
         elif test_type == TestType.OPENMP:
             extension_test_configuration.test_type = sparse_mm.TestType.OPENMP
+        elif test_type == TestType.OPENMP_MEM_EFFI:
+            extension_test_configuration.test_type = sparse_mm.TestType.OPENMP_MEM_EFFI
         elif test_type == TestType.STD_THREAD:
             extension_test_configuration.test_type = sparse_mm.TestType.STD_THREAD
         else:

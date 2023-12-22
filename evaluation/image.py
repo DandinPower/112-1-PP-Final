@@ -1,4 +1,3 @@
-from prettytable import PrettyTable
 data = [
     ["convert_to_csr", 6.38500, 0.05],
     ["csr_matmult_maxnnz", 4396.46500, 35.74],

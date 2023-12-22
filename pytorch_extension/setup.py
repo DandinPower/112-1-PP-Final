@@ -7,7 +7,7 @@ module = CppExtension(
             'sparse_mm.cpp'
       ],
       include_dirs=[
-            'include'
+            'include', 'include/sparse_mm'
       ],
       extra_compile_args=['-O3', '-fopenmp']
 )

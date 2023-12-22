@@ -70101,3 +70101,1083 @@ csr_to_coo,11.26000,3.94
 ----------------------------------------
 A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= STD_THREAD
 Test, Duration(ms), Percentage(%)
+convert_to_csr,1.03600,0.42
+create_sparse_tensor,0.04000,0.02
+csr_matmult_calculation_region,128.15400,52.29
+csr_matmult_initialization,3.63000,1.48
+csr_matmult_maxnnz,84.40800,34.44
+csr_matmult_putanswer_region,16.59900,6.77
+csr_to_coo,11.21000,4.57
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.37400,0.08
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,957.64300,56.01
+csr_matmult_initialization,3.26100,0.19
+csr_matmult_maxnnz,615.70100,36.01
+csr_matmult_putanswer_region,120.79700,7.06
+csr_to_coo,11.01000,0.64
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.17600,0.40
+create_sparse_tensor,0.03500,0.01
+csr_matmult_calculation_region,173.47700,59.63
+csr_matmult_initialization,3.31800,1.14
+csr_matmult_maxnnz,85.05700,29.24
+csr_matmult_putanswer_region,16.62500,5.71
+csr_to_coo,11.24700,3.87
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.04400,0.42
+create_sparse_tensor,0.04000,0.02
+csr_matmult_calculation_region,128.29400,52.00
+csr_matmult_initialization,3.63000,1.47
+csr_matmult_maxnnz,85.87100,34.80
+csr_matmult_putanswer_region,16.73300,6.78
+csr_to_coo,11.11500,4.50
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.32600,0.08
+create_sparse_tensor,0.03800,0.00
+csr_matmult_calculation_region,957.98300,55.99
+csr_matmult_initialization,3.25600,0.19
+csr_matmult_maxnnz,616.20600,36.02
+csr_matmult_putanswer_region,121.13600,7.08
+csr_to_coo,10.96700,0.64
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.21800,0.43
+create_sparse_tensor,0.03400,0.01
+csr_matmult_calculation_region,167.61600,58.80
+csr_matmult_initialization,3.42400,1.20
+csr_matmult_maxnnz,85.00300,29.82
+csr_matmult_putanswer_region,16.42200,5.76
+csr_to_coo,11.32900,3.97
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.03000,0.42
+create_sparse_tensor,0.03800,0.02
+csr_matmult_calculation_region,128.85800,52.32
+csr_matmult_initialization,3.33600,1.35
+csr_matmult_maxnnz,84.65400,34.37
+csr_matmult_putanswer_region,17.15700,6.97
+csr_to_coo,11.22500,4.56
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.03200,0.06
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,956.50600,56.02
+csr_matmult_initialization,3.26000,0.19
+csr_matmult_maxnnz,615.07000,36.02
+csr_matmult_putanswer_region,120.70800,7.07
+csr_to_coo,10.90300,0.64
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.82000,0.28
+create_sparse_tensor,0.03600,0.01
+csr_matmult_calculation_region,177.93800,60.21
+csr_matmult_initialization,3.45200,1.17
+csr_matmult_maxnnz,85.02100,28.77
+csr_matmult_putanswer_region,16.71900,5.66
+csr_to_coo,11.53000,3.90
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.02000,0.39
+create_sparse_tensor,0.03900,0.01
+csr_matmult_calculation_region,128.39400,48.69
+csr_matmult_initialization,3.38500,1.28
+csr_matmult_maxnnz,102.60800,38.91
+csr_matmult_putanswer_region,17.02600,6.46
+csr_to_coo,11.21600,4.25
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.24300,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,952.90400,55.90
+csr_matmult_initialization,3.30500,0.19
+csr_matmult_maxnnz,616.52200,36.16
+csr_matmult_putanswer_region,120.03700,7.04
+csr_to_coo,10.75500,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.41900,0.54
+create_sparse_tensor,0.03500,0.01
+csr_matmult_calculation_region,128.52400,48.59
+csr_matmult_initialization,3.44100,1.30
+csr_matmult_maxnnz,111.09100,42.00
+csr_matmult_putanswer_region,8.67800,3.28
+csr_to_coo,11.29700,4.27
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.03900,0.66
+create_sparse_tensor,0.03900,0.02
+csr_matmult_calculation_region,81.90200,52.04
+csr_matmult_initialization,3.69000,2.34
+csr_matmult_maxnnz,48.79600,31.01
+csr_matmult_putanswer_region,10.77400,6.85
+csr_to_coo,11.13400,7.07
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.36300,0.08
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,950.75400,55.76
+csr_matmult_initialization,3.33000,0.20
+csr_matmult_maxnnz,617.60000,36.22
+csr_matmult_putanswer_region,121.12200,7.10
+csr_to_coo,10.94600,0.64
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.38100,0.72
+create_sparse_tensor,0.03400,0.02
+csr_matmult_calculation_region,110.29200,57.37
+csr_matmult_initialization,3.65100,1.90
+csr_matmult_maxnnz,56.81100,29.55
+csr_matmult_putanswer_region,8.86700,4.61
+csr_to_coo,11.19500,5.82
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.09000,0.55
+create_sparse_tensor,0.03900,0.02
+csr_matmult_calculation_region,117.99900,59.06
+csr_matmult_initialization,3.68100,1.84
+csr_matmult_maxnnz,56.41700,28.24
+csr_matmult_putanswer_region,9.41000,4.71
+csr_to_coo,11.16500,5.59
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.44400,0.08
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,976.82300,56.09
+csr_matmult_initialization,3.63900,0.21
+csr_matmult_maxnnz,627.09300,36.01
+csr_matmult_putanswer_region,121.63900,6.98
+csr_to_coo,10.91600,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.19900,0.63
+create_sparse_tensor,0.03500,0.02
+csr_matmult_calculation_region,110.68000,57.90
+csr_matmult_initialization,3.61800,1.89
+csr_matmult_maxnnz,55.63100,29.10
+csr_matmult_putanswer_region,8.71600,4.56
+csr_to_coo,11.29100,5.91
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.05400,0.66
+create_sparse_tensor,0.03900,0.02
+csr_matmult_calculation_region,84.95800,52.98
+csr_matmult_initialization,3.65900,2.28
+csr_matmult_maxnnz,49.55800,30.90
+csr_matmult_putanswer_region,9.98400,6.23
+csr_to_coo,11.11000,6.93
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.01000,0.06
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,975.54500,56.03
+csr_matmult_initialization,3.64900,0.21
+csr_matmult_maxnnz,626.77000,36.00
+csr_matmult_putanswer_region,123.06900,7.07
+csr_to_coo,11.00900,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.07100,0.58
+create_sparse_tensor,0.03400,0.02
+csr_matmult_calculation_region,105.20200,56.89
+csr_matmult_initialization,3.59500,1.94
+csr_matmult_maxnnz,54.51000,29.48
+csr_matmult_putanswer_region,9.00600,4.87
+csr_to_coo,11.50500,6.22
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.04300,0.66
+create_sparse_tensor,0.04100,0.03
+csr_matmult_calculation_region,80.19800,50.72
+csr_matmult_initialization,3.64200,2.30
+csr_matmult_maxnnz,51.81300,32.77
+csr_matmult_putanswer_region,9.85000,6.23
+csr_to_coo,11.51900,7.29
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.40700,0.08
+create_sparse_tensor,0.03200,0.00
+csr_matmult_calculation_region,974.14600,56.02
+csr_matmult_initialization,3.63800,0.21
+csr_matmult_maxnnz,626.15200,36.01
+csr_matmult_putanswer_region,122.58300,7.05
+csr_to_coo,11.01200,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.75100,0.40
+create_sparse_tensor,0.03400,0.02
+csr_matmult_calculation_region,108.81200,57.90
+csr_matmult_initialization,3.59900,1.91
+csr_matmult_maxnnz,54.43900,28.97
+csr_matmult_putanswer_region,8.87300,4.72
+csr_to_coo,11.43400,6.08
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.04500,0.64
+create_sparse_tensor,0.04000,0.02
+csr_matmult_calculation_region,81.06300,49.35
+csr_matmult_initialization,3.68100,2.24
+csr_matmult_maxnnz,57.42000,34.96
+csr_matmult_putanswer_region,9.72800,5.92
+csr_to_coo,11.28300,6.87
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.29900,0.07
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,974.62900,56.05
+csr_matmult_initialization,3.66000,0.21
+csr_matmult_maxnnz,626.01800,36.00
+csr_matmult_putanswer_region,122.05200,7.02
+csr_to_coo,11.01900,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.89700,0.46
+create_sparse_tensor,0.02900,0.01
+csr_matmult_calculation_region,98.61700,50.81
+csr_matmult_initialization,3.63100,1.87
+csr_matmult_maxnnz,70.69400,36.43
+csr_matmult_putanswer_region,8.89200,4.58
+csr_to_coo,11.31300,5.83
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.01700,0.65
+create_sparse_tensor,0.03900,0.03
+csr_matmult_calculation_region,80.35100,51.51
+csr_matmult_initialization,3.64500,2.34
+csr_matmult_maxnnz,49.95200,32.02
+csr_matmult_putanswer_region,9.75200,6.25
+csr_to_coo,11.23400,7.20
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.91900,0.05
+create_sparse_tensor,0.03300,0.00
+csr_matmult_calculation_region,975.04500,56.04
+csr_matmult_initialization,3.64000,0.21
+csr_matmult_maxnnz,626.34800,36.00
+csr_matmult_putanswer_region,122.84400,7.06
+csr_to_coo,11.07800,0.64
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.81900,0.42
+create_sparse_tensor,0.03900,0.02
+csr_matmult_calculation_region,112.68800,58.19
+csr_matmult_initialization,3.59900,1.86
+csr_matmult_maxnnz,56.17800,29.01
+csr_matmult_putanswer_region,8.93600,4.61
+csr_to_coo,11.39100,5.88
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.05600,0.67
+create_sparse_tensor,0.03900,0.02
+csr_matmult_calculation_region,79.90700,50.95
+csr_matmult_initialization,3.65800,2.33
+csr_matmult_maxnnz,51.11100,32.59
+csr_matmult_putanswer_region,9.73800,6.21
+csr_to_coo,11.31400,7.21
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.15100,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,975.51300,56.06
+csr_matmult_initialization,3.71200,0.21
+csr_matmult_maxnnz,626.70000,36.01
+csr_matmult_putanswer_region,122.08100,7.02
+csr_to_coo,10.93800,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.02300,0.55
+create_sparse_tensor,0.03500,0.02
+csr_matmult_calculation_region,105.85400,56.71
+csr_matmult_initialization,3.60800,1.93
+csr_matmult_maxnnz,55.45800,29.71
+csr_matmult_putanswer_region,9.27300,4.97
+csr_to_coo,11.40100,6.11
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.05100,0.66
+create_sparse_tensor,0.03800,0.02
+csr_matmult_calculation_region,80.40300,50.32
+csr_matmult_initialization,3.65400,2.29
+csr_matmult_maxnnz,53.75100,33.64
+csr_matmult_putanswer_region,9.62400,6.02
+csr_to_coo,11.24800,7.04
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.34700,0.08
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,974.00500,56.01
+csr_matmult_initialization,3.63600,0.21
+csr_matmult_maxnnz,626.95400,36.05
+csr_matmult_putanswer_region,121.94700,7.01
+csr_to_coo,10.99900,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.74000,0.42
+create_sparse_tensor,0.03200,0.02
+csr_matmult_calculation_region,98.65900,55.39
+csr_matmult_initialization,3.59800,2.02
+csr_matmult_maxnnz,55.01900,30.89
+csr_matmult_putanswer_region,8.77000,4.92
+csr_to_coo,11.30300,6.35
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.08500,0.70
+create_sparse_tensor,0.03900,0.03
+csr_matmult_calculation_region,80.28500,51.62
+csr_matmult_initialization,3.64100,2.34
+csr_matmult_maxnnz,49.65600,31.93
+csr_matmult_putanswer_region,9.60900,6.18
+csr_to_coo,11.20200,7.20
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.38900,0.08
+create_sparse_tensor,0.03000,0.00
+csr_matmult_calculation_region,973.90100,56.02
+csr_matmult_initialization,3.65400,0.21
+csr_matmult_maxnnz,626.48500,36.04
+csr_matmult_putanswer_region,121.92300,7.01
+csr_to_coo,10.95300,0.63
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,0.98700,0.52
+create_sparse_tensor,0.03500,0.02
+csr_matmult_calculation_region,111.43800,58.38
+csr_matmult_initialization,3.59800,1.88
+csr_matmult_maxnnz,54.75800,28.68
+csr_matmult_putanswer_region,8.77700,4.60
+csr_to_coo,11.30200,5.92
+----------------------------------------
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.06300,0.68
+create_sparse_tensor,0.04000,0.03
+csr_matmult_calculation_region,80.16300,51.20
+csr_matmult_initialization,3.64500,2.33
+csr_matmult_maxnnz,50.50700,32.26
+csr_matmult_putanswer_region,9.98000,6.37
+csr_to_coo,11.17500,7.14
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.08200,0.03
+create_sparse_tensor,0.03300,0.00
+csr_matmult_calculation_region,3929.83100,60.51
+csr_matmult_initialization,3.67900,0.06
+csr_matmult_maxnnz,2486.37700,38.28
+csr_matmult_putanswer_region,70.79600,1.09
+csr_to_coo,2.14800,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.43300,0.05
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,5078.07100,94.45
+csr_matmult_initialization,3.68800,0.07
+csr_matmult_maxnnz,200.99500,3.74
+csr_matmult_putanswer_region,80.22700,1.49
+csr_to_coo,10.86700,0.20
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.58200,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3973.37400,60.05
+csr_matmult_initialization,3.62800,0.05
+csr_matmult_maxnnz,2545.09100,38.47
+csr_matmult_putanswer_region,78.95600,1.19
+csr_to_coo,10.93400,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.56300,0.07
+create_sparse_tensor,0.03000,0.00
+csr_matmult_calculation_region,3932.32000,60.48
+csr_matmult_initialization,3.65200,0.06
+csr_matmult_maxnnz,2488.64400,38.27
+csr_matmult_putanswer_region,70.88400,1.09
+csr_to_coo,2.20100,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.59100,0.06
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,5086.91600,65.93
+csr_matmult_initialization,3.65800,0.05
+csr_matmult_maxnnz,2548.45600,33.03
+csr_matmult_putanswer_region,69.73100,0.90
+csr_to_coo,2.16300,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.62800,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,4013.89000,60.48
+csr_matmult_initialization,3.66300,0.06
+csr_matmult_maxnnz,2543.43600,38.33
+csr_matmult_putanswer_region,68.87400,1.04
+csr_to_coo,1.86200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.55100,0.07
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,3921.32700,60.47
+csr_matmult_initialization,3.62100,0.06
+csr_matmult_maxnnz,2482.67000,38.28
+csr_matmult_putanswer_region,70.71600,1.09
+csr_to_coo,2.18200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.59700,0.06
+create_sparse_tensor,0.03300,0.00
+csr_matmult_calculation_region,5077.12500,65.96
+csr_matmult_initialization,3.62100,0.05
+csr_matmult_maxnnz,2540.57000,33.01
+csr_matmult_putanswer_region,69.12500,0.90
+csr_to_coo,2.18200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.61600,0.07
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,3955.64700,60.22
+csr_matmult_initialization,3.63100,0.06
+csr_matmult_maxnnz,2535.06100,38.59
+csr_matmult_putanswer_region,68.05400,1.04
+csr_to_coo,1.71000,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.55000,0.07
+create_sparse_tensor,0.03300,0.00
+csr_matmult_calculation_region,3918.89400,60.45
+csr_matmult_initialization,3.69500,0.06
+csr_matmult_maxnnz,2483.10000,38.30
+csr_matmult_putanswer_region,70.25200,1.08
+csr_to_coo,2.17700,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.56600,0.06
+create_sparse_tensor,0.03200,0.00
+csr_matmult_calculation_region,5074.88700,66.00
+csr_matmult_initialization,3.62800,0.05
+csr_matmult_maxnnz,2535.06800,32.97
+csr_matmult_putanswer_region,69.16800,0.90
+csr_to_coo,2.16400,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.60300,0.07
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,3948.92100,60.19
+csr_matmult_initialization,3.65700,0.06
+csr_matmult_maxnnz,2534.00300,38.62
+csr_matmult_putanswer_region,67.72700,1.03
+csr_to_coo,1.77600,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.54600,0.07
+create_sparse_tensor,0.04100,0.00
+csr_matmult_calculation_region,3916.75300,60.45
+csr_matmult_initialization,3.62300,0.06
+csr_matmult_maxnnz,2481.44100,38.30
+csr_matmult_putanswer_region,70.32800,1.09
+csr_to_coo,2.16700,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.57700,0.06
+create_sparse_tensor,0.03200,0.00
+csr_matmult_calculation_region,5073.45200,65.99
+csr_matmult_initialization,3.62800,0.05
+csr_matmult_maxnnz,2535.15800,32.97
+csr_matmult_putanswer_region,69.14400,0.90
+csr_to_coo,2.15800,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.60300,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3958.80700,60.25
+csr_matmult_initialization,3.62900,0.06
+csr_matmult_maxnnz,2534.04500,38.56
+csr_matmult_putanswer_region,68.01500,1.04
+csr_to_coo,1.76900,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.55400,0.07
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,3915.71500,60.46
+csr_matmult_initialization,3.62700,0.06
+csr_matmult_maxnnz,2480.66600,38.30
+csr_matmult_putanswer_region,70.26900,1.08
+csr_to_coo,2.18000,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.57900,0.06
+create_sparse_tensor,0.03200,0.00
+csr_matmult_calculation_region,5070.94200,65.98
+csr_matmult_initialization,3.62800,0.05
+csr_matmult_maxnnz,2535.00100,32.98
+csr_matmult_putanswer_region,69.16700,0.90
+csr_to_coo,2.18200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.60400,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3934.32400,60.10
+csr_matmult_initialization,3.62800,0.06
+csr_matmult_maxnnz,2534.44100,38.72
+csr_matmult_putanswer_region,67.34700,1.03
+csr_to_coo,1.71800,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.55700,0.07
+create_sparse_tensor,0.02900,0.00
+csr_matmult_calculation_region,3914.37600,60.46
+csr_matmult_initialization,3.63100,0.06
+csr_matmult_maxnnz,2479.23400,38.29
+csr_matmult_putanswer_region,70.26200,1.09
+csr_to_coo,2.17500,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.57300,0.06
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,5083.39400,66.06
+csr_matmult_initialization,3.62800,0.05
+csr_matmult_maxnnz,2532.40000,32.91
+csr_matmult_putanswer_region,69.16100,0.90
+csr_to_coo,2.17200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.63300,0.07
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,4004.64100,60.46
+csr_matmult_initialization,3.67600,0.06
+csr_matmult_maxnnz,2540.01500,38.35
+csr_matmult_putanswer_region,68.50400,1.03
+csr_to_coo,1.71200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.54300,0.07
+create_sparse_tensor,0.03000,0.00
+csr_matmult_calculation_region,3919.59600,60.46
+csr_matmult_initialization,3.67400,0.06
+csr_matmult_maxnnz,2482.67600,38.29
+csr_matmult_putanswer_region,70.38900,1.09
+csr_to_coo,2.17500,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.58800,0.06
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,5074.92300,65.96
+csr_matmult_initialization,3.62700,0.05
+csr_matmult_maxnnz,2539.99500,33.01
+csr_matmult_putanswer_region,69.04300,0.90
+csr_to_coo,2.15900,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.62000,0.07
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,3906.73800,59.88
+csr_matmult_initialization,3.74200,0.06
+csr_matmult_maxnnz,2539.92600,38.93
+csr_matmult_putanswer_region,67.80700,1.04
+csr_to_coo,1.72500,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.54600,0.07
+create_sparse_tensor,0.03000,0.00
+csr_matmult_calculation_region,3916.88600,60.47
+csr_matmult_initialization,3.62100,0.06
+csr_matmult_maxnnz,2479.62100,38.28
+csr_matmult_putanswer_region,70.30300,1.09
+csr_to_coo,2.17500,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.57700,0.06
+create_sparse_tensor,0.03300,0.00
+csr_matmult_calculation_region,5075.27900,65.97
+csr_matmult_initialization,3.65400,0.05
+csr_matmult_maxnnz,2538.05300,32.99
+csr_matmult_putanswer_region,69.15400,0.90
+csr_to_coo,2.18700,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.60900,0.07
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,3996.36400,60.48
+csr_matmult_initialization,3.63800,0.06
+csr_matmult_maxnnz,2532.60800,38.33
+csr_matmult_putanswer_region,68.47500,1.04
+csr_to_coo,1.70000,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.59400,0.07
+create_sparse_tensor,0.03100,0.00
+csr_matmult_calculation_region,3920.75000,60.48
+csr_matmult_initialization,3.61900,0.06
+csr_matmult_maxnnz,2480.80700,38.27
+csr_matmult_putanswer_region,70.27800,1.08
+csr_to_coo,2.16900,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.57200,0.06
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,5078.79500,65.98
+csr_matmult_initialization,3.63000,0.05
+csr_matmult_maxnnz,2538.81100,32.98
+csr_matmult_putanswer_region,69.31300,0.90
+csr_to_coo,2.15300,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.59500,0.07
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,3923.98000,60.03
+csr_matmult_initialization,3.66800,0.06
+csr_matmult_maxnnz,2535.52200,38.79
+csr_matmult_putanswer_region,67.20500,1.03
+csr_to_coo,1.69200,0.03
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.51600,0.07
+create_sparse_tensor,0.03200,0.00
+csr_matmult_calculation_region,3916.53300,60.81
+csr_matmult_initialization,3.61000,0.06
+csr_matmult_maxnnz,2425.78600,37.67
+csr_matmult_putanswer_region,78.67800,1.22
+csr_to_coo,10.98400,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,4.50400,0.09
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,2555.56400,50.20
+csr_matmult_initialization,3.61900,0.07
+csr_matmult_maxnnz,2475.85100,48.64
+csr_matmult_putanswer_region,39.84400,0.78
+csr_to_coo,10.87800,0.21
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.51800,0.08
+create_sparse_tensor,0.04400,0.00
+csr_matmult_calculation_region,1978.12800,59.86
+csr_matmult_initialization,3.66100,0.11
+csr_matmult_maxnnz,1265.34300,38.29
+csr_matmult_putanswer_region,39.39200,1.19
+csr_to_coo,15.35900,0.46
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.73200,0.04
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,3826.71000,60.62
+csr_matmult_initialization,3.61800,0.06
+csr_matmult_maxnnz,2391.43900,37.88
+csr_matmult_putanswer_region,77.26000,1.22
+csr_to_coo,10.75000,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.74800,0.07
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,2558.67700,66.04
+csr_matmult_initialization,3.81300,0.10
+csr_matmult_maxnnz,1258.27000,32.48
+csr_matmult_putanswer_region,39.93000,1.03
+csr_to_coo,10.88200,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.63800,0.08
+create_sparse_tensor,0.04400,0.00
+csr_matmult_calculation_region,1986.99700,60.23
+csr_matmult_initialization,3.66000,0.11
+csr_matmult_maxnnz,1249.11800,37.86
+csr_matmult_putanswer_region,39.44300,1.20
+csr_to_coo,17.21800,0.52
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.78200,0.04
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,3840.53000,60.76
+csr_matmult_initialization,3.68400,0.06
+csr_matmult_maxnnz,2386.04600,37.75
+csr_matmult_putanswer_region,77.20500,1.22
+csr_to_coo,10.80200,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.68000,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,2571.18900,66.00
+csr_matmult_initialization,3.78100,0.10
+csr_matmult_maxnnz,1267.56000,32.54
+csr_matmult_putanswer_region,39.73800,1.02
+csr_to_coo,11.00000,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.64300,0.08
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1978.01800,60.14
+csr_matmult_initialization,3.64500,0.11
+csr_matmult_maxnnz,1248.93900,37.97
+csr_matmult_putanswer_region,38.85400,1.18
+csr_to_coo,16.87900,0.51
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.59100,0.04
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3845.86700,60.84
+csr_matmult_initialization,3.60400,0.06
+csr_matmult_maxnnz,2380.58200,37.66
+csr_matmult_putanswer_region,77.36100,1.22
+csr_to_coo,10.76300,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,3.00700,0.08
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,2564.47000,65.85
+csr_matmult_initialization,3.73300,0.10
+csr_matmult_maxnnz,1272.68200,32.68
+csr_matmult_putanswer_region,39.90000,1.02
+csr_to_coo,10.85700,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.38000,0.07
+create_sparse_tensor,0.04200,0.00
+csr_matmult_calculation_region,1992.52300,59.75
+csr_matmult_initialization,3.67200,0.11
+csr_matmult_maxnnz,1280.72100,38.41
+csr_matmult_putanswer_region,38.94800,1.17
+csr_to_coo,16.38900,0.49
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.76600,0.04
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3840.91000,60.80
+csr_matmult_initialization,3.60500,0.06
+csr_matmult_maxnnz,2381.81500,37.70
+csr_matmult_putanswer_region,77.70000,1.23
+csr_to_coo,10.67600,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.74900,0.07
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,2563.16600,65.86
+csr_matmult_initialization,3.79300,0.10
+csr_matmult_maxnnz,1270.95100,32.66
+csr_matmult_putanswer_region,40.08500,1.03
+csr_to_coo,10.87900,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.65800,0.08
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1985.99400,59.99
+csr_matmult_initialization,3.68500,0.11
+csr_matmult_maxnnz,1263.64000,38.17
+csr_matmult_putanswer_region,39.11600,1.18
+csr_to_coo,15.63300,0.47
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.78200,0.04
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,3841.27500,60.72
+csr_matmult_initialization,3.66700,0.06
+csr_matmult_maxnnz,2386.42700,37.73
+csr_matmult_putanswer_region,80.61100,1.27
+csr_to_coo,10.90900,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.80900,0.07
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,2562.05600,66.07
+csr_matmult_initialization,3.95600,0.10
+csr_matmult_maxnnz,1273.01800,32.83
+csr_matmult_putanswer_region,33.99200,0.88
+csr_to_coo,2.14900,0.06
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.63400,0.08
+create_sparse_tensor,0.04100,0.00
+csr_matmult_calculation_region,1972.38300,60.29
+csr_matmult_initialization,3.65400,0.11
+csr_matmult_maxnnz,1257.82100,38.45
+csr_matmult_putanswer_region,33.07900,1.01
+csr_to_coo,1.82700,0.06
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.73900,0.04
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,3878.26000,61.00
+csr_matmult_initialization,3.66200,0.06
+csr_matmult_maxnnz,2380.53900,37.44
+csr_matmult_putanswer_region,80.53400,1.27
+csr_to_coo,11.66000,0.18
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.55900,0.07
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,2561.22100,66.37
+csr_matmult_initialization,3.65700,0.09
+csr_matmult_maxnnz,1255.36600,32.53
+csr_matmult_putanswer_region,33.91600,0.88
+csr_to_coo,2.14100,0.06
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.69600,0.08
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1988.11700,59.98
+csr_matmult_initialization,3.67300,0.11
+csr_matmult_maxnnz,1264.11500,38.13
+csr_matmult_putanswer_region,39.54400,1.19
+csr_to_coo,16.69100,0.50
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.63700,0.04
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,3837.78400,60.75
+csr_matmult_initialization,3.63300,0.06
+csr_matmult_maxnnz,2385.15000,37.76
+csr_matmult_putanswer_region,77.08900,1.22
+csr_to_coo,10.88600,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.49300,0.06
+create_sparse_tensor,0.03700,0.00
+csr_matmult_calculation_region,2564.30900,65.81
+csr_matmult_initialization,3.82000,0.10
+csr_matmult_maxnnz,1274.65300,32.71
+csr_matmult_putanswer_region,40.21600,1.03
+csr_to_coo,11.26800,0.29
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.57800,0.08
+create_sparse_tensor,0.03800,0.00
+csr_matmult_calculation_region,1994.43500,60.26
+csr_matmult_initialization,3.73200,0.11
+csr_matmult_maxnnz,1258.19500,38.01
+csr_matmult_putanswer_region,39.74900,1.20
+csr_to_coo,11.07200,0.33
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.75400,0.04
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,3834.03300,60.73
+csr_matmult_initialization,3.60600,0.06
+csr_matmult_maxnnz,2384.07900,37.76
+csr_matmult_putanswer_region,77.46300,1.23
+csr_to_coo,11.03300,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.73100,0.07
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,2560.08300,65.84
+csr_matmult_initialization,3.99100,0.10
+csr_matmult_maxnnz,1270.63000,32.68
+csr_matmult_putanswer_region,40.08900,1.03
+csr_to_coo,11.03100,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.48700,0.08
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1985.53800,59.92
+csr_matmult_initialization,3.64500,0.11
+csr_matmult_maxnnz,1267.24000,38.24
+csr_matmult_putanswer_region,38.67200,1.17
+csr_to_coo,16.10000,0.49
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.72000,0.04
+create_sparse_tensor,0.03800,0.00
+csr_matmult_calculation_region,3835.03400,60.73
+csr_matmult_initialization,3.63800,0.06
+csr_matmult_maxnnz,2384.29200,37.76
+csr_matmult_putanswer_region,77.90800,1.23
+csr_to_coo,10.91300,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.62700,0.07
+create_sparse_tensor,0.03900,0.00
+csr_matmult_calculation_region,2561.84200,66.03
+csr_matmult_initialization,3.67900,0.09
+csr_matmult_maxnnz,1260.58300,32.49
+csr_matmult_putanswer_region,40.18400,1.04
+csr_to_coo,10.96600,0.28
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.50500,0.08
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1975.88600,59.76
+csr_matmult_initialization,3.67300,0.11
+csr_matmult_maxnnz,1267.66700,38.34
+csr_matmult_putanswer_region,39.92700,1.21
+csr_to_coo,16.77200,0.51
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.59000,0.04
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3847.39000,60.77
+csr_matmult_initialization,3.65600,0.06
+csr_matmult_maxnnz,2385.58400,37.68
+csr_matmult_putanswer_region,81.35700,1.28
+csr_to_coo,10.74900,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.88800,0.11
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,1300.01400,49.81
+csr_matmult_initialization,3.93400,0.15
+csr_matmult_maxnnz,1269.97300,48.66
+csr_matmult_putanswer_region,21.94700,0.84
+csr_to_coo,11.08800,0.42
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.75800,0.10
+create_sparse_tensor,0.04400,0.00
+csr_matmult_calculation_region,1028.42400,60.26
+csr_matmult_initialization,3.64000,0.21
+csr_matmult_maxnnz,634.18000,37.16
+csr_matmult_putanswer_region,21.90000,1.28
+csr_to_coo,16.81100,0.98
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.12900,0.03
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,3849.90600,60.77
+csr_matmult_initialization,3.64200,0.06
+csr_matmult_maxnnz,2388.42100,37.70
+csr_matmult_putanswer_region,80.64500,1.27
+csr_to_coo,10.64500,0.17
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.24400,0.11
+create_sparse_tensor,0.03600,0.00
+csr_matmult_calculation_region,1311.36700,65.73
+csr_matmult_initialization,3.67000,0.18
+csr_matmult_maxnnz,644.53800,32.30
+csr_matmult_putanswer_region,22.13500,1.11
+csr_to_coo,11.18300,0.56
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.70900,0.10
+create_sparse_tensor,0.04300,0.00
+csr_matmult_calculation_region,1055.75600,60.95
+csr_matmult_initialization,3.67400,0.21
+csr_matmult_maxnnz,632.70600,36.53
+csr_matmult_putanswer_region,21.42400,1.24
+csr_to_coo,16.79800,0.97
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= PARALLEL_STRUCTURE
+Test, Duration(ms), Percentage(%)
+convert_to_csr,1.95200,0.03
+create_sparse_tensor,0.03400,0.00
+csr_matmult_calculation_region,3839.92600,60.74
+csr_matmult_initialization,3.63700,0.06
+csr_matmult_maxnnz,2383.65500,37.71
+csr_matmult_putanswer_region,81.23600,1.29
+csr_to_coo,11.35000,0.18
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= OPENMP
+Test, Duration(ms), Percentage(%)
+convert_to_csr,2.11600,0.11
+create_sparse_tensor,0.03500,0.00
+csr_matmult_calculation_region,1304.26000,65.76
+csr_matmult_initialization,3.68700,0.19
+csr_matmult_maxnnz,639.69300,32.25
+csr_matmult_putanswer_region,22.03400,1.11
+csr_to_coo,11.65000,0.59
+----------------------------------------
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ], type= STD_THREAD
+Test, Duration(ms), Percentage(%)

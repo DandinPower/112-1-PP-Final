@@ -1,5 +1,23 @@
 # Sparse Matrix Pytorch Extension
 
+## Introduction
+
+This project is for the course project of Parallel Programming in NYCU CSIE. We implement the sparse matrix multiplication Parallel Optimization in PyTorch extension. We also provide a benchmark tool to compare the performance of different implementations. Currently, we have implemented the following methods:
+
+1. naive implementation
+2. refactor to parallel friendly structure implementation (still serial)
+3. OpenMP implementation by ![Frankie](https://github.com/frankie699) and ![DandinPower](https://github.com/DandinPower)
+4. OpenMP + memory efficient implementation by ![Leo](https://github.com/leo27945875) 
+5. std::thread implementation by ![Frankie](https://github.com/frankie699) and ![DandinPower](https://github.com/DandinPower)
+
+in most of the implementation, the OpenMP + memory efficient implementation is the fastest one and also the most memory efficient one. You can check the benchmark result after you run the benchmark scripts, or you can check our benchmark result in the logs folder.
+
+Our Evaluation platform is:
+
+1. AMD Ryzen 9 5950X 16-Core Processor (16cores)
+2. Ubuntu 22.04 LTS
+3. python 3.10.12
+
 ## Prerequisites
 
 Before you can compile the PyTorch extension, you need to install the necessary requirements. Run the following command in your terminal:
@@ -44,7 +62,9 @@ After you compile the PyTorch extension, and run the tests, you can use our benc
     bash all_benchmark.sh
     ``` 
 
-for each benchmark, you can change the parameters in the script file. You can see the parameters description in the script file.
+for each benchmark, you can change the parameters in the script file. You can see the parameters description in the script file. 
+
+**Note**: you must set the threads number fit into your CPU core number, also you need to care about the core has same performance or not. For example, in intel CPU, the performance core will faster than the efficiency core.
 
 ## Notes
 

@@ -79,6 +79,11 @@ for each benchmark, you can change the parameters in the script file. You can se
     #include <ATen/native/StridedRandomAccessor.h>
     ```
 
+## Contributions
+
+You are welcome to contribute to this project. If you have any questions, please feel free to contact us.
+If you don't know what to do, you can check the issues page.
+
 ## Reference
 
 - pytorch

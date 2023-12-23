@@ -1,0 +1,2861 @@
+--------------------------------------------------
+A=[ 1 x 1, 0.1], B=[ 1 x 1, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.04068ms
+builtin_sparse_mm_extension:         0.04330ms
+parallel_structure_sparse_mm:        0.04024ms
+openmp_sparse_mm:                    0.08173ms
+openmp_mem_effi_sparse_mm:           0.02844ms
+std_thread_sparse_mm:                0.10714ms
+dense_mm:                            0.01301ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.1], B=[ 1 x 1, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01842ms
+builtin_sparse_mm_extension:         0.03620ms
+parallel_structure_sparse_mm:        0.03660ms
+openmp_sparse_mm:                    0.04385ms
+openmp_mem_effi_sparse_mm:           0.03086ms
+std_thread_sparse_mm:                0.11080ms
+dense_mm:                            0.00466ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.1], B=[ 1 x 1, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01883ms
+builtin_sparse_mm_extension:         0.03229ms
+parallel_structure_sparse_mm:        0.03446ms
+openmp_sparse_mm:                    0.04512ms
+openmp_mem_effi_sparse_mm:           0.03104ms
+std_thread_sparse_mm:                0.08936ms
+dense_mm:                            0.00449ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.1], B=[ 1 x 1, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01830ms
+builtin_sparse_mm_extension:         0.03282ms
+parallel_structure_sparse_mm:        0.03433ms
+openmp_sparse_mm:                    0.05191ms
+openmp_mem_effi_sparse_mm:           0.03703ms
+std_thread_sparse_mm:                0.09076ms
+dense_mm:                            0.00448ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.1], B=[ 1 x 1, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01911ms
+builtin_sparse_mm_extension:         0.03304ms
+parallel_structure_sparse_mm:        0.03498ms
+openmp_sparse_mm:                    0.06390ms
+openmp_mem_effi_sparse_mm:           0.04809ms
+std_thread_sparse_mm:                0.09642ms
+dense_mm:                            0.00468ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.2], B=[ 1 x 1, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01929ms
+builtin_sparse_mm_extension:         0.03275ms
+parallel_structure_sparse_mm:        0.03556ms
+openmp_sparse_mm:                    0.03845ms
+openmp_mem_effi_sparse_mm:           0.02705ms
+std_thread_sparse_mm:                0.09202ms
+dense_mm:                            0.00460ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.2], B=[ 1 x 1, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01854ms
+builtin_sparse_mm_extension:         0.03223ms
+parallel_structure_sparse_mm:        0.03433ms
+openmp_sparse_mm:                    0.04168ms
+openmp_mem_effi_sparse_mm:           0.02925ms
+std_thread_sparse_mm:                0.09586ms
+dense_mm:                            0.00459ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.2], B=[ 1 x 1, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01822ms
+builtin_sparse_mm_extension:         0.03187ms
+parallel_structure_sparse_mm:        0.03414ms
+openmp_sparse_mm:                    0.04457ms
+openmp_mem_effi_sparse_mm:           0.02927ms
+std_thread_sparse_mm:                0.08367ms
+dense_mm:                            0.00444ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.2], B=[ 1 x 1, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01840ms
+builtin_sparse_mm_extension:         0.03225ms
+parallel_structure_sparse_mm:        0.03372ms
+openmp_sparse_mm:                    0.05196ms
+openmp_mem_effi_sparse_mm:           0.03107ms
+std_thread_sparse_mm:                0.08715ms
+dense_mm:                            0.00447ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.2], B=[ 1 x 1, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01867ms
+builtin_sparse_mm_extension:         0.03273ms
+parallel_structure_sparse_mm:        0.03449ms
+openmp_sparse_mm:                    0.06456ms
+openmp_mem_effi_sparse_mm:           0.03296ms
+std_thread_sparse_mm:                0.09555ms
+dense_mm:                            0.00462ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.4], B=[ 1 x 1, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01966ms
+builtin_sparse_mm_extension:         0.03568ms
+parallel_structure_sparse_mm:        0.03670ms
+openmp_sparse_mm:                    0.04677ms
+openmp_mem_effi_sparse_mm:           0.02917ms
+std_thread_sparse_mm:                0.09070ms
+dense_mm:                            0.00467ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.4], B=[ 1 x 1, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01900ms
+builtin_sparse_mm_extension:         0.03387ms
+parallel_structure_sparse_mm:        0.03632ms
+openmp_sparse_mm:                    0.04332ms
+openmp_mem_effi_sparse_mm:           0.03103ms
+std_thread_sparse_mm:                0.09604ms
+dense_mm:                            0.00461ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.4], B=[ 1 x 1, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01837ms
+builtin_sparse_mm_extension:         0.03502ms
+parallel_structure_sparse_mm:        0.03632ms
+openmp_sparse_mm:                    0.04758ms
+openmp_mem_effi_sparse_mm:           0.02989ms
+std_thread_sparse_mm:                0.08551ms
+dense_mm:                            0.00452ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.4], B=[ 1 x 1, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01855ms
+builtin_sparse_mm_extension:         0.03227ms
+parallel_structure_sparse_mm:        0.03383ms
+openmp_sparse_mm:                    0.05054ms
+openmp_mem_effi_sparse_mm:           0.03041ms
+std_thread_sparse_mm:                0.08700ms
+dense_mm:                            0.00453ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.4], B=[ 1 x 1, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01895ms
+builtin_sparse_mm_extension:         0.03276ms
+parallel_structure_sparse_mm:        0.03514ms
+openmp_sparse_mm:                    0.06373ms
+openmp_mem_effi_sparse_mm:           0.03304ms
+std_thread_sparse_mm:                0.09503ms
+dense_mm:                            0.00473ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.8], B=[ 1 x 1, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01988ms
+builtin_sparse_mm_extension:         0.03518ms
+parallel_structure_sparse_mm:        0.03762ms
+openmp_sparse_mm:                    0.04108ms
+openmp_mem_effi_sparse_mm:           0.02842ms
+std_thread_sparse_mm:                0.09165ms
+dense_mm:                            0.00472ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.8], B=[ 1 x 1, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01904ms
+builtin_sparse_mm_extension:         0.03371ms
+parallel_structure_sparse_mm:        0.03521ms
+openmp_sparse_mm:                    0.04198ms
+openmp_mem_effi_sparse_mm:           0.02976ms
+std_thread_sparse_mm:                0.09848ms
+dense_mm:                            0.00454ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.8], B=[ 1 x 1, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01865ms
+builtin_sparse_mm_extension:         0.03345ms
+parallel_structure_sparse_mm:        0.03475ms
+openmp_sparse_mm:                    0.04470ms
+openmp_mem_effi_sparse_mm:           0.02951ms
+std_thread_sparse_mm:                0.08431ms
+dense_mm:                            0.00447ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.8], B=[ 1 x 1, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01876ms
+builtin_sparse_mm_extension:         0.03288ms
+parallel_structure_sparse_mm:        0.03394ms
+openmp_sparse_mm:                    0.05185ms
+openmp_mem_effi_sparse_mm:           0.03056ms
+std_thread_sparse_mm:                0.08810ms
+dense_mm:                            0.00446ms
+--------------------------------------------------
+
+A=[ 1 x 1, 0.8], B=[ 1 x 1, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01963ms
+builtin_sparse_mm_extension:         0.03470ms
+parallel_structure_sparse_mm:        0.03594ms
+openmp_sparse_mm:                    0.06623ms
+openmp_mem_effi_sparse_mm:           0.03432ms
+std_thread_sparse_mm:                0.10032ms
+dense_mm:                            0.00461ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.1], B=[ 2 x 2, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01976ms
+builtin_sparse_mm_extension:         0.03397ms
+parallel_structure_sparse_mm:        0.03678ms
+openmp_sparse_mm:                    0.04088ms
+openmp_mem_effi_sparse_mm:           0.02881ms
+std_thread_sparse_mm:                0.09119ms
+dense_mm:                            0.00773ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.1], B=[ 2 x 2, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01875ms
+builtin_sparse_mm_extension:         0.03271ms
+parallel_structure_sparse_mm:        0.03494ms
+openmp_sparse_mm:                    0.04396ms
+openmp_mem_effi_sparse_mm:           0.03135ms
+std_thread_sparse_mm:                0.12900ms
+dense_mm:                            0.00515ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.1], B=[ 2 x 2, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01884ms
+builtin_sparse_mm_extension:         0.03209ms
+parallel_structure_sparse_mm:        0.03442ms
+openmp_sparse_mm:                    0.04736ms
+openmp_mem_effi_sparse_mm:           0.03030ms
+std_thread_sparse_mm:                0.12012ms
+dense_mm:                            0.00518ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.1], B=[ 2 x 2, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01890ms
+builtin_sparse_mm_extension:         0.03299ms
+parallel_structure_sparse_mm:        0.03399ms
+openmp_sparse_mm:                    0.05351ms
+openmp_mem_effi_sparse_mm:           0.03207ms
+std_thread_sparse_mm:                0.12375ms
+dense_mm:                            0.00522ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.1], B=[ 2 x 2, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01949ms
+builtin_sparse_mm_extension:         0.03372ms
+parallel_structure_sparse_mm:        0.03521ms
+openmp_sparse_mm:                    0.06375ms
+openmp_mem_effi_sparse_mm:           0.04177ms
+std_thread_sparse_mm:                0.13891ms
+dense_mm:                            0.00542ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.2], B=[ 2 x 2, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01937ms
+builtin_sparse_mm_extension:         0.03380ms
+parallel_structure_sparse_mm:        0.03570ms
+openmp_sparse_mm:                    0.04046ms
+openmp_mem_effi_sparse_mm:           0.02881ms
+std_thread_sparse_mm:                0.09329ms
+dense_mm:                            0.00528ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.2], B=[ 2 x 2, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01983ms
+builtin_sparse_mm_extension:         0.03462ms
+parallel_structure_sparse_mm:        0.03612ms
+openmp_sparse_mm:                    0.04326ms
+openmp_mem_effi_sparse_mm:           0.03098ms
+std_thread_sparse_mm:                0.12851ms
+dense_mm:                            0.00520ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.2], B=[ 2 x 2, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01840ms
+builtin_sparse_mm_extension:         0.03221ms
+parallel_structure_sparse_mm:        0.03462ms
+openmp_sparse_mm:                    0.04707ms
+openmp_mem_effi_sparse_mm:           0.03167ms
+std_thread_sparse_mm:                0.11882ms
+dense_mm:                            0.00509ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.2], B=[ 2 x 2, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01857ms
+builtin_sparse_mm_extension:         0.03296ms
+parallel_structure_sparse_mm:        0.03402ms
+openmp_sparse_mm:                    0.05807ms
+openmp_mem_effi_sparse_mm:           0.03148ms
+std_thread_sparse_mm:                0.12307ms
+dense_mm:                            0.00515ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.2], B=[ 2 x 2, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02046ms
+builtin_sparse_mm_extension:         0.03586ms
+parallel_structure_sparse_mm:        0.03668ms
+openmp_sparse_mm:                    0.06591ms
+openmp_mem_effi_sparse_mm:           0.03551ms
+std_thread_sparse_mm:                0.13733ms
+dense_mm:                            0.00552ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.4], B=[ 2 x 2, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01918ms
+builtin_sparse_mm_extension:         0.03384ms
+parallel_structure_sparse_mm:        0.03599ms
+openmp_sparse_mm:                    0.04150ms
+openmp_mem_effi_sparse_mm:           0.02918ms
+std_thread_sparse_mm:                0.09114ms
+dense_mm:                            0.00525ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.4], B=[ 2 x 2, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02102ms
+builtin_sparse_mm_extension:         0.03580ms
+parallel_structure_sparse_mm:        0.03788ms
+openmp_sparse_mm:                    0.04484ms
+openmp_mem_effi_sparse_mm:           0.03316ms
+std_thread_sparse_mm:                0.13182ms
+dense_mm:                            0.00564ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.4], B=[ 2 x 2, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01925ms
+builtin_sparse_mm_extension:         0.03234ms
+parallel_structure_sparse_mm:        0.03458ms
+openmp_sparse_mm:                    0.04707ms
+openmp_mem_effi_sparse_mm:           0.03209ms
+std_thread_sparse_mm:                0.11955ms
+dense_mm:                            0.00529ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.4], B=[ 2 x 2, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01955ms
+builtin_sparse_mm_extension:         0.03471ms
+parallel_structure_sparse_mm:        0.03485ms
+openmp_sparse_mm:                    0.05365ms
+openmp_mem_effi_sparse_mm:           0.03247ms
+std_thread_sparse_mm:                0.12323ms
+dense_mm:                            0.00538ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.4], B=[ 2 x 2, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02083ms
+builtin_sparse_mm_extension:         0.03508ms
+parallel_structure_sparse_mm:        0.03548ms
+openmp_sparse_mm:                    0.06478ms
+openmp_mem_effi_sparse_mm:           0.03449ms
+std_thread_sparse_mm:                0.13825ms
+dense_mm:                            0.00553ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.8], B=[ 2 x 2, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02048ms
+builtin_sparse_mm_extension:         0.03470ms
+parallel_structure_sparse_mm:        0.03707ms
+openmp_sparse_mm:                    0.04189ms
+openmp_mem_effi_sparse_mm:           0.02885ms
+std_thread_sparse_mm:                0.09240ms
+dense_mm:                            0.00545ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.8], B=[ 2 x 2, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02017ms
+builtin_sparse_mm_extension:         0.03488ms
+parallel_structure_sparse_mm:        0.03603ms
+openmp_sparse_mm:                    0.04659ms
+openmp_mem_effi_sparse_mm:           0.03226ms
+std_thread_sparse_mm:                0.13084ms
+dense_mm:                            0.00543ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.8], B=[ 2 x 2, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01962ms
+builtin_sparse_mm_extension:         0.03393ms
+parallel_structure_sparse_mm:        0.03514ms
+openmp_sparse_mm:                    0.04858ms
+openmp_mem_effi_sparse_mm:           0.03185ms
+std_thread_sparse_mm:                0.12148ms
+dense_mm:                            0.00535ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.8], B=[ 2 x 2, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02067ms
+builtin_sparse_mm_extension:         0.03507ms
+parallel_structure_sparse_mm:        0.03661ms
+openmp_sparse_mm:                    0.05537ms
+openmp_mem_effi_sparse_mm:           0.03339ms
+std_thread_sparse_mm:                0.12563ms
+dense_mm:                            0.00553ms
+--------------------------------------------------
+
+A=[ 2 x 2, 0.8], B=[ 2 x 2, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02051ms
+builtin_sparse_mm_extension:         0.03491ms
+parallel_structure_sparse_mm:        0.03686ms
+openmp_sparse_mm:                    0.06511ms
+openmp_mem_effi_sparse_mm:           0.03507ms
+std_thread_sparse_mm:                0.14006ms
+dense_mm:                            0.00562ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.1], B=[ 4 x 4, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02028ms
+builtin_sparse_mm_extension:         0.03524ms
+parallel_structure_sparse_mm:        0.03777ms
+openmp_sparse_mm:                    0.04160ms
+openmp_mem_effi_sparse_mm:           0.02902ms
+std_thread_sparse_mm:                0.09209ms
+dense_mm:                            0.00527ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.1], B=[ 4 x 4, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01942ms
+builtin_sparse_mm_extension:         0.03345ms
+parallel_structure_sparse_mm:        0.03543ms
+openmp_sparse_mm:                    0.04381ms
+openmp_mem_effi_sparse_mm:           0.03226ms
+std_thread_sparse_mm:                0.12802ms
+dense_mm:                            0.00531ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.1], B=[ 4 x 4, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01859ms
+builtin_sparse_mm_extension:         0.03311ms
+parallel_structure_sparse_mm:        0.03526ms
+openmp_sparse_mm:                    0.04647ms
+openmp_mem_effi_sparse_mm:           0.03140ms
+std_thread_sparse_mm:                0.16378ms
+dense_mm:                            0.00518ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.1], B=[ 4 x 4, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01967ms
+builtin_sparse_mm_extension:         0.03506ms
+parallel_structure_sparse_mm:        0.03462ms
+openmp_sparse_mm:                    0.04955ms
+openmp_mem_effi_sparse_mm:           0.03476ms
+std_thread_sparse_mm:                0.16574ms
+dense_mm:                            0.00540ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.1], B=[ 4 x 4, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02069ms
+builtin_sparse_mm_extension:         0.03497ms
+parallel_structure_sparse_mm:        0.03666ms
+openmp_sparse_mm:                    0.06430ms
+openmp_mem_effi_sparse_mm:           0.03669ms
+std_thread_sparse_mm:                0.19824ms
+dense_mm:                            0.00555ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.2], B=[ 4 x 4, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02051ms
+builtin_sparse_mm_extension:         0.03489ms
+parallel_structure_sparse_mm:        0.03648ms
+openmp_sparse_mm:                    0.04167ms
+openmp_mem_effi_sparse_mm:           0.02910ms
+std_thread_sparse_mm:                0.09409ms
+dense_mm:                            0.00524ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.2], B=[ 4 x 4, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01977ms
+builtin_sparse_mm_extension:         0.03357ms
+parallel_structure_sparse_mm:        0.03582ms
+openmp_sparse_mm:                    0.04432ms
+openmp_mem_effi_sparse_mm:           0.03288ms
+std_thread_sparse_mm:                0.13356ms
+dense_mm:                            0.00536ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.2], B=[ 4 x 4, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.01997ms
+builtin_sparse_mm_extension:         0.03447ms
+parallel_structure_sparse_mm:        0.03623ms
+openmp_sparse_mm:                    0.04981ms
+openmp_mem_effi_sparse_mm:           0.03390ms
+std_thread_sparse_mm:                0.16559ms
+dense_mm:                            0.00541ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.2], B=[ 4 x 4, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02003ms
+builtin_sparse_mm_extension:         0.03345ms
+parallel_structure_sparse_mm:        0.03459ms
+openmp_sparse_mm:                    0.05120ms
+openmp_mem_effi_sparse_mm:           0.03229ms
+std_thread_sparse_mm:                0.17142ms
+dense_mm:                            0.00539ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.2], B=[ 4 x 4, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02099ms
+builtin_sparse_mm_extension:         0.03606ms
+parallel_structure_sparse_mm:        0.03654ms
+openmp_sparse_mm:                    0.06621ms
+openmp_mem_effi_sparse_mm:           0.03686ms
+std_thread_sparse_mm:                0.19778ms
+dense_mm:                            0.00560ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.4], B=[ 4 x 4, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02035ms
+builtin_sparse_mm_extension:         0.03458ms
+parallel_structure_sparse_mm:        0.03631ms
+openmp_sparse_mm:                    0.04274ms
+openmp_mem_effi_sparse_mm:           0.02937ms
+std_thread_sparse_mm:                0.09202ms
+dense_mm:                            0.00523ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.4], B=[ 4 x 4, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02033ms
+builtin_sparse_mm_extension:         0.03528ms
+parallel_structure_sparse_mm:        0.03685ms
+openmp_sparse_mm:                    0.04559ms
+openmp_mem_effi_sparse_mm:           0.03354ms
+std_thread_sparse_mm:                0.13364ms
+dense_mm:                            0.00545ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.4], B=[ 4 x 4, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02508ms
+builtin_sparse_mm_extension:         0.04276ms
+parallel_structure_sparse_mm:        0.04494ms
+openmp_sparse_mm:                    0.05949ms
+openmp_mem_effi_sparse_mm:           0.04011ms
+std_thread_sparse_mm:                0.19577ms
+dense_mm:                            0.00622ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.4], B=[ 4 x 4, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02081ms
+builtin_sparse_mm_extension:         0.03504ms
+parallel_structure_sparse_mm:        0.03528ms
+openmp_sparse_mm:                    0.05616ms
+openmp_mem_effi_sparse_mm:           0.03437ms
+std_thread_sparse_mm:                0.16874ms
+dense_mm:                            0.00552ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.4], B=[ 4 x 4, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02124ms
+builtin_sparse_mm_extension:         0.03634ms
+parallel_structure_sparse_mm:        0.03684ms
+openmp_sparse_mm:                    0.06528ms
+openmp_mem_effi_sparse_mm:           0.04903ms
+std_thread_sparse_mm:                0.19853ms
+dense_mm:                            0.00569ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.8], B=[ 4 x 4, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02041ms
+builtin_sparse_mm_extension:         0.03602ms
+parallel_structure_sparse_mm:        0.03916ms
+openmp_sparse_mm:                    0.04180ms
+openmp_mem_effi_sparse_mm:           0.02913ms
+std_thread_sparse_mm:                0.09168ms
+dense_mm:                            0.00522ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.8], B=[ 4 x 4, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02051ms
+builtin_sparse_mm_extension:         0.03512ms
+parallel_structure_sparse_mm:        0.03576ms
+openmp_sparse_mm:                    0.04781ms
+openmp_mem_effi_sparse_mm:           0.03313ms
+std_thread_sparse_mm:                0.13493ms
+dense_mm:                            0.00539ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.8], B=[ 4 x 4, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02068ms
+builtin_sparse_mm_extension:         0.03502ms
+parallel_structure_sparse_mm:        0.03581ms
+openmp_sparse_mm:                    0.04900ms
+openmp_mem_effi_sparse_mm:           0.03287ms
+std_thread_sparse_mm:                0.16725ms
+dense_mm:                            0.00540ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.8], B=[ 4 x 4, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02058ms
+builtin_sparse_mm_extension:         0.03454ms
+parallel_structure_sparse_mm:        0.03517ms
+openmp_sparse_mm:                    0.05279ms
+openmp_mem_effi_sparse_mm:           0.03397ms
+std_thread_sparse_mm:                0.17488ms
+dense_mm:                            0.00558ms
+--------------------------------------------------
+
+A=[ 4 x 4, 0.8], B=[ 4 x 4, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02165ms
+builtin_sparse_mm_extension:         0.03699ms
+parallel_structure_sparse_mm:        0.03761ms
+openmp_sparse_mm:                    0.06552ms
+openmp_mem_effi_sparse_mm:           0.03725ms
+std_thread_sparse_mm:                0.19928ms
+dense_mm:                            0.00573ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.1], B=[ 8 x 8, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02069ms
+builtin_sparse_mm_extension:         0.03720ms
+parallel_structure_sparse_mm:        0.03759ms
+openmp_sparse_mm:                    0.04308ms
+openmp_mem_effi_sparse_mm:           0.02996ms
+std_thread_sparse_mm:                0.09164ms
+dense_mm:                            0.00532ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.1], B=[ 8 x 8, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02059ms
+builtin_sparse_mm_extension:         0.03522ms
+parallel_structure_sparse_mm:        0.03739ms
+openmp_sparse_mm:                    0.04796ms
+openmp_mem_effi_sparse_mm:           0.03572ms
+std_thread_sparse_mm:                0.13724ms
+dense_mm:                            0.00558ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.1], B=[ 8 x 8, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02024ms
+builtin_sparse_mm_extension:         0.03507ms
+parallel_structure_sparse_mm:        0.03584ms
+openmp_sparse_mm:                    0.04796ms
+openmp_mem_effi_sparse_mm:           0.03359ms
+std_thread_sparse_mm:                0.16820ms
+dense_mm:                            0.00554ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.1], B=[ 8 x 8, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02114ms
+builtin_sparse_mm_extension:         0.03518ms
+parallel_structure_sparse_mm:        0.03547ms
+openmp_sparse_mm:                    0.05325ms
+openmp_mem_effi_sparse_mm:           0.03734ms
+std_thread_sparse_mm:                0.39981ms
+dense_mm:                            0.00646ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.1], B=[ 8 x 8, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02585ms
+builtin_sparse_mm_extension:         0.04330ms
+parallel_structure_sparse_mm:        0.04566ms
+openmp_sparse_mm:                    0.07615ms
+openmp_mem_effi_sparse_mm:           0.04677ms
+std_thread_sparse_mm:                0.52482ms
+dense_mm:                            0.00736ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.2], B=[ 8 x 8, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02835ms
+builtin_sparse_mm_extension:         0.04982ms
+parallel_structure_sparse_mm:        0.05335ms
+openmp_sparse_mm:                    0.06010ms
+openmp_mem_effi_sparse_mm:           0.04279ms
+std_thread_sparse_mm:                0.13549ms
+dense_mm:                            0.00674ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.2], B=[ 8 x 8, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03293ms
+builtin_sparse_mm_extension:         0.06023ms
+parallel_structure_sparse_mm:        0.06505ms
+openmp_sparse_mm:                    0.07618ms
+openmp_mem_effi_sparse_mm:           0.05911ms
+std_thread_sparse_mm:                0.17515ms
+dense_mm:                            0.00757ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.2], B=[ 8 x 8, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03380ms
+builtin_sparse_mm_extension:         0.06022ms
+parallel_structure_sparse_mm:        0.06491ms
+openmp_sparse_mm:                    0.08283ms
+openmp_mem_effi_sparse_mm:           0.06853ms
+std_thread_sparse_mm:                0.23665ms
+dense_mm:                            0.00837ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.2], B=[ 8 x 8, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02509ms
+builtin_sparse_mm_extension:         0.04269ms
+parallel_structure_sparse_mm:        0.04299ms
+openmp_sparse_mm:                    0.06218ms
+openmp_mem_effi_sparse_mm:           0.04151ms
+std_thread_sparse_mm:                0.46482ms
+dense_mm:                            0.00673ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.2], B=[ 8 x 8, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02747ms
+builtin_sparse_mm_extension:         0.04452ms
+parallel_structure_sparse_mm:        0.04625ms
+openmp_sparse_mm:                    0.07586ms
+openmp_mem_effi_sparse_mm:           0.04848ms
+std_thread_sparse_mm:                0.50043ms
+dense_mm:                            0.00742ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.4], B=[ 8 x 8, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02555ms
+builtin_sparse_mm_extension:         0.04340ms
+parallel_structure_sparse_mm:        0.04691ms
+openmp_sparse_mm:                    0.05317ms
+openmp_mem_effi_sparse_mm:           0.03669ms
+std_thread_sparse_mm:                0.09873ms
+dense_mm:                            0.00595ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.4], B=[ 8 x 8, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02167ms
+builtin_sparse_mm_extension:         0.03737ms
+parallel_structure_sparse_mm:        0.03878ms
+openmp_sparse_mm:                    0.05059ms
+openmp_mem_effi_sparse_mm:           0.04308ms
+std_thread_sparse_mm:                0.13129ms
+dense_mm:                            0.00578ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.4], B=[ 8 x 8, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02326ms
+builtin_sparse_mm_extension:         0.03606ms
+parallel_structure_sparse_mm:        0.03732ms
+openmp_sparse_mm:                    0.05229ms
+openmp_mem_effi_sparse_mm:           0.03796ms
+std_thread_sparse_mm:                0.17369ms
+dense_mm:                            0.00564ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.4], B=[ 8 x 8, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02280ms
+builtin_sparse_mm_extension:         0.03718ms
+parallel_structure_sparse_mm:        0.03881ms
+openmp_sparse_mm:                    0.05700ms
+openmp_mem_effi_sparse_mm:           0.03865ms
+std_thread_sparse_mm:                0.43175ms
+dense_mm:                            0.00650ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.4], B=[ 8 x 8, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02674ms
+builtin_sparse_mm_extension:         0.04541ms
+parallel_structure_sparse_mm:        0.04428ms
+openmp_sparse_mm:                    0.07266ms
+openmp_mem_effi_sparse_mm:           0.04186ms
+std_thread_sparse_mm:                0.52043ms
+dense_mm:                            0.00734ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.8], B=[ 8 x 8, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02413ms
+builtin_sparse_mm_extension:         0.03831ms
+parallel_structure_sparse_mm:        0.04023ms
+openmp_sparse_mm:                    0.05571ms
+openmp_mem_effi_sparse_mm:           0.03185ms
+std_thread_sparse_mm:                0.09461ms
+dense_mm:                            0.00564ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.8], B=[ 8 x 8, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02277ms
+builtin_sparse_mm_extension:         0.03728ms
+parallel_structure_sparse_mm:        0.03857ms
+openmp_sparse_mm:                    0.05189ms
+openmp_mem_effi_sparse_mm:           0.03899ms
+std_thread_sparse_mm:                0.14043ms
+dense_mm:                            0.00589ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.8], B=[ 8 x 8, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02323ms
+builtin_sparse_mm_extension:         0.03749ms
+parallel_structure_sparse_mm:        0.03856ms
+openmp_sparse_mm:                    0.05429ms
+openmp_mem_effi_sparse_mm:           0.03868ms
+std_thread_sparse_mm:                0.17772ms
+dense_mm:                            0.00604ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.8], B=[ 8 x 8, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02442ms
+builtin_sparse_mm_extension:         0.03898ms
+parallel_structure_sparse_mm:        0.03961ms
+openmp_sparse_mm:                    0.05884ms
+openmp_mem_effi_sparse_mm:           0.04007ms
+std_thread_sparse_mm:                0.41027ms
+dense_mm:                            0.00672ms
+--------------------------------------------------
+
+A=[ 8 x 8, 0.8], B=[ 8 x 8, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02616ms
+builtin_sparse_mm_extension:         0.04051ms
+parallel_structure_sparse_mm:        0.04209ms
+openmp_sparse_mm:                    0.07738ms
+openmp_mem_effi_sparse_mm:           0.04285ms
+std_thread_sparse_mm:                0.51862ms
+dense_mm:                            0.00718ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.1], B=[ 16 x 16, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02309ms
+builtin_sparse_mm_extension:         0.03930ms
+parallel_structure_sparse_mm:        0.04170ms
+openmp_sparse_mm:                    0.04694ms
+openmp_mem_effi_sparse_mm:           0.03227ms
+std_thread_sparse_mm:                0.10626ms
+dense_mm:                            0.00799ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.1], B=[ 16 x 16, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02284ms
+builtin_sparse_mm_extension:         0.03772ms
+parallel_structure_sparse_mm:        0.04083ms
+openmp_sparse_mm:                    0.05113ms
+openmp_mem_effi_sparse_mm:           0.04178ms
+std_thread_sparse_mm:                0.14055ms
+dense_mm:                            0.00740ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.1], B=[ 16 x 16, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02290ms
+builtin_sparse_mm_extension:         0.03826ms
+parallel_structure_sparse_mm:        0.04226ms
+openmp_sparse_mm:                    0.05573ms
+openmp_mem_effi_sparse_mm:           0.03947ms
+std_thread_sparse_mm:                0.17414ms
+dense_mm:                            0.00697ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.1], B=[ 16 x 16, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02407ms
+builtin_sparse_mm_extension:         0.03938ms
+parallel_structure_sparse_mm:        0.04151ms
+openmp_sparse_mm:                    0.05875ms
+openmp_mem_effi_sparse_mm:           0.04179ms
+std_thread_sparse_mm:                0.47764ms
+dense_mm:                            0.00792ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.1], B=[ 16 x 16, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02797ms
+builtin_sparse_mm_extension:         0.04626ms
+parallel_structure_sparse_mm:        0.04868ms
+openmp_sparse_mm:                    0.08129ms
+openmp_mem_effi_sparse_mm:           0.05269ms
+std_thread_sparse_mm:                1.07450ms
+dense_mm:                            0.00834ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.2], B=[ 16 x 16, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02748ms
+builtin_sparse_mm_extension:         0.04716ms
+parallel_structure_sparse_mm:        0.04905ms
+openmp_sparse_mm:                    0.05458ms
+openmp_mem_effi_sparse_mm:           0.03927ms
+std_thread_sparse_mm:                0.10295ms
+dense_mm:                            0.00672ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.2], B=[ 16 x 16, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02325ms
+builtin_sparse_mm_extension:         0.03813ms
+parallel_structure_sparse_mm:        0.04097ms
+openmp_sparse_mm:                    0.05236ms
+openmp_mem_effi_sparse_mm:           0.04315ms
+std_thread_sparse_mm:                0.12794ms
+dense_mm:                            0.00647ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.2], B=[ 16 x 16, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02256ms
+builtin_sparse_mm_extension:         0.03779ms
+parallel_structure_sparse_mm:        0.03952ms
+openmp_sparse_mm:                    0.05376ms
+openmp_mem_effi_sparse_mm:           0.04022ms
+std_thread_sparse_mm:                0.16831ms
+dense_mm:                            0.00638ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.2], B=[ 16 x 16, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02443ms
+builtin_sparse_mm_extension:         0.03915ms
+parallel_structure_sparse_mm:        0.04108ms
+openmp_sparse_mm:                    0.05840ms
+openmp_mem_effi_sparse_mm:           0.04255ms
+std_thread_sparse_mm:                0.46894ms
+dense_mm:                            0.00727ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.2], B=[ 16 x 16, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03029ms
+builtin_sparse_mm_extension:         0.04956ms
+parallel_structure_sparse_mm:        0.05179ms
+openmp_sparse_mm:                    0.08607ms
+openmp_mem_effi_sparse_mm:           0.09441ms
+std_thread_sparse_mm:                1.15628ms
+dense_mm:                            0.00850ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.4], B=[ 16 x 16, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03080ms
+builtin_sparse_mm_extension:         0.05045ms
+parallel_structure_sparse_mm:        0.05148ms
+openmp_sparse_mm:                    0.05742ms
+openmp_mem_effi_sparse_mm:           0.04134ms
+std_thread_sparse_mm:                0.10345ms
+dense_mm:                            0.00672ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.4], B=[ 16 x 16, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02604ms
+builtin_sparse_mm_extension:         0.04078ms
+parallel_structure_sparse_mm:        0.04330ms
+openmp_sparse_mm:                    0.05502ms
+openmp_mem_effi_sparse_mm:           0.04430ms
+std_thread_sparse_mm:                0.12448ms
+dense_mm:                            0.00648ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.4], B=[ 16 x 16, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02610ms
+builtin_sparse_mm_extension:         0.04005ms
+parallel_structure_sparse_mm:        0.04151ms
+openmp_sparse_mm:                    0.07260ms
+openmp_mem_effi_sparse_mm:           0.04188ms
+std_thread_sparse_mm:                0.16971ms
+dense_mm:                            0.00637ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.4], B=[ 16 x 16, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02697ms
+builtin_sparse_mm_extension:         0.04347ms
+parallel_structure_sparse_mm:        0.04303ms
+openmp_sparse_mm:                    0.06209ms
+openmp_mem_effi_sparse_mm:           0.04405ms
+std_thread_sparse_mm:                0.38128ms
+dense_mm:                            0.00730ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.4], B=[ 16 x 16, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03361ms
+builtin_sparse_mm_extension:         0.05273ms
+parallel_structure_sparse_mm:        0.05418ms
+openmp_sparse_mm:                    0.08657ms
+openmp_mem_effi_sparse_mm:           0.05718ms
+std_thread_sparse_mm:                1.32229ms
+dense_mm:                            0.00859ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.8], B=[ 16 x 16, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03687ms
+builtin_sparse_mm_extension:         0.05626ms
+parallel_structure_sparse_mm:        0.06062ms
+openmp_sparse_mm:                    0.06323ms
+openmp_mem_effi_sparse_mm:           0.04653ms
+std_thread_sparse_mm:                0.13650ms
+dense_mm:                            0.00709ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.8], B=[ 16 x 16, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02863ms
+builtin_sparse_mm_extension:         0.04485ms
+parallel_structure_sparse_mm:        0.04638ms
+openmp_sparse_mm:                    0.05940ms
+openmp_mem_effi_sparse_mm:           0.04651ms
+std_thread_sparse_mm:                0.13753ms
+dense_mm:                            0.00648ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.8], B=[ 16 x 16, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02892ms
+builtin_sparse_mm_extension:         0.04347ms
+parallel_structure_sparse_mm:        0.04560ms
+openmp_sparse_mm:                    0.05568ms
+openmp_mem_effi_sparse_mm:           0.04291ms
+std_thread_sparse_mm:                0.17084ms
+dense_mm:                            0.00655ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.8], B=[ 16 x 16, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02999ms
+builtin_sparse_mm_extension:         0.04441ms
+parallel_structure_sparse_mm:        0.04573ms
+openmp_sparse_mm:                    0.07407ms
+openmp_mem_effi_sparse_mm:           0.04588ms
+std_thread_sparse_mm:                0.41966ms
+dense_mm:                            0.00740ms
+--------------------------------------------------
+
+A=[ 16 x 16, 0.8], B=[ 16 x 16, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03783ms
+builtin_sparse_mm_extension:         0.05616ms
+parallel_structure_sparse_mm:        0.05840ms
+openmp_sparse_mm:                    0.08636ms
+openmp_mem_effi_sparse_mm:           0.05856ms
+std_thread_sparse_mm:                1.19120ms
+dense_mm:                            0.00846ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.1], B=[ 32 x 32, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03331ms
+builtin_sparse_mm_extension:         0.05275ms
+parallel_structure_sparse_mm:        0.06076ms
+openmp_sparse_mm:                    0.06333ms
+openmp_mem_effi_sparse_mm:           0.04307ms
+std_thread_sparse_mm:                0.14222ms
+dense_mm:                            0.00947ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.1], B=[ 32 x 32, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02799ms
+builtin_sparse_mm_extension:         0.04355ms
+parallel_structure_sparse_mm:        0.04892ms
+openmp_sparse_mm:                    0.06304ms
+openmp_mem_effi_sparse_mm:           0.05254ms
+std_thread_sparse_mm:                0.14826ms
+dense_mm:                            0.01389ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.1], B=[ 32 x 32, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02847ms
+builtin_sparse_mm_extension:         0.04182ms
+parallel_structure_sparse_mm:        0.04788ms
+openmp_sparse_mm:                    0.06096ms
+openmp_mem_effi_sparse_mm:           0.04906ms
+std_thread_sparse_mm:                0.19511ms
+dense_mm:                            0.01265ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.1], B=[ 32 x 32, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.02911ms
+builtin_sparse_mm_extension:         0.04337ms
+parallel_structure_sparse_mm:        0.04656ms
+openmp_sparse_mm:                    0.06571ms
+openmp_mem_effi_sparse_mm:           0.05228ms
+std_thread_sparse_mm:                0.40948ms
+dense_mm:                            0.01343ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.1], B=[ 32 x 32, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03635ms
+builtin_sparse_mm_extension:         0.05332ms
+parallel_structure_sparse_mm:        0.06239ms
+openmp_sparse_mm:                    0.08971ms
+openmp_mem_effi_sparse_mm:           0.06468ms
+std_thread_sparse_mm:                1.17109ms
+dense_mm:                            0.01710ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.2], B=[ 32 x 32, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.04328ms
+builtin_sparse_mm_extension:         0.06378ms
+parallel_structure_sparse_mm:        0.06935ms
+openmp_sparse_mm:                    0.07400ms
+openmp_mem_effi_sparse_mm:           0.05265ms
+std_thread_sparse_mm:                0.15470ms
+dense_mm:                            0.00813ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.2], B=[ 32 x 32, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.03697ms
+builtin_sparse_mm_extension:         0.05149ms
+parallel_structure_sparse_mm:        0.05634ms
+openmp_sparse_mm:                    0.06676ms
+openmp_mem_effi_sparse_mm:           0.06034ms
+std_thread_sparse_mm:                0.15231ms
+dense_mm:                            0.01104ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.2], B=[ 32 x 32, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.04013ms
+builtin_sparse_mm_extension:         0.05312ms
+parallel_structure_sparse_mm:        0.05603ms
+openmp_sparse_mm:                    0.06637ms
+openmp_mem_effi_sparse_mm:           0.07524ms
+std_thread_sparse_mm:                0.18827ms
+dense_mm:                            0.01245ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.2], B=[ 32 x 32, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.04433ms
+builtin_sparse_mm_extension:         0.05669ms
+parallel_structure_sparse_mm:        0.07656ms
+openmp_sparse_mm:                    0.07405ms
+openmp_mem_effi_sparse_mm:           0.06145ms
+std_thread_sparse_mm:                0.43826ms
+dense_mm:                            0.01340ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.2], B=[ 32 x 32, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.05095ms
+builtin_sparse_mm_extension:         0.06853ms
+parallel_structure_sparse_mm:        0.07357ms
+openmp_sparse_mm:                    0.09796ms
+openmp_mem_effi_sparse_mm:           0.07365ms
+std_thread_sparse_mm:                1.16520ms
+dense_mm:                            0.01711ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.4], B=[ 32 x 32, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06121ms
+builtin_sparse_mm_extension:         0.07747ms
+parallel_structure_sparse_mm:        0.08205ms
+openmp_sparse_mm:                    0.08672ms
+openmp_mem_effi_sparse_mm:           0.06783ms
+std_thread_sparse_mm:                0.16779ms
+dense_mm:                            0.00810ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.4], B=[ 32 x 32, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.05100ms
+builtin_sparse_mm_extension:         0.06440ms
+parallel_structure_sparse_mm:        0.06881ms
+openmp_sparse_mm:                    0.07456ms
+openmp_mem_effi_sparse_mm:           0.06708ms
+std_thread_sparse_mm:                0.16615ms
+dense_mm:                            0.01098ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.4], B=[ 32 x 32, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06015ms
+builtin_sparse_mm_extension:         0.07318ms
+parallel_structure_sparse_mm:        0.07703ms
+openmp_sparse_mm:                    0.07113ms
+openmp_mem_effi_sparse_mm:           0.06532ms
+std_thread_sparse_mm:                0.20221ms
+dense_mm:                            0.01204ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.4], B=[ 32 x 32, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.05588ms
+builtin_sparse_mm_extension:         0.06989ms
+parallel_structure_sparse_mm:        0.07068ms
+openmp_sparse_mm:                    0.08454ms
+openmp_mem_effi_sparse_mm:           0.06595ms
+std_thread_sparse_mm:                0.43372ms
+dense_mm:                            0.01295ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.4], B=[ 32 x 32, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06935ms
+builtin_sparse_mm_extension:         0.08401ms
+parallel_structure_sparse_mm:        0.09252ms
+openmp_sparse_mm:                    0.11836ms
+openmp_mem_effi_sparse_mm:           0.07973ms
+std_thread_sparse_mm:                1.16746ms
+dense_mm:                            0.01738ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.8], B=[ 32 x 32, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.08835ms
+builtin_sparse_mm_extension:         0.09709ms
+parallel_structure_sparse_mm:        0.10489ms
+openmp_sparse_mm:                    0.10741ms
+openmp_mem_effi_sparse_mm:           0.09103ms
+std_thread_sparse_mm:                0.18893ms
+dense_mm:                            0.00797ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.8], B=[ 32 x 32, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06376ms
+builtin_sparse_mm_extension:         0.07643ms
+parallel_structure_sparse_mm:        0.08189ms
+openmp_sparse_mm:                    0.08756ms
+openmp_mem_effi_sparse_mm:           0.07044ms
+std_thread_sparse_mm:                0.17259ms
+dense_mm:                            0.01119ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.8], B=[ 32 x 32, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06648ms
+builtin_sparse_mm_extension:         0.07639ms
+parallel_structure_sparse_mm:        0.08112ms
+openmp_sparse_mm:                    0.07749ms
+openmp_mem_effi_sparse_mm:           0.06528ms
+std_thread_sparse_mm:                0.20294ms
+dense_mm:                            0.01163ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.8], B=[ 32 x 32, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.06823ms
+builtin_sparse_mm_extension:         0.07970ms
+parallel_structure_sparse_mm:        0.08336ms
+openmp_sparse_mm:                    0.07483ms
+openmp_mem_effi_sparse_mm:           0.06475ms
+std_thread_sparse_mm:                0.41581ms
+dense_mm:                            0.01343ms
+--------------------------------------------------
+
+A=[ 32 x 32, 0.8], B=[ 32 x 32, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.09393ms
+builtin_sparse_mm_extension:         0.10494ms
+parallel_structure_sparse_mm:        0.11186ms
+openmp_sparse_mm:                    0.10108ms
+openmp_mem_effi_sparse_mm:           0.07918ms
+std_thread_sparse_mm:                1.16648ms
+dense_mm:                            0.01716ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.1], B=[ 64 x 64, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.07858ms
+builtin_sparse_mm_extension:         0.09680ms
+parallel_structure_sparse_mm:        0.10679ms
+openmp_sparse_mm:                    0.10905ms
+openmp_mem_effi_sparse_mm:           0.08264ms
+std_thread_sparse_mm:                0.19479ms
+dense_mm:                            0.01411ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.1], B=[ 64 x 64, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.07739ms
+builtin_sparse_mm_extension:         0.08291ms
+parallel_structure_sparse_mm:        0.09670ms
+openmp_sparse_mm:                    0.09863ms
+openmp_mem_effi_sparse_mm:           0.09923ms
+std_thread_sparse_mm:                0.18670ms
+dense_mm:                            0.01882ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.1], B=[ 64 x 64, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.07133ms
+builtin_sparse_mm_extension:         0.07896ms
+parallel_structure_sparse_mm:        0.08821ms
+openmp_sparse_mm:                    0.08543ms
+openmp_mem_effi_sparse_mm:           0.09310ms
+std_thread_sparse_mm:                0.20244ms
+dense_mm:                            0.01738ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.1], B=[ 64 x 64, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.07893ms
+builtin_sparse_mm_extension:         0.08533ms
+parallel_structure_sparse_mm:        0.09074ms
+openmp_sparse_mm:                    0.08649ms
+openmp_mem_effi_sparse_mm:           0.09344ms
+std_thread_sparse_mm:                0.43778ms
+dense_mm:                            0.01545ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.1], B=[ 64 x 64, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.08190ms
+builtin_sparse_mm_extension:         0.09246ms
+parallel_structure_sparse_mm:        0.09824ms
+openmp_sparse_mm:                    0.11000ms
+openmp_mem_effi_sparse_mm:           0.09799ms
+std_thread_sparse_mm:                1.19641ms
+dense_mm:                            0.01736ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.2], B=[ 64 x 64, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.15711ms
+builtin_sparse_mm_extension:         0.17555ms
+parallel_structure_sparse_mm:        0.17989ms
+openmp_sparse_mm:                    0.19276ms
+openmp_mem_effi_sparse_mm:           0.16950ms
+std_thread_sparse_mm:                0.24730ms
+dense_mm:                            0.01169ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.2], B=[ 64 x 64, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.15575ms
+builtin_sparse_mm_extension:         0.16970ms
+parallel_structure_sparse_mm:        0.17991ms
+openmp_sparse_mm:                    0.14484ms
+openmp_mem_effi_sparse_mm:           0.15189ms
+std_thread_sparse_mm:                0.21565ms
+dense_mm:                            0.01606ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.2], B=[ 64 x 64, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.15758ms
+builtin_sparse_mm_extension:         0.16900ms
+parallel_structure_sparse_mm:        0.18583ms
+openmp_sparse_mm:                    0.11136ms
+openmp_mem_effi_sparse_mm:           0.13332ms
+std_thread_sparse_mm:                0.22407ms
+dense_mm:                            0.01587ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.2], B=[ 64 x 64, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.17977ms
+builtin_sparse_mm_extension:         0.17540ms
+parallel_structure_sparse_mm:        0.18253ms
+openmp_sparse_mm:                    0.09842ms
+openmp_mem_effi_sparse_mm:           0.12963ms
+std_thread_sparse_mm:                0.45547ms
+dense_mm:                            0.01553ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.2], B=[ 64 x 64, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.17689ms
+builtin_sparse_mm_extension:         0.18910ms
+parallel_structure_sparse_mm:        0.18816ms
+openmp_sparse_mm:                    0.12067ms
+openmp_mem_effi_sparse_mm:           0.13339ms
+std_thread_sparse_mm:                1.18045ms
+dense_mm:                            0.01743ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.4], B=[ 64 x 64, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.18554ms
+builtin_sparse_mm_extension:         0.21046ms
+parallel_structure_sparse_mm:        0.20790ms
+openmp_sparse_mm:                    0.23296ms
+openmp_mem_effi_sparse_mm:           0.20675ms
+std_thread_sparse_mm:                0.28871ms
+dense_mm:                            0.01180ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.4], B=[ 64 x 64, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.19033ms
+builtin_sparse_mm_extension:         0.20338ms
+parallel_structure_sparse_mm:        0.21551ms
+openmp_sparse_mm:                    0.17323ms
+openmp_mem_effi_sparse_mm:           0.16572ms
+std_thread_sparse_mm:                0.25377ms
+dense_mm:                            0.01631ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.4], B=[ 64 x 64, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.19784ms
+builtin_sparse_mm_extension:         0.19962ms
+parallel_structure_sparse_mm:        0.20917ms
+openmp_sparse_mm:                    0.12643ms
+openmp_mem_effi_sparse_mm:           0.14435ms
+std_thread_sparse_mm:                0.24145ms
+dense_mm:                            0.01570ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.4], B=[ 64 x 64, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.22230ms
+builtin_sparse_mm_extension:         0.21457ms
+parallel_structure_sparse_mm:        0.21009ms
+openmp_sparse_mm:                    0.10709ms
+openmp_mem_effi_sparse_mm:           0.13981ms
+std_thread_sparse_mm:                0.47070ms
+dense_mm:                            0.01513ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.4], B=[ 64 x 64, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.21016ms
+builtin_sparse_mm_extension:         0.21435ms
+parallel_structure_sparse_mm:        0.22091ms
+openmp_sparse_mm:                    0.12012ms
+openmp_mem_effi_sparse_mm:           0.14156ms
+std_thread_sparse_mm:                1.17277ms
+dense_mm:                            0.01723ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.8], B=[ 64 x 64, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.27775ms
+builtin_sparse_mm_extension:         0.28822ms
+parallel_structure_sparse_mm:        0.30219ms
+openmp_sparse_mm:                    0.35576ms
+openmp_mem_effi_sparse_mm:           0.33227ms
+std_thread_sparse_mm:                0.44237ms
+dense_mm:                            0.01142ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.8], B=[ 64 x 64, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.28073ms
+builtin_sparse_mm_extension:         0.29285ms
+parallel_structure_sparse_mm:        0.29978ms
+openmp_sparse_mm:                    0.24690ms
+openmp_mem_effi_sparse_mm:           0.22116ms
+std_thread_sparse_mm:                0.33594ms
+dense_mm:                            0.01550ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.8], B=[ 64 x 64, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.29244ms
+builtin_sparse_mm_extension:         0.29084ms
+parallel_structure_sparse_mm:        0.30190ms
+openmp_sparse_mm:                    0.18375ms
+openmp_mem_effi_sparse_mm:           0.14496ms
+std_thread_sparse_mm:                0.29328ms
+dense_mm:                            0.01538ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.8], B=[ 64 x 64, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.29001ms
+builtin_sparse_mm_extension:         0.29570ms
+parallel_structure_sparse_mm:        0.30263ms
+openmp_sparse_mm:                    0.13913ms
+openmp_mem_effi_sparse_mm:           0.13817ms
+std_thread_sparse_mm:                0.50444ms
+dense_mm:                            0.01580ms
+--------------------------------------------------
+
+A=[ 64 x 64, 0.8], B=[ 64 x 64, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.30227ms
+builtin_sparse_mm_extension:         0.30187ms
+parallel_structure_sparse_mm:        0.30776ms
+openmp_sparse_mm:                    0.13725ms
+openmp_mem_effi_sparse_mm:           0.14431ms
+std_thread_sparse_mm:                1.18666ms
+dense_mm:                            0.01677ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.1], B=[ 128 x 128, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.42627ms
+builtin_sparse_mm_extension:         0.46343ms
+parallel_structure_sparse_mm:        0.45304ms
+openmp_sparse_mm:                    0.48490ms
+openmp_mem_effi_sparse_mm:           0.44266ms
+std_thread_sparse_mm:                0.62765ms
+dense_mm:                            0.04148ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.1], B=[ 128 x 128, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.41812ms
+builtin_sparse_mm_extension:         0.45140ms
+parallel_structure_sparse_mm:        0.45194ms
+openmp_sparse_mm:                    0.31301ms
+openmp_mem_effi_sparse_mm:           0.41572ms
+std_thread_sparse_mm:                0.41158ms
+dense_mm:                            0.04662ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.1], B=[ 128 x 128, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.41658ms
+builtin_sparse_mm_extension:         0.46650ms
+parallel_structure_sparse_mm:        0.45844ms
+openmp_sparse_mm:                    0.19994ms
+openmp_mem_effi_sparse_mm:           0.38300ms
+std_thread_sparse_mm:                0.32294ms
+dense_mm:                            0.04394ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.1], B=[ 128 x 128, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.46180ms
+builtin_sparse_mm_extension:         0.45839ms
+parallel_structure_sparse_mm:        0.46304ms
+openmp_sparse_mm:                    0.15322ms
+openmp_mem_effi_sparse_mm:           0.31761ms
+std_thread_sparse_mm:                0.50980ms
+dense_mm:                            0.02849ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.1], B=[ 128 x 128, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.43271ms
+builtin_sparse_mm_extension:         0.44565ms
+parallel_structure_sparse_mm:        0.46139ms
+openmp_sparse_mm:                    0.14921ms
+openmp_mem_effi_sparse_mm:           0.31481ms
+std_thread_sparse_mm:                1.22895ms
+dense_mm:                            0.03101ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.2], B=[ 128 x 128, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.66189ms
+builtin_sparse_mm_extension:         0.68233ms
+parallel_structure_sparse_mm:        0.70783ms
+openmp_sparse_mm:                    0.75652ms
+openmp_mem_effi_sparse_mm:           0.71190ms
+std_thread_sparse_mm:                0.91111ms
+dense_mm:                            0.04163ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.2], B=[ 128 x 128, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.67222ms
+builtin_sparse_mm_extension:         0.68443ms
+parallel_structure_sparse_mm:        0.69022ms
+openmp_sparse_mm:                    0.45969ms
+openmp_mem_effi_sparse_mm:           0.57207ms
+std_thread_sparse_mm:                0.56134ms
+dense_mm:                            0.03903ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.2], B=[ 128 x 128, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.68326ms
+builtin_sparse_mm_extension:         0.68560ms
+parallel_structure_sparse_mm:        0.69460ms
+openmp_sparse_mm:                    0.28496ms
+openmp_mem_effi_sparse_mm:           0.54953ms
+std_thread_sparse_mm:                0.40874ms
+dense_mm:                            0.03875ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.2], B=[ 128 x 128, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.68033ms
+builtin_sparse_mm_extension:         0.67689ms
+parallel_structure_sparse_mm:        0.69365ms
+openmp_sparse_mm:                    0.19289ms
+openmp_mem_effi_sparse_mm:           0.47027ms
+std_thread_sparse_mm:                0.56348ms
+dense_mm:                            0.02917ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.2], B=[ 128 x 128, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.75935ms
+builtin_sparse_mm_extension:         0.72916ms
+parallel_structure_sparse_mm:        0.75422ms
+openmp_sparse_mm:                    0.19761ms
+openmp_mem_effi_sparse_mm:           0.43849ms
+std_thread_sparse_mm:                1.35038ms
+dense_mm:                            0.03246ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.4], B=[ 128 x 128, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   1.06150ms
+builtin_sparse_mm_extension:         0.99438ms
+parallel_structure_sparse_mm:        0.96376ms
+openmp_sparse_mm:                    1.06377ms
+openmp_mem_effi_sparse_mm:           1.04850ms
+std_thread_sparse_mm:                1.30261ms
+dense_mm:                            0.04313ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.4], B=[ 128 x 128, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.95091ms
+builtin_sparse_mm_extension:         0.92722ms
+parallel_structure_sparse_mm:        0.91780ms
+openmp_sparse_mm:                    0.66025ms
+openmp_mem_effi_sparse_mm:           0.63707ms
+std_thread_sparse_mm:                0.77303ms
+dense_mm:                            0.03442ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.4], B=[ 128 x 128, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.97590ms
+builtin_sparse_mm_extension:         0.92854ms
+parallel_structure_sparse_mm:        0.90933ms
+openmp_sparse_mm:                    0.39348ms
+openmp_mem_effi_sparse_mm:           0.53232ms
+std_thread_sparse_mm:                0.52741ms
+dense_mm:                            0.03588ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.4], B=[ 128 x 128, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.98558ms
+builtin_sparse_mm_extension:         0.92536ms
+parallel_structure_sparse_mm:        0.91875ms
+openmp_sparse_mm:                    0.25521ms
+openmp_mem_effi_sparse_mm:           0.43383ms
+std_thread_sparse_mm:                0.62263ms
+dense_mm:                            0.02729ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.4], B=[ 128 x 128, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   0.94230ms
+builtin_sparse_mm_extension:         0.94200ms
+parallel_structure_sparse_mm:        0.93866ms
+openmp_sparse_mm:                    0.23356ms
+openmp_mem_effi_sparse_mm:           0.43243ms
+std_thread_sparse_mm:                1.32761ms
+dense_mm:                            0.03372ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.8], B=[ 128 x 128, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.12858ms
+builtin_sparse_mm_extension:         1.79621ms
+parallel_structure_sparse_mm:        1.84164ms
+openmp_sparse_mm:                    2.20596ms
+openmp_mem_effi_sparse_mm:           2.17742ms
+std_thread_sparse_mm:                2.45301ms
+dense_mm:                            0.07306ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.8], B=[ 128 x 128, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.08291ms
+builtin_sparse_mm_extension:         1.77770ms
+parallel_structure_sparse_mm:        1.82124ms
+openmp_sparse_mm:                    1.53442ms
+openmp_mem_effi_sparse_mm:           1.23047ms
+std_thread_sparse_mm:                1.48066ms
+dense_mm:                            0.03702ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.8], B=[ 128 x 128, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.07338ms
+builtin_sparse_mm_extension:         1.78535ms
+parallel_structure_sparse_mm:        1.83153ms
+openmp_sparse_mm:                    0.96825ms
+openmp_mem_effi_sparse_mm:           0.76812ms
+std_thread_sparse_mm:                0.99292ms
+dense_mm:                            0.03811ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.8], B=[ 128 x 128, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   1.99108ms
+builtin_sparse_mm_extension:         1.77070ms
+parallel_structure_sparse_mm:        1.80449ms
+openmp_sparse_mm:                    0.53916ms
+openmp_mem_effi_sparse_mm:           0.49613ms
+std_thread_sparse_mm:                0.86612ms
+dense_mm:                            0.03004ms
+--------------------------------------------------
+
+A=[ 128 x 128, 0.8], B=[ 128 x 128, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   1.83257ms
+builtin_sparse_mm_extension:         1.79103ms
+parallel_structure_sparse_mm:        1.86781ms
+openmp_sparse_mm:                    0.38528ms
+openmp_mem_effi_sparse_mm:           0.46763ms
+std_thread_sparse_mm:                1.38783ms
+dense_mm:                            0.03289ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.1], B=[ 256 x 256, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.38960ms
+builtin_sparse_mm_extension:         2.40067ms
+parallel_structure_sparse_mm:        2.40774ms
+openmp_sparse_mm:                    2.55300ms
+openmp_mem_effi_sparse_mm:           2.48383ms
+std_thread_sparse_mm:                2.80547ms
+dense_mm:                            0.47064ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.1], B=[ 256 x 256, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.47741ms
+builtin_sparse_mm_extension:         2.36823ms
+parallel_structure_sparse_mm:        2.37433ms
+openmp_sparse_mm:                    1.66105ms
+openmp_mem_effi_sparse_mm:           1.99505ms
+std_thread_sparse_mm:                1.81747ms
+dense_mm:                            0.24872ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.1], B=[ 256 x 256, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.37564ms
+builtin_sparse_mm_extension:         2.38429ms
+parallel_structure_sparse_mm:        2.40628ms
+openmp_sparse_mm:                    0.99839ms
+openmp_mem_effi_sparse_mm:           1.90526ms
+std_thread_sparse_mm:                1.04861ms
+dense_mm:                            0.20246ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.1], B=[ 256 x 256, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.43749ms
+builtin_sparse_mm_extension:         2.41029ms
+parallel_structure_sparse_mm:        2.52275ms
+openmp_sparse_mm:                    0.55628ms
+openmp_mem_effi_sparse_mm:           1.92839ms
+std_thread_sparse_mm:                0.90663ms
+dense_mm:                            0.10054ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.1], B=[ 256 x 256, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   2.49029ms
+builtin_sparse_mm_extension:         2.38706ms
+parallel_structure_sparse_mm:        2.38243ms
+openmp_sparse_mm:                    0.40946ms
+openmp_mem_effi_sparse_mm:           1.93813ms
+std_thread_sparse_mm:                1.40133ms
+dense_mm:                            0.09536ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.2], B=[ 256 x 256, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   3.09066ms
+builtin_sparse_mm_extension:         3.02749ms
+parallel_structure_sparse_mm:        3.06992ms
+openmp_sparse_mm:                    3.39052ms
+openmp_mem_effi_sparse_mm:           3.32434ms
+std_thread_sparse_mm:                3.57095ms
+dense_mm:                            0.47988ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.2], B=[ 256 x 256, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   3.21298ms
+builtin_sparse_mm_extension:         3.13436ms
+parallel_structure_sparse_mm:        3.03037ms
+openmp_sparse_mm:                    2.16221ms
+openmp_mem_effi_sparse_mm:           2.20142ms
+std_thread_sparse_mm:                2.28269ms
+dense_mm:                            0.27812ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.2], B=[ 256 x 256, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   3.29747ms
+builtin_sparse_mm_extension:         3.13348ms
+parallel_structure_sparse_mm:        3.06654ms
+openmp_sparse_mm:                    1.28925ms
+openmp_mem_effi_sparse_mm:           2.06231ms
+std_thread_sparse_mm:                1.31448ms
+dense_mm:                            0.20709ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.2], B=[ 256 x 256, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   3.30272ms
+builtin_sparse_mm_extension:         3.10863ms
+parallel_structure_sparse_mm:        3.06758ms
+openmp_sparse_mm:                    0.77357ms
+openmp_mem_effi_sparse_mm:           2.02928ms
+std_thread_sparse_mm:                1.06099ms
+dense_mm:                            0.10270ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.2], B=[ 256 x 256, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   3.25181ms
+builtin_sparse_mm_extension:         3.14593ms
+parallel_structure_sparse_mm:        3.06129ms
+openmp_sparse_mm:                    1.15019ms
+openmp_mem_effi_sparse_mm:           1.97897ms
+std_thread_sparse_mm:                1.48678ms
+dense_mm:                            0.09523ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.4], B=[ 256 x 256, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                   5.19456ms
+builtin_sparse_mm_extension:         5.28944ms
+parallel_structure_sparse_mm:        5.07906ms
+openmp_sparse_mm:                    5.83851ms
+openmp_mem_effi_sparse_mm:           5.89107ms
+std_thread_sparse_mm:                5.65892ms
+dense_mm:                            0.44752ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.4], B=[ 256 x 256, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                   5.27373ms
+builtin_sparse_mm_extension:         5.05311ms
+parallel_structure_sparse_mm:        4.97606ms
+openmp_sparse_mm:                    3.49271ms
+openmp_mem_effi_sparse_mm:           3.15810ms
+std_thread_sparse_mm:                3.63830ms
+dense_mm:                            0.29789ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.4], B=[ 256 x 256, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                   5.58195ms
+builtin_sparse_mm_extension:         5.36462ms
+parallel_structure_sparse_mm:        5.06309ms
+openmp_sparse_mm:                    2.19167ms
+openmp_mem_effi_sparse_mm:           2.22464ms
+std_thread_sparse_mm:                2.39276ms
+dense_mm:                            0.26327ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.4], B=[ 256 x 256, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                   5.70655ms
+builtin_sparse_mm_extension:         5.33723ms
+parallel_structure_sparse_mm:        5.12545ms
+openmp_sparse_mm:                    1.25381ms
+openmp_mem_effi_sparse_mm:           2.08209ms
+std_thread_sparse_mm:                1.59624ms
+dense_mm:                            0.10975ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.4], B=[ 256 x 256, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                   5.23021ms
+builtin_sparse_mm_extension:         5.21897ms
+parallel_structure_sparse_mm:        5.09546ms
+openmp_sparse_mm:                    0.83061ms
+openmp_mem_effi_sparse_mm:           1.93868ms
+std_thread_sparse_mm:                1.77838ms
+dense_mm:                            0.09556ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.8], B=[ 256 x 256, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  13.83652ms
+builtin_sparse_mm_extension:        13.19095ms
+parallel_structure_sparse_mm:       13.23201ms
+openmp_sparse_mm:                   15.65368ms
+openmp_mem_effi_sparse_mm:          16.58063ms
+std_thread_sparse_mm:               14.69292ms
+dense_mm:                            0.45791ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.8], B=[ 256 x 256, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  13.38247ms
+builtin_sparse_mm_extension:        13.22525ms
+parallel_structure_sparse_mm:       13.10204ms
+openmp_sparse_mm:                    8.74456ms
+openmp_mem_effi_sparse_mm:           8.12846ms
+std_thread_sparse_mm:                7.98870ms
+dense_mm:                            0.29116ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.8], B=[ 256 x 256, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  13.74066ms
+builtin_sparse_mm_extension:        13.19616ms
+parallel_structure_sparse_mm:       13.21860ms
+openmp_sparse_mm:                    4.82958ms
+openmp_mem_effi_sparse_mm:           4.17200ms
+std_thread_sparse_mm:                4.65156ms
+dense_mm:                            0.32677ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.8], B=[ 256 x 256, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  14.10082ms
+builtin_sparse_mm_extension:        13.73184ms
+parallel_structure_sparse_mm:       13.59036ms
+openmp_sparse_mm:                    3.18752ms
+openmp_mem_effi_sparse_mm:           2.67575ms
+std_thread_sparse_mm:                3.58421ms
+dense_mm:                            0.16991ms
+--------------------------------------------------
+
+A=[ 256 x 256, 0.8], B=[ 256 x 256, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  13.94530ms
+builtin_sparse_mm_extension:        13.39213ms
+parallel_structure_sparse_mm:       13.40035ms
+openmp_sparse_mm:                    1.92312ms
+openmp_mem_effi_sparse_mm:           1.97879ms
+std_thread_sparse_mm:                2.87716ms
+dense_mm:                            0.10495ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.1], B=[ 512 x 512, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  11.09899ms
+builtin_sparse_mm_extension:        11.86353ms
+parallel_structure_sparse_mm:       11.21698ms
+openmp_sparse_mm:                   12.13238ms
+openmp_mem_effi_sparse_mm:          11.95673ms
+std_thread_sparse_mm:               12.05011ms
+dense_mm:                            2.35668ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.1], B=[ 512 x 512, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  11.08892ms
+builtin_sparse_mm_extension:        11.23073ms
+parallel_structure_sparse_mm:       11.21851ms
+openmp_sparse_mm:                    6.85409ms
+openmp_mem_effi_sparse_mm:           8.34547ms
+std_thread_sparse_mm:                7.04246ms
+dense_mm:                            1.63534ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.1], B=[ 512 x 512, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  11.31001ms
+builtin_sparse_mm_extension:        11.69536ms
+parallel_structure_sparse_mm:       10.78214ms
+openmp_sparse_mm:                    4.23181ms
+openmp_mem_effi_sparse_mm:           8.03345ms
+std_thread_sparse_mm:                4.27357ms
+dense_mm:                            1.26226ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.1], B=[ 512 x 512, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  11.89833ms
+builtin_sparse_mm_extension:        12.82781ms
+parallel_structure_sparse_mm:       10.81606ms
+openmp_sparse_mm:                    2.27699ms
+openmp_mem_effi_sparse_mm:           7.59048ms
+std_thread_sparse_mm:                2.73152ms
+dense_mm:                            0.70934ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.1], B=[ 512 x 512, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  11.55816ms
+builtin_sparse_mm_extension:        12.17044ms
+parallel_structure_sparse_mm:       11.13388ms
+openmp_sparse_mm:                    1.55337ms
+openmp_mem_effi_sparse_mm:           8.14587ms
+std_thread_sparse_mm:                2.40386ms
+dense_mm:                            0.67418ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.2], B=[ 512 x 512, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  16.04638ms
+builtin_sparse_mm_extension:        16.50427ms
+parallel_structure_sparse_mm:       15.88788ms
+openmp_sparse_mm:                   17.65928ms
+openmp_mem_effi_sparse_mm:          17.19539ms
+std_thread_sparse_mm:               17.44311ms
+dense_mm:                            2.36114ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.2], B=[ 512 x 512, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  16.34082ms
+builtin_sparse_mm_extension:        16.93586ms
+parallel_structure_sparse_mm:       15.62575ms
+openmp_sparse_mm:                   10.11683ms
+openmp_mem_effi_sparse_mm:           9.66649ms
+std_thread_sparse_mm:               10.05452ms
+dense_mm:                            1.58032ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.2], B=[ 512 x 512, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  16.43776ms
+builtin_sparse_mm_extension:        15.76452ms
+parallel_structure_sparse_mm:       15.34974ms
+openmp_sparse_mm:                    5.29540ms
+openmp_mem_effi_sparse_mm:           7.77070ms
+std_thread_sparse_mm:                5.73865ms
+dense_mm:                            1.34626ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.2], B=[ 512 x 512, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  15.96407ms
+builtin_sparse_mm_extension:        15.97857ms
+parallel_structure_sparse_mm:       15.69924ms
+openmp_sparse_mm:                    3.52930ms
+openmp_mem_effi_sparse_mm:           7.47975ms
+std_thread_sparse_mm:                3.71901ms
+dense_mm:                            0.83234ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.2], B=[ 512 x 512, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  16.81187ms
+builtin_sparse_mm_extension:        18.69208ms
+parallel_structure_sparse_mm:       16.71615ms
+openmp_sparse_mm:                    2.56428ms
+openmp_mem_effi_sparse_mm:           7.74458ms
+std_thread_sparse_mm:                3.57123ms
+dense_mm:                            0.58716ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.4], B=[ 512 x 512, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  33.79786ms
+builtin_sparse_mm_extension:        34.60192ms
+parallel_structure_sparse_mm:       34.06190ms
+openmp_sparse_mm:                   37.41158ms
+openmp_mem_effi_sparse_mm:          38.06085ms
+std_thread_sparse_mm:               35.31148ms
+dense_mm:                            2.03833ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.4], B=[ 512 x 512, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  33.69486ms
+builtin_sparse_mm_extension:        34.49949ms
+parallel_structure_sparse_mm:       33.31033ms
+openmp_sparse_mm:                   21.50981ms
+openmp_mem_effi_sparse_mm:          21.40190ms
+std_thread_sparse_mm:               19.95425ms
+dense_mm:                            1.52162ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.4], B=[ 512 x 512, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  34.88491ms
+builtin_sparse_mm_extension:        34.35854ms
+parallel_structure_sparse_mm:       32.97428ms
+openmp_sparse_mm:                   12.79774ms
+openmp_mem_effi_sparse_mm:          12.18109ms
+std_thread_sparse_mm:               11.84908ms
+dense_mm:                            1.40729ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.4], B=[ 512 x 512, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  35.18305ms
+builtin_sparse_mm_extension:        33.66452ms
+parallel_structure_sparse_mm:       33.44443ms
+openmp_sparse_mm:                    7.59303ms
+openmp_mem_effi_sparse_mm:           9.72413ms
+std_thread_sparse_mm:                7.49785ms
+dense_mm:                            0.97111ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.4], B=[ 512 x 512, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  36.54168ms
+builtin_sparse_mm_extension:        35.83695ms
+parallel_structure_sparse_mm:       34.06534ms
+openmp_sparse_mm:                    6.25337ms
+openmp_mem_effi_sparse_mm:           9.56037ms
+std_thread_sparse_mm:                6.91407ms
+dense_mm:                            0.80186ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.8], B=[ 512 x 512, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                 103.10994ms
+builtin_sparse_mm_extension:       104.43138ms
+parallel_structure_sparse_mm:      100.18265ms
+openmp_sparse_mm:                  117.10155ms
+openmp_mem_effi_sparse_mm:         123.99390ms
+std_thread_sparse_mm:              103.98454ms
+dense_mm:                            2.06389ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.8], B=[ 512 x 512, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                 104.83865ms
+builtin_sparse_mm_extension:       105.90448ms
+parallel_structure_sparse_mm:      100.17445ms
+openmp_sparse_mm:                   64.92307ms
+openmp_mem_effi_sparse_mm:          61.46420ms
+std_thread_sparse_mm:               53.75486ms
+dense_mm:                            1.30767ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.8], B=[ 512 x 512, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                 107.26264ms
+builtin_sparse_mm_extension:       102.35850ms
+parallel_structure_sparse_mm:      100.78525ms
+openmp_sparse_mm:                   32.46125ms
+openmp_mem_effi_sparse_mm:          31.35748ms
+std_thread_sparse_mm:               28.22196ms
+dense_mm:                            1.20353ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.8], B=[ 512 x 512, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                 105.16023ms
+builtin_sparse_mm_extension:       105.88437ms
+parallel_structure_sparse_mm:      101.55776ms
+openmp_sparse_mm:                   23.56682ms
+openmp_mem_effi_sparse_mm:          20.46134ms
+std_thread_sparse_mm:               15.81255ms
+dense_mm:                            1.02728ms
+--------------------------------------------------
+
+A=[ 512 x 512, 0.8], B=[ 512 x 512, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                 104.79560ms
+builtin_sparse_mm_extension:       104.65126ms
+parallel_structure_sparse_mm:      101.62417ms
+openmp_sparse_mm:                   17.14701ms
+openmp_mem_effi_sparse_mm:          15.39318ms
+std_thread_sparse_mm:               15.41180ms
+dense_mm:                            0.74231ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.1], B=[ 1024 x 1024, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  53.21946ms
+builtin_sparse_mm_extension:        56.99994ms
+parallel_structure_sparse_mm:       54.79278ms
+openmp_sparse_mm:                   57.57430ms
+openmp_mem_effi_sparse_mm:          55.14265ms
+std_thread_sparse_mm:               58.16266ms
+dense_mm:                           15.01700ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.1], B=[ 1024 x 1024, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  52.51310ms
+builtin_sparse_mm_extension:        57.54465ms
+parallel_structure_sparse_mm:       51.79053ms
+openmp_sparse_mm:                   32.19827ms
+openmp_mem_effi_sparse_mm:          35.67932ms
+std_thread_sparse_mm:               31.69219ms
+dense_mm:                            8.80271ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.1], B=[ 1024 x 1024, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  53.53707ms
+builtin_sparse_mm_extension:        53.63728ms
+parallel_structure_sparse_mm:       53.19891ms
+openmp_sparse_mm:                   17.77089ms
+openmp_mem_effi_sparse_mm:          32.26658ms
+std_thread_sparse_mm:               17.82733ms
+dense_mm:                            6.24870ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.1], B=[ 1024 x 1024, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  54.69344ms
+builtin_sparse_mm_extension:        54.51834ms
+parallel_structure_sparse_mm:       53.76486ms
+openmp_sparse_mm:                    9.79367ms
+openmp_mem_effi_sparse_mm:          30.61909ms
+std_thread_sparse_mm:               10.15667ms
+dense_mm:                            3.57535ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.1], B=[ 1024 x 1024, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  57.23855ms
+builtin_sparse_mm_extension:        55.46445ms
+parallel_structure_sparse_mm:       53.75825ms
+openmp_sparse_mm:                    6.93004ms
+openmp_mem_effi_sparse_mm:          30.97104ms
+std_thread_sparse_mm:                7.58774ms
+dense_mm:                            3.82547ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.2], B=[ 1024 x 1024, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                  90.65599ms
+builtin_sparse_mm_extension:        93.17112ms
+parallel_structure_sparse_mm:       91.54717ms
+openmp_sparse_mm:                  100.30854ms
+openmp_mem_effi_sparse_mm:         101.96309ms
+std_thread_sparse_mm:               94.88205ms
+dense_mm:                           15.19048ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.2], B=[ 1024 x 1024, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                  93.23111ms
+builtin_sparse_mm_extension:        95.43589ms
+parallel_structure_sparse_mm:       91.24611ms
+openmp_sparse_mm:                   57.04697ms
+openmp_mem_effi_sparse_mm:          52.85058ms
+std_thread_sparse_mm:               51.40511ms
+dense_mm:                            8.62224ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.2], B=[ 1024 x 1024, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                  94.16321ms
+builtin_sparse_mm_extension:        97.51110ms
+parallel_structure_sparse_mm:       92.56231ms
+openmp_sparse_mm:                   28.88758ms
+openmp_mem_effi_sparse_mm:          35.87239ms
+std_thread_sparse_mm:               26.90343ms
+dense_mm:                            6.29467ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.2], B=[ 1024 x 1024, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                  91.56564ms
+builtin_sparse_mm_extension:        94.61556ms
+parallel_structure_sparse_mm:       92.39299ms
+openmp_sparse_mm:                   18.54289ms
+openmp_mem_effi_sparse_mm:          33.51927ms
+std_thread_sparse_mm:               15.78541ms
+dense_mm:                            3.33017ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.2], B=[ 1024 x 1024, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                  96.41652ms
+builtin_sparse_mm_extension:        96.00994ms
+parallel_structure_sparse_mm:       91.86516ms
+openmp_sparse_mm:                   12.90951ms
+openmp_mem_effi_sparse_mm:          33.43460ms
+std_thread_sparse_mm:               11.07773ms
+dense_mm:                            3.00893ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.4], B=[ 1024 x 1024, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                 239.74295ms
+builtin_sparse_mm_extension:       243.46303ms
+parallel_structure_sparse_mm:      231.92811ms
+openmp_sparse_mm:                  267.69548ms
+openmp_mem_effi_sparse_mm:         273.48846ms
+std_thread_sparse_mm:              234.08883ms
+dense_mm:                           15.46827ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.4], B=[ 1024 x 1024, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                 240.67313ms
+builtin_sparse_mm_extension:       238.94537ms
+parallel_structure_sparse_mm:      235.59471ms
+openmp_sparse_mm:                  148.16260ms
+openmp_mem_effi_sparse_mm:         140.01526ms
+std_thread_sparse_mm:              123.76329ms
+dense_mm:                            8.66322ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.4], B=[ 1024 x 1024, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                 239.95852ms
+builtin_sparse_mm_extension:       239.69335ms
+parallel_structure_sparse_mm:      231.60890ms
+openmp_sparse_mm:                   75.44455ms
+openmp_mem_effi_sparse_mm:          71.17228ms
+std_thread_sparse_mm:               65.10573ms
+dense_mm:                            6.49498ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.4], B=[ 1024 x 1024, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                 243.23689ms
+builtin_sparse_mm_extension:       240.82689ms
+parallel_structure_sparse_mm:      232.95092ms
+openmp_sparse_mm:                   43.83955ms
+openmp_mem_effi_sparse_mm:          40.15886ms
+std_thread_sparse_mm:               39.10753ms
+dense_mm:                            3.35328ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.4], B=[ 1024 x 1024, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                 247.92682ms
+builtin_sparse_mm_extension:       233.46833ms
+parallel_structure_sparse_mm:      231.48042ms
+openmp_sparse_mm:                   29.31003ms
+openmp_mem_effi_sparse_mm:          35.83204ms
+std_thread_sparse_mm:               26.26937ms
+dense_mm:                            3.10998ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.8], B=[ 1024 x 1024, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                 798.81872ms
+builtin_sparse_mm_extension:       780.91628ms
+parallel_structure_sparse_mm:      774.05016ms
+openmp_sparse_mm:                  905.21769ms
+openmp_mem_effi_sparse_mm:         929.14741ms
+std_thread_sparse_mm:              782.04348ms
+dense_mm:                           15.13744ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.8], B=[ 1024 x 1024, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                 790.40340ms
+builtin_sparse_mm_extension:       766.84883ms
+parallel_structure_sparse_mm:      763.23703ms
+openmp_sparse_mm:                  493.71436ms
+openmp_mem_effi_sparse_mm:         477.95495ms
+std_thread_sparse_mm:              404.49165ms
+dense_mm:                           10.21289ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.8], B=[ 1024 x 1024, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                 792.27997ms
+builtin_sparse_mm_extension:       774.22908ms
+parallel_structure_sparse_mm:      766.54732ms
+openmp_sparse_mm:                  256.21345ms
+openmp_mem_effi_sparse_mm:         241.08677ms
+std_thread_sparse_mm:              206.05029ms
+dense_mm:                            6.19657ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.8], B=[ 1024 x 1024, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                 795.72088ms
+builtin_sparse_mm_extension:       773.83897ms
+parallel_structure_sparse_mm:      766.40800ms
+openmp_sparse_mm:                  133.18566ms
+openmp_mem_effi_sparse_mm:         125.47249ms
+std_thread_sparse_mm:              109.74777ms
+dense_mm:                            3.23431ms
+--------------------------------------------------
+
+A=[ 1024 x 1024, 0.8], B=[ 1024 x 1024, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                 809.32948ms
+builtin_sparse_mm_extension:       777.03114ms
+parallel_structure_sparse_mm:      772.32295ms
+openmp_sparse_mm:                   96.80802ms
+openmp_mem_effi_sparse_mm:          92.80096ms
+std_thread_sparse_mm:               92.19896ms
+dense_mm:                            3.32983ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.1], B=[ 2048 x 2048, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                 290.28431ms
+builtin_sparse_mm_extension:       315.07131ms
+parallel_structure_sparse_mm:      304.24875ms
+openmp_sparse_mm:                  329.38245ms
+openmp_mem_effi_sparse_mm:         314.03070ms
+std_thread_sparse_mm:              316.56679ms
+dense_mm:                          121.68143ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.1], B=[ 2048 x 2048, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                 294.32486ms
+builtin_sparse_mm_extension:       315.65495ms
+parallel_structure_sparse_mm:      304.17532ms
+openmp_sparse_mm:                  187.94044ms
+openmp_mem_effi_sparse_mm:         176.56335ms
+std_thread_sparse_mm:              171.93012ms
+dense_mm:                           64.71375ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.1], B=[ 2048 x 2048, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                 299.42716ms
+builtin_sparse_mm_extension:       316.56160ms
+parallel_structure_sparse_mm:      304.91821ms
+openmp_sparse_mm:                  109.56001ms
+openmp_mem_effi_sparse_mm:         159.39097ms
+std_thread_sparse_mm:               97.54282ms
+dense_mm:                           43.26079ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.1], B=[ 2048 x 2048, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                 299.80849ms
+builtin_sparse_mm_extension:       299.05100ms
+parallel_structure_sparse_mm:      286.08523ms
+openmp_sparse_mm:                   52.60259ms
+openmp_mem_effi_sparse_mm:         131.29495ms
+std_thread_sparse_mm:               48.37664ms
+dense_mm:                           18.42833ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.1], B=[ 2048 x 2048, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                 334.16672ms
+builtin_sparse_mm_extension:       317.19040ms
+parallel_structure_sparse_mm:      305.10252ms
+openmp_sparse_mm:                   48.58085ms
+openmp_mem_effi_sparse_mm:         151.43322ms
+std_thread_sparse_mm:               78.95778ms
+dense_mm:                           12.95981ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.2], B=[ 2048 x 2048, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                 596.61033ms
+builtin_sparse_mm_extension:       609.07422ms
+parallel_structure_sparse_mm:      598.88946ms
+openmp_sparse_mm:                  677.56966ms
+openmp_mem_effi_sparse_mm:         673.26554ms
+std_thread_sparse_mm:              611.44245ms
+dense_mm:                          124.68160ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.2], B=[ 2048 x 2048, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                 584.00697ms
+builtin_sparse_mm_extension:       609.33765ms
+parallel_structure_sparse_mm:      599.71950ms
+openmp_sparse_mm:                  372.90028ms
+openmp_mem_effi_sparse_mm:         348.65017ms
+std_thread_sparse_mm:              322.25756ms
+dense_mm:                           66.54461ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.2], B=[ 2048 x 2048, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                 590.50203ms
+builtin_sparse_mm_extension:       606.48000ms
+parallel_structure_sparse_mm:      598.45241ms
+openmp_sparse_mm:                  202.44914ms
+openmp_mem_effi_sparse_mm:         190.38949ms
+std_thread_sparse_mm:              174.51564ms
+dense_mm:                           44.01792ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.2], B=[ 2048 x 2048, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                 589.08224ms
+builtin_sparse_mm_extension:       597.53796ms
+parallel_structure_sparse_mm:      592.87245ms
+openmp_sparse_mm:                  112.62645ms
+openmp_mem_effi_sparse_mm:         160.57587ms
+std_thread_sparse_mm:               99.16778ms
+dense_mm:                           18.53813ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.2], B=[ 2048 x 2048, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                 633.79203ms
+builtin_sparse_mm_extension:       603.17619ms
+parallel_structure_sparse_mm:      599.39887ms
+openmp_sparse_mm:                   91.42679ms
+openmp_mem_effi_sparse_mm:         165.98176ms
+std_thread_sparse_mm:               70.92301ms
+dense_mm:                           14.50904ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                1785.95533ms
+builtin_sparse_mm_extension:      1725.96199ms
+parallel_structure_sparse_mm:     1720.02943ms
+openmp_sparse_mm:                 1994.07525ms
+openmp_mem_effi_sparse_mm:        2025.60742ms
+std_thread_sparse_mm:             1759.80037ms
+dense_mm:                          120.94781ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                1782.81843ms
+builtin_sparse_mm_extension:      1725.90018ms
+parallel_structure_sparse_mm:     1716.96485ms
+openmp_sparse_mm:                 1083.18914ms
+openmp_mem_effi_sparse_mm:        1037.74459ms
+std_thread_sparse_mm:              903.93880ms
+dense_mm:                           64.58934ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                1771.79804ms
+builtin_sparse_mm_extension:      1715.84594ms
+parallel_structure_sparse_mm:     1708.50507ms
+openmp_sparse_mm:                  572.48362ms
+openmp_mem_effi_sparse_mm:         547.97395ms
+std_thread_sparse_mm:              475.59921ms
+dense_mm:                           43.68904ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                1787.76784ms
+builtin_sparse_mm_extension:      1727.55188ms
+parallel_structure_sparse_mm:     1719.21082ms
+openmp_sparse_mm:                  304.82429ms
+openmp_mem_effi_sparse_mm:         306.34096ms
+std_thread_sparse_mm:              252.56694ms
+dense_mm:                           19.91641ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.4], B=[ 2048 x 2048, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                1848.91298ms
+builtin_sparse_mm_extension:      1745.08408ms
+parallel_structure_sparse_mm:     1737.29696ms
+openmp_sparse_mm:                  200.98338ms
+openmp_mem_effi_sparse_mm:         206.02737ms
+std_thread_sparse_mm:              167.14772ms
+dense_mm:                           15.92442ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                6884.91190ms
+builtin_sparse_mm_extension:      6502.35894ms
+parallel_structure_sparse_mm:     6484.00906ms
+openmp_sparse_mm:                 7464.03785ms
+openmp_mem_effi_sparse_mm:        7694.92961ms
+std_thread_sparse_mm:             6579.93568ms
+dense_mm:                          123.95510ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                6752.30060ms
+builtin_sparse_mm_extension:      6356.62281ms
+parallel_structure_sparse_mm:     6338.43936ms
+openmp_sparse_mm:                 4008.97409ms
+openmp_mem_effi_sparse_mm:        3885.57024ms
+std_thread_sparse_mm:             3311.78335ms
+dense_mm:                           65.81909ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                6750.38365ms
+builtin_sparse_mm_extension:      6356.20779ms
+parallel_structure_sparse_mm:     6333.74123ms
+openmp_sparse_mm:                 2047.14619ms
+openmp_mem_effi_sparse_mm:        2006.23081ms
+std_thread_sparse_mm:             1719.73206ms
+dense_mm:                           43.87211ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                6769.50232ms
+builtin_sparse_mm_extension:      6405.20050ms
+parallel_structure_sparse_mm:     6396.36874ms
+openmp_sparse_mm:                 1063.95645ms
+openmp_mem_effi_sparse_mm:        1066.85592ms
+std_thread_sparse_mm:              967.86267ms
+dense_mm:                           19.06135ms
+--------------------------------------------------
+
+A=[ 2048 x 2048, 0.8], B=[ 2048 x 2048, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                6917.82301ms
+builtin_sparse_mm_extension:      6494.18921ms
+parallel_structure_sparse_mm:     6473.20505ms
+openmp_sparse_mm:                  594.44985ms
+openmp_mem_effi_sparse_mm:         597.23084ms
+std_thread_sparse_mm:              514.49123ms
+dense_mm:                           17.14156ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.1], B=[ 4096 x 4096, 0.1], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                1754.19823ms
+builtin_sparse_mm_extension:      1872.37651ms
+parallel_structure_sparse_mm:     1859.15236ms
+openmp_sparse_mm:                 2040.83769ms
+openmp_mem_effi_sparse_mm:        1928.53778ms
+std_thread_sparse_mm:             1872.47560ms
+dense_mm:                         1005.35034ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.1], B=[ 4096 x 4096, 0.1], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                1751.31549ms
+builtin_sparse_mm_extension:      1871.22013ms
+parallel_structure_sparse_mm:     1884.53118ms
+openmp_sparse_mm:                 1139.15507ms
+openmp_mem_effi_sparse_mm:        1007.34726ms
+std_thread_sparse_mm:             1036.84834ms
+dense_mm:                          513.57321ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.1], B=[ 4096 x 4096, 0.1], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                1756.80151ms
+builtin_sparse_mm_extension:      1872.16166ms
+parallel_structure_sparse_mm:     1888.81459ms
+openmp_sparse_mm:                  642.21533ms
+openmp_mem_effi_sparse_mm:         736.70568ms
+std_thread_sparse_mm:              595.09116ms
+dense_mm:                          346.90448ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.1], B=[ 4096 x 4096, 0.1], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                1759.83929ms
+builtin_sparse_mm_extension:      1873.66528ms
+parallel_structure_sparse_mm:     1887.30246ms
+openmp_sparse_mm:                  387.12209ms
+openmp_mem_effi_sparse_mm:         688.44392ms
+std_thread_sparse_mm:              361.59261ms
+dense_mm:                          149.75800ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.1], B=[ 4096 x 4096, 0.1], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                1771.93811ms
+builtin_sparse_mm_extension:      1877.32619ms
+parallel_structure_sparse_mm:     1889.89984ms
+openmp_sparse_mm:                  286.22697ms
+openmp_mem_effi_sparse_mm:         675.58750ms
+std_thread_sparse_mm:              275.71298ms
+dense_mm:                          117.44302ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.2], B=[ 4096 x 4096, 0.2], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:                4922.38770ms
+builtin_sparse_mm_extension:      4649.11263ms
+parallel_structure_sparse_mm:     4691.23385ms
+openmp_sparse_mm:                 5149.82432ms
+openmp_mem_effi_sparse_mm:        5182.52319ms
+std_thread_sparse_mm:             4753.40523ms
+dense_mm:                         1009.26161ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.2], B=[ 4096 x 4096, 0.2], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:                4879.05493ms
+builtin_sparse_mm_extension:      4659.40940ms
+parallel_structure_sparse_mm:     4676.41605ms
+openmp_sparse_mm:                 2777.30837ms
+openmp_mem_effi_sparse_mm:        2632.00965ms
+std_thread_sparse_mm:             2447.33923ms
+dense_mm:                          514.18876ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.2], B=[ 4096 x 4096, 0.2], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:                4861.04139ms
+builtin_sparse_mm_extension:      4661.17026ms
+parallel_structure_sparse_mm:     4673.83724ms
+openmp_sparse_mm:                 1455.61507ms
+openmp_mem_effi_sparse_mm:        1392.81039ms
+std_thread_sparse_mm:             1306.58347ms
+dense_mm:                          349.39525ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.2], B=[ 4096 x 4096, 0.2], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:                4892.68833ms
+builtin_sparse_mm_extension:      4674.92486ms
+parallel_structure_sparse_mm:     4677.76158ms
+openmp_sparse_mm:                  812.51099ms
+openmp_mem_effi_sparse_mm:         805.19530ms
+std_thread_sparse_mm:              749.68926ms
+dense_mm:                          149.37069ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.2], B=[ 4096 x 4096, 0.2], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:                4840.14298ms
+builtin_sparse_mm_extension:      4567.85832ms
+parallel_structure_sparse_mm:     4688.44297ms
+openmp_sparse_mm:                  554.52328ms
+openmp_mem_effi_sparse_mm:         741.80907ms
+std_thread_sparse_mm:              545.56980ms
+dense_mm:                          118.20525ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.4], B=[ 4096 x 4096, 0.4], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:               17031.95171ms
+builtin_sparse_mm_extension:     15675.33330ms
+parallel_structure_sparse_mm:    15699.27182ms
+openmp_sparse_mm:                17491.24096ms
+openmp_mem_effi_sparse_mm:       17887.16697ms
+std_thread_sparse_mm:            15806.66380ms
+dense_mm:                         1014.61207ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.4], B=[ 4096 x 4096, 0.4], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:               16496.10747ms
+builtin_sparse_mm_extension:     15285.82571ms
+parallel_structure_sparse_mm:    15287.10169ms
+openmp_sparse_mm:                 9477.39645ms
+openmp_mem_effi_sparse_mm:        9059.37005ms
+std_thread_sparse_mm:             8153.01838ms
+dense_mm:                          520.44065ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.4], B=[ 4096 x 4096, 0.4], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:               16481.08916ms
+builtin_sparse_mm_extension:     15313.91691ms
+parallel_structure_sparse_mm:    15350.90065ms
+openmp_sparse_mm:                 5082.68496ms
+openmp_mem_effi_sparse_mm:        5114.05641ms
+std_thread_sparse_mm:             4604.06215ms
+dense_mm:                          351.05193ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.4], B=[ 4096 x 4096, 0.4], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:               16456.32196ms
+builtin_sparse_mm_extension:     15288.13055ms
+parallel_structure_sparse_mm:    15319.67155ms
+openmp_sparse_mm:                 3489.63768ms
+openmp_mem_effi_sparse_mm:        3784.90733ms
+std_thread_sparse_mm:             3407.76150ms
+dense_mm:                          149.71506ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.4], B=[ 4096 x 4096, 0.4], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:               16771.46891ms
+builtin_sparse_mm_extension:     15550.36707ms
+parallel_structure_sparse_mm:    15583.34224ms
+openmp_sparse_mm:                 2281.46324ms
+openmp_mem_effi_sparse_mm:        2515.25053ms
+std_thread_sparse_mm:             2254.41408ms
+dense_mm:                          123.93870ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.8], B=[ 4096 x 4096, 0.8], num_threads= [ 1 ]
+--------------------------------------------------
+builtin_sparse_mm:               57340.60342ms
+builtin_sparse_mm_extension:     53445.24324ms
+parallel_structure_sparse_mm:    53447.06743ms
+openmp_sparse_mm:                60851.49039ms
+openmp_mem_effi_sparse_mm:       63042.30447ms
+std_thread_sparse_mm:            54514.75182ms
+dense_mm:                         1001.67267ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.8], B=[ 4096 x 4096, 0.8], num_threads= [ 2 ]
+--------------------------------------------------
+builtin_sparse_mm:               57226.22206ms
+builtin_sparse_mm_extension:     53846.02524ms
+parallel_structure_sparse_mm:    53871.48819ms
+openmp_sparse_mm:                33933.70817ms
+openmp_mem_effi_sparse_mm:       32787.80080ms
+std_thread_sparse_mm:            28751.93334ms
+dense_mm:                          523.77215ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.8], B=[ 4096 x 4096, 0.8], num_threads= [ 4 ]
+--------------------------------------------------
+builtin_sparse_mm:               58081.21474ms
+builtin_sparse_mm_extension:     54194.15616ms
+parallel_structure_sparse_mm:    54174.54968ms
+openmp_sparse_mm:                19340.36693ms
+openmp_mem_effi_sparse_mm:       18728.21040ms
+std_thread_sparse_mm:            17332.21408ms
+dense_mm:                          355.51724ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.8], B=[ 4096 x 4096, 0.8], num_threads= [ 8 ]
+--------------------------------------------------
+builtin_sparse_mm:               57096.36005ms
+builtin_sparse_mm_extension:     53348.27723ms
+parallel_structure_sparse_mm:    53364.65953ms
+openmp_sparse_mm:                 9528.26553ms
+openmp_mem_effi_sparse_mm:        9499.86449ms
+std_thread_sparse_mm:             8774.06209ms
+dense_mm:                          151.23427ms
+--------------------------------------------------
+
+A=[ 4096 x 4096, 0.8], B=[ 4096 x 4096, 0.8], num_threads= [ 16 ]
+--------------------------------------------------
+builtin_sparse_mm:               57254.01654ms
+builtin_sparse_mm_extension:     53550.56530ms
+parallel_structure_sparse_mm:    53464.79025ms
+openmp_sparse_mm:                 5199.63607ms
+openmp_mem_effi_sparse_mm:        5336.37045ms
+std_thread_sparse_mm:             4588.28716ms
+dense_mm:                          116.58253ms
+--------------------------------------------------
+

@@ -1,6 +1,19 @@
-from setuptools import setup, Extension
-from torch.utils import cpp_extension
+from setuptools import setup
+from torch.utils.cpp_extension import CppExtension, BuildExtension
 
-setup(name='sparse_mm',
-      ext_modules=[cpp_extension.CppExtension('sparse_mm', ['sparse_mm.cpp'])],
-      cmdclass={'build_ext': cpp_extension.BuildExtension})
+module = CppExtension(
+      'sparse_mm',
+      sources=[
+            'sparse_mm.cpp'
+      ],
+      include_dirs=[
+            'include', 'include/sparse_mm'
+      ],
+      extra_compile_args=['-O3', '-fopenmp']
+)
+
+setup(
+      name='sparse_mm',
+      ext_modules=[module],
+      cmdclass={'build_ext': BuildExtension}
+)

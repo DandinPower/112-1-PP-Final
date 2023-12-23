@@ -1,1 +1,5 @@
 torch
+torchvision
+pytest
+tqdm
+matplotlib

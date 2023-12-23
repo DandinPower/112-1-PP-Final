@@ -1,23 +1,74 @@
-## Sparse Matrix Pytorch Extension
+# Sparse Matrix Pytorch Extension
 
-### Compile and Test
-- install the requirements
+## Introduction
+
+This project is for the course project of Parallel Programming in NYCU CSIE. We implement the sparse matrix multiplication Parallel Optimization in PyTorch extension. We also provide a benchmark tool to compare the performance of different implementations. Currently, we have implemented the following methods:
+
+1. PyTorch serial implementation
+2. Parallel friendly structure implementation (still serial)
+3. OpenMP implementation by [Frankie](https://github.com/frankie699) and [DandinPower](https://github.com/DandinPower)
+4. OpenMP + memory efficient implementation by [Leo](https://github.com/leo27945875) 
+5. std::thread implementation by [Frankie](https://github.com/frankie699) and [DandinPower](https://github.com/DandinPower)
+
+The OpenMP + memory efficient implementation is the most memory efficient one. For the fastest implementation, we can find in different scenarios, the std::thread, openmp, and openmp + memory efficient all have their advantages. You can check the benchmark result in the logs folder.
+
+Our Evaluation platform is:
+
+1. AMD Ryzen 9 5950X 16-Core Processor (16cores)
+2. Ubuntu 22.04 LTS
+3. python 3.10.12
+
+## Prerequisites
+
+Before you can compile the PyTorch extension, you need to install the necessary requirements. Run the following command in your terminal:
+
+```bash
+pip install -r requirements.txt
+```
+
+## Compiling the PyTorch Extension
+
+After installing the prerequisites, navigate to the pytorch_extension directory and run the setup file to compile the PyTorch extension:
+
+```bash
+cd pytorch_extension
+bash run.sh
+```
+
+## Running the Tests
+
+This project uses the pytest module for unit testing. To test the PyTorch extension implementation, run the following command:
+
+```bash
+pytest ./test
+```
+
+## Benchmark Tool
+
+After you compile the PyTorch extension, and run the tests, you can use our benchmark code to compare different implementations of sparse matrix multiplication. We have provided 2 type of benchmark strategies:
+
+1. Benchmarking the SPMM function with end-to-end time, with different density, different threads and matrix size.
     ```bash
-    pip install -r requirements.txt
+    bash benchmark.sh
     ```
 
-- compile the pytorch extension
+2. Benchmarking the SPMM function with MNIST test dataset, with different density, different threads.
     ```bash
-    cd pytorch_extension
-    python setup.py install
+    bash mnist_benchmark.sh
     ```
 
-- run the test
+3. run all benchmarks
     ```bash
-    python main.py
-    ```
+    bash all_benchmark.sh
+    ``` 
 
-### Notes
+for each benchmark, you can change the parameters in the script file. You can see the parameters description in the script file. 
+
+**Note**: you must set the threads number fit into your CPU core number, also you need to care about the core has same performance or not. For example, in intel CPU, the performance core will faster than the efficiency core.
+
+## Notes
+
+### pytorch extension include issue
 
 - for those which pytorch built-in function didn't include by torch/extension.h, you need to include the right file like
     ```c++
@@ -28,7 +79,12 @@
     #include <ATen/native/StridedRandomAccessor.h>
     ```
 
-### Reference
+## Contributions
+
+You are welcome to contribute to this project. If you have any questions, please feel free to contact us.
+If you don't know what to do, you can check the issues page.
+
+## Reference
 
 - pytorch
     - [pytorch extension](https://pytorch.org/tutorials/advanced/cpp_extension.html)

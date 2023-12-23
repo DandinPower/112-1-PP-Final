@@ -10,7 +10,7 @@ This project is for the course project of Parallel Programming in NYCU CSIE. We 
 4. OpenMP + memory efficient implementation by [Leo](https://github.com/leo27945875) 
 5. std::thread implementation by [Frankie](https://github.com/frankie699) and [DandinPower](https://github.com/DandinPower)
 
-in most of the implementation, the OpenMP + memory efficient implementation is the fastest one and also the most memory efficient one. You can check the benchmark result after you run the benchmark scripts, or you can check our benchmark result in the logs folder.
+The OpenMP + memory efficient implementation is the most memory efficient one. For the fastest implementation, we can find in different scenarios, the std::thread, openmp, and openmp + memory efficient all have their advantages. You can check the benchmark result in the logs folder.
 
 Our Evaluation platform is:
 

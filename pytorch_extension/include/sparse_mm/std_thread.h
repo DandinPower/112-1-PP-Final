@@ -207,7 +207,7 @@ torch::Tensor sparse_matmul_kernel(const torch::Tensor &mat1,
         mat2_values_ptr, output_indptr.data_ptr<int64_t>(),
         output_col_indices.data_ptr<int64_t>(), values.data_ptr<scalar_t>());
 
-    csr_to_coo(M, output_indptr.data_ptr<int64_t>(),
+    csr_to_coo_parallel(M, output_indptr.data_ptr<int64_t>(),
                output_row_indices.data_ptr<int64_t>());
 
     logger.startTest("create_sparse_tensor");

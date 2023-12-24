@@ -1,8 +1,8 @@
 #pragma once
+#include <logger.h>
 #include <omp.h>
 #include <torch/extension.h>
 #include <utils.h>
-#include <logger.h>
 
 void csr_to_coo(const int64_t n_row, const int64_t Ap[], int64_t Bi[]) {
     logger.startTest("csr_to_coo");
@@ -12,6 +12,16 @@ void csr_to_coo(const int64_t n_row, const int64_t Ap[], int64_t Bi[]) {
         }
     }
     logger.endTest("csr_to_coo");
+}
+
+void csr_to_coo_parallel(const int64_t n_row, const int64_t Ap[],
+                         int64_t Bi[]) {
+#pragma omp for
+    for (int64_t i = 0; i < n_row; i++) {
+        for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++) {
+            Bi[jj] = i;
+        }
+    }
 }
 
 template <typename index_t_ptr = int64_t *>
@@ -67,5 +77,34 @@ int64_t _csr_matmult_maxnnz_parallel(const int64_t n_row, const int64_t n_col,
         nnz += row_nnz;
     }
     logger.endTest("csr_matmult_maxnnz");
+    return nnz;
+}
+
+template <typename index_t_ptr = int64_t *>
+int64_t _csr_matmult_maxnnz_mem_effi(const int64_t n_row, const int64_t n_col,
+                               const index_t_ptr Ap, const index_t_ptr Aj,
+                               const index_t_ptr Bp, const index_t_ptr Bj) {
+    int64_t nnz = 0;
+#pragma omp parallel
+    {
+        std::vector<int64_t> mask(n_col, -1);
+
+#pragma omp for
+        for (int64_t i = 0; i < n_row; i++) {
+            int64_t row_nnz = 0;
+            for (int64_t jj = Ap[i]; jj < Ap[i + 1]; jj++) {
+                int64_t j = Aj[jj];
+                for (int64_t kk = Bp[j]; kk < Bp[j + 1]; kk++) {
+                    int64_t k = Bj[kk];
+                    if (mask[k] != i) {
+                        mask[k] = i;
+                        row_nnz++;
+                    }
+                }
+            }
+#pragma omp atomic
+            nnz += row_nnz;
+        }
+    }
     return nnz;
 }

@@ -120,7 +120,7 @@ torch::Tensor sparse_matmul_kernel(const torch::Tensor &mat1,
     auto mat2_values_ptr = at::native::StridedRandomAccessor<scalar_t>(
         mat2_csr.values().data_ptr<scalar_t>(), mat2_csr.values().stride(-1));
 
-    const auto nnz = _csr_matmult_maxnnz_parallel(
+    const auto nnz = _csr_matmult_maxnnz_mem_effi(
         M, N, mat1_crow_indices_ptr, mat1_col_indices_ptr,
         mat2_crow_indices_ptr, mat2_col_indices_ptr);
 
@@ -138,7 +138,7 @@ torch::Tensor sparse_matmul_kernel(const torch::Tensor &mat1,
                  output_col_indices.data_ptr<int64_t>(),
                  values.data_ptr<scalar_t>());
 
-    csr_to_coo(M, output_indptr.data_ptr<int64_t>(),
+    csr_to_coo_parallel(M, output_indptr.data_ptr<int64_t>(),
                output_row_indices.data_ptr<int64_t>());
 
     logger.startTest("create_sparse_tensor");

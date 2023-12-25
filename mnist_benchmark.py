@@ -72,24 +72,26 @@ def inference_benchmark(test_loader: DataLoader, args: argparse.Namespace):
     threads_set = create_config_list_by_mul_step(args.num_threads_start, args.num_threads_end + 1, args.num_threads_step)
     
     with open(args.log_file, 'w') as f:
-        for density in density_set:
-            prune_model_by_trained_model(density, args.model_save_path, args.pruned_model_save_path)
-            model.load_state_dict(args.pruned_model_save_path, 6)
-            for thread_num in threads_set:
-                print(f'density=[ {density} ], num_threads= [ {thread_num} ]')
-                output_string = f'density=[ {density} ], num_threads= [ {thread_num} ]\n'
-                output_string += f'strategy, duration(ms)\n'
-                output_string += "-" * 50 + "\n"
-                for strategy_name, strategy in strategy_set:
-                    t = 0
-                    for _ in range(args.num_iterations):
-                        if strategy_name == 'builtin' or strategy_name == 'parallel_structure':
-                            t += _inference(test_loader, model, strategy, -1)
-                        else:
-                            t += _inference(test_loader, model, strategy, thread_num)
-                    t /= args.num_iterations
-                    output_string += f'{strategy_name},{t*1000:.3f}\n'
-                output_string += "-" * 50 + "\n"
+        pass
+    for density in density_set:
+        prune_model_by_trained_model(density, args.model_save_path, args.pruned_model_save_path)
+        model.load_state_dict(args.pruned_model_save_path, 6)
+        for thread_num in threads_set:
+            print(f'density=[ {density} ], num_threads= [ {thread_num} ]')
+            output_string = f'density=[ {density} ], num_threads= [ {thread_num} ]\n'
+            output_string += f'strategy, duration(ms)\n'
+            output_string += "-" * 50 + "\n"
+            for strategy_name, strategy in strategy_set:
+                t = 0
+                for _ in range(args.num_iterations):
+                    if strategy_name == 'builtin' or strategy_name == 'parallel_structure':
+                        t += _inference(test_loader, model, strategy, -1)
+                    else:
+                        t += _inference(test_loader, model, strategy, thread_num)
+                t /= args.num_iterations
+                output_string += f'{strategy_name},{t*1000:.3f}\n'
+            output_string += "-" * 50 + "\n"
+            with open(args.log_file, 'a+') as f:
                 f.write(output_string)
 
 def main():

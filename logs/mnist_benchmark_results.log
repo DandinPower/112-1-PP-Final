@@ -1,180 +1,180 @@
 density=[ 0.1 ], num_threads= [ 1 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,9834.832
-parallel_structure,9972.148
-openmp,12965.061
-openmp_mem_effi,12883.249
-std_thread,14089.865
+builtin,10304.371
+parallel_structure,10381.503
+openmp,13064.480
+openmp_mem_effi,12774.097
+std_thread,14257.810
 --------------------------------------------------
 density=[ 0.1 ], num_threads= [ 2 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,11768.542
-parallel_structure,11777.903
-openmp,8355.403
-openmp_mem_effi,7379.285
-std_thread,9563.689
+builtin,12225.269
+parallel_structure,12203.371
+openmp,8672.248
+openmp_mem_effi,7507.103
+std_thread,9465.195
 --------------------------------------------------
 density=[ 0.1 ], num_threads= [ 4 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,10462.780
-parallel_structure,10595.950
-openmp,6842.300
-openmp_mem_effi,5316.624
-std_thread,6922.797
+builtin,10759.805
+parallel_structure,10885.621
+openmp,7100.981
+openmp_mem_effi,5376.919
+std_thread,6837.166
 --------------------------------------------------
 density=[ 0.1 ], num_threads= [ 8 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,10067.434
-parallel_structure,10211.645
-openmp,6212.598
-openmp_mem_effi,4659.032
-std_thread,7521.539
+builtin,10326.661
+parallel_structure,10449.943
+openmp,6392.637
+openmp_mem_effi,4623.514
+std_thread,7574.391
 --------------------------------------------------
 density=[ 0.1 ], num_threads= [ 16 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,9691.254
-parallel_structure,9869.598
-openmp,6153.075
-openmp_mem_effi,4592.406
-std_thread,8385.093
+builtin,10145.753
+parallel_structure,10268.935
+openmp,6434.543
+openmp_mem_effi,4643.915
+std_thread,8798.125
 --------------------------------------------------
 density=[ 0.2 ], num_threads= [ 1 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,15050.428
-parallel_structure,15175.458
-openmp,20146.294
-openmp_mem_effi,20135.476
-std_thread,21254.795
+builtin,15241.721
+parallel_structure,15328.296
+openmp,20097.805
+openmp_mem_effi,19866.744
+std_thread,21817.266
 --------------------------------------------------
 density=[ 0.2 ], num_threads= [ 2 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,18649.605
-parallel_structure,18630.694
-openmp,12110.457
-openmp_mem_effi,11560.272
-std_thread,13872.772
+builtin,19286.137
+parallel_structure,19296.785
+openmp,12840.980
+openmp_mem_effi,11889.895
+std_thread,13854.118
 --------------------------------------------------
 density=[ 0.2 ], num_threads= [ 4 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,16291.565
-parallel_structure,16420.449
-openmp,9095.925
-openmp_mem_effi,7717.634
-std_thread,10019.303
+builtin,17176.384
+parallel_structure,17290.499
+openmp,9490.289
+openmp_mem_effi,7920.712
+std_thread,9941.133
 --------------------------------------------------
 density=[ 0.2 ], num_threads= [ 8 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,15334.764
-parallel_structure,15475.660
-openmp,8560.062
-openmp_mem_effi,6823.787
-std_thread,10165.492
+builtin,15853.324
+parallel_structure,16106.280
+openmp,8793.119
+openmp_mem_effi,6981.159
+std_thread,9890.730
 --------------------------------------------------
 density=[ 0.2 ], num_threads= [ 16 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,14458.393
-parallel_structure,14607.257
-openmp,8747.349
-openmp_mem_effi,6968.317
-std_thread,10849.282
+builtin,15160.689
+parallel_structure,15460.881
+openmp,9022.815
+openmp_mem_effi,7055.493
+std_thread,11234.253
 --------------------------------------------------
 density=[ 0.4 ], num_threads= [ 1 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,22224.869
-parallel_structure,22302.462
-openmp,31637.963
-openmp_mem_effi,31627.303
-std_thread,32880.573
+builtin,23249.014
+parallel_structure,23329.541
+openmp,32780.720
+openmp_mem_effi,32425.332
+std_thread,33617.996
 --------------------------------------------------
 density=[ 0.4 ], num_threads= [ 2 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,29231.752
-parallel_structure,29228.824
-openmp,18671.631
-openmp_mem_effi,18271.352
-std_thread,20214.360
+builtin,30128.412
+parallel_structure,30130.892
+openmp,19254.135
+openmp_mem_effi,18818.390
+std_thread,20241.054
 --------------------------------------------------
 density=[ 0.4 ], num_threads= [ 4 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,24256.629
-parallel_structure,24307.966
-openmp,13506.751
-openmp_mem_effi,12097.288
-std_thread,14801.249
+builtin,24863.481
+parallel_structure,24921.644
+openmp,14189.463
+openmp_mem_effi,12516.928
+std_thread,14594.133
 --------------------------------------------------
 density=[ 0.4 ], num_threads= [ 8 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,21986.170
-parallel_structure,22052.931
-openmp,12916.379
-openmp_mem_effi,10740.234
-std_thread,14390.449
+builtin,23099.319
+parallel_structure,23164.923
+openmp,13427.946
+openmp_mem_effi,11108.491
+std_thread,14185.332
 --------------------------------------------------
 density=[ 0.4 ], num_threads= [ 16 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,21774.368
-parallel_structure,21846.578
-openmp,13007.605
-openmp_mem_effi,10944.296
-std_thread,15483.988
+builtin,22966.436
+parallel_structure,23020.987
+openmp,13544.774
+openmp_mem_effi,11220.918
+std_thread,15422.166
 --------------------------------------------------
 density=[ 0.8 ], num_threads= [ 1 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,32766.367
-parallel_structure,32837.189
-openmp,50556.921
-openmp_mem_effi,50745.321
-std_thread,49922.163
+builtin,34857.464
+parallel_structure,34992.512
+openmp,52494.946
+openmp_mem_effi,52114.196
+std_thread,51479.750
 --------------------------------------------------
 density=[ 0.8 ], num_threads= [ 2 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,45651.865
-parallel_structure,45752.544
-openmp,28083.846
-openmp_mem_effi,28204.825
-std_thread,29520.490
+builtin,48021.964
+parallel_structure,48059.442
+openmp,29230.810
+openmp_mem_effi,29201.553
+std_thread,29940.324
 --------------------------------------------------
 density=[ 0.8 ], num_threads= [ 4 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,36486.395
-parallel_structure,36547.576
-openmp,19894.803
-openmp_mem_effi,18820.945
-std_thread,21031.130
+builtin,38402.854
+parallel_structure,38482.838
+openmp,20469.808
+openmp_mem_effi,19408.257
+std_thread,20842.963
 --------------------------------------------------
 density=[ 0.8 ], num_threads= [ 8 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,32836.727
-parallel_structure,32902.038
-openmp,19400.231
-openmp_mem_effi,16420.511
-std_thread,20308.479
+builtin,34259.914
+parallel_structure,34372.976
+openmp,19683.124
+openmp_mem_effi,16872.525
+std_thread,19209.004
 --------------------------------------------------
 density=[ 0.8 ], num_threads= [ 16 ]
 strategy, duration(ms)
 --------------------------------------------------
-builtin,32504.617
-parallel_structure,32552.478
-openmp,19967.940
-openmp_mem_effi,17035.258
-std_thread,21556.883
+builtin,33849.100
+parallel_structure,33951.972
+openmp,20389.049
+openmp_mem_effi,17431.610
+std_thread,21929.542
 --------------------------------------------------

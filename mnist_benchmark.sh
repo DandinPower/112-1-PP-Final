@@ -28,7 +28,7 @@ NUM_THREADS_STEP=2
 
 # NUM_ITERATIONS means the number of runs for each configuration
 # LOG_FILE is the log file to store the benchmark results
-NUM_ITERATIONS=10
+NUM_ITERATIONS=5
 LOG_FILE=logs/mnist_benchmark_results.log
 
 # Run the mnist benchmark

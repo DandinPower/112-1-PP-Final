@@ -79,6 +79,10 @@ for each benchmark, you can change the parameters in the script file. You can se
     #include <ATen/native/StridedRandomAccessor.h>
     ```
 
+## Experiments
+
+![](logs/RES.png)
+
 ## Contributions
 
 You are welcome to contribute to this project. If you have any questions, please feel free to contact us.
